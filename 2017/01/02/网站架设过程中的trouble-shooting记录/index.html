@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="">
+<html class="theme-next muse use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -90,7 +90,7 @@
 <meta property="og:url" content="http://astropeanut.info/2017/01/02/网站架设过程中的trouble-shooting记录/index.html">
 <meta property="og:site_name" content="陈清祥的博客">
 <meta property="og:description" content="目的一开始是因为在国内有了个免费的VPS，通过不断网络搜索大概明白了可以用它来做的事情。翻墙是一个，不过往回翻意义总是小一点。另外一个就是建站。看了一些介绍，发现建站其实很容易，如果比较幸运没出什么错误的话一两个小时搞定，不过我显然属于不幸运的那一类。TT在狗爹上买了一年的域名，很便宜，8块人民币。然后在github上研究博客。期间捉摸了hexo等工具，比较折腾。现在还是现在github上玩着，熟">
-<meta property="og:updated_time" content="2017-01-02T07:37:58.000Z">
+<meta property="og:updated_time" content="2017-01-02T08:04:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="网站架设过程中的trouble shooting记录">
 <meta name="twitter:description" content="目的一开始是因为在国内有了个免费的VPS，通过不断网络搜索大概明白了可以用它来做的事情。翻墙是一个，不过往回翻意义总是小一点。另外一个就是建站。看了一些介绍，发现建站其实很容易，如果比较幸运没出什么错误的话一两个小时搞定，不过我显然属于不幸运的那一类。TT在狗爹上买了一年的域名，很便宜，8块人民币。然后在github上研究博客。期间捉摸了hexo等工具，比较折腾。现在还是现在github上玩着，熟">
@@ -107,7 +107,7 @@
     motion: true,
     duoshuo: {
       userId: '0',
-      author: 'Author'
+      author: '博主'
     },
     algolia: {
       applicationID: '',
@@ -130,7 +130,7 @@
   <title> 网站架设过程中的trouble shooting记录 | 陈清祥的博客 </title>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
 
@@ -187,7 +187,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            首页
           </a>
         </li>
       
@@ -197,7 +197,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            Kategorien
+            分类
           </a>
         </li>
       
@@ -207,7 +207,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            归档
           </a>
         </li>
       
@@ -217,7 +217,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
-            Tags
+            标签
           </a>
         </li>
       
@@ -297,7 +297,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">发表于</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-02T15:35:26+08:00">
                 2017-01-02
@@ -318,7 +318,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">in</span>
+                <span class="post-meta-item-text">分类于</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -410,9 +410,9 @@
 <p>然后去狗爹网站，My Products -&gt; manage dns。在里面更改dns为f1g1ns1.dnspod.net何f1g1ns2.dnspod.net.这样狗爹这边的设置也完成了。不考虑延时的因素，原则上已经可以在浏览器敲astropeanut.info进入一个输出hello world的页面了。</p>
 <h2 id="网站编辑"><a href="#网站编辑" class="headerlink" title="网站编辑"></a>网站编辑</h2><h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3><p>博客得好看而且容易操作，所以用了hexo，我的一半时间花在着了折腾这个上面，所以我主要记录一下这里踩的坑。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd path/to/your/workspace</div><div class="line">npm install hexo-cli -g</div></pre></td></tr></table></figure>
-<p>另外在mac平台下node.js可以直接下载在图形界面安装。我在这里折腾了特别久。原因就是npm安装hexo这一步老是出错。网上有不少人遇到和我一样的问题，但是我的用他们的方法解决不了。后来有些博客说这个node.js最好在nvm下安装。最终是从官方文档解决的问题：<a href="https://hexo.io/docs/。其中关键一个是nvm" target="_blank" rel="external">https://hexo.io/docs/。其中关键一个是nvm</a> install stable.通过nvm ls可以查看目前使用的版本，之前存在的奇奇怪怪的问题，在按文档插入运行nvm install stable之后都正常了。另外要注意的是，每次新开一个终端窗口，hexo命令都会失效，所以每次开终端以后都要运行一下nvm install stable，然后可以正常使用hexo相关命令。</p>
+<p>另外在mac平台下node.js可以直接下载在图形界面安装。我在这里折腾了特别久。原因就是npm安装hexo这一步老是出错。网上有不少人遇到和我一样的问题，但是我的用他们的方法解决不了。后来有些博客说这个node.js最好在nvm下安装。最终是从官方文档解决的问题：<a href="https://hexo.io/docs/" target="_blank" rel="external">https://hexo.io/docs/</a>。其中关键一个是nvm install stable.通过nvm ls可以查看目前使用的版本，之前存在的奇奇怪怪的问题，在按文档插入运行nvm install stable之后都正常了。另外要注意的是，每次新开一个终端窗口，hexo命令都会失效，所以每次开终端以后都要运行一下nvm install stable，然后可以正常使用hexo相关命令。</p>
 <h3 id="使用hexo"><a href="#使用hexo" class="headerlink" title="使用hexo"></a>使用hexo</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">cd path/to/your/workspace</div><div class="line">hexo init blog</div><div class="line">cd blog</div><div class="line">npm install</div><div class="line">hexo generate</div><div class="line">hexo server</div></pre></td></tr></table></figure>
-<p>前两句会新建一个blog文件夹并且进行相关初始化。三四两句会安装一些依赖。五六两句用来在本地生成一个网页，可以在<a href="http://localhost:4000查看。" target="_blank" rel="external">http://localhost:4000查看。</a><br>在_config.yml文件中修改deploy部分为：</p>
+<p>前两句会新建一个blog文件夹并且进行相关初始化。三四两句会安装一些依赖。五六两句用来在本地生成一个网页，可以在<a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a>查看。<br>在_config.yml文件中修改deploy部分为：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo : git@github.com:uname/uname.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
 <p>在比较老的hexo版本里面type应该写github，现在改为了git。<br>默认的主题是landscape，不喜欢可以下载已有的大量主题。命令为</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone &lt;repository&gt; themes/&lt;theme-name&gt;</div></pre></td></tr></table></figure>
@@ -518,10 +518,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Inhaltsverzeichnis
+            文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Übersicht
+            站点概览
           </li>
         </ul>
       
@@ -540,7 +540,7 @@
             <div class="site-state-item site-state-posts">
               <a href="/archives">
                 <span class="site-state-item-count">2</span>
-                <span class="site-state-item-name">Artikel</span>
+                <span class="site-state-item-name">日志</span>
               </a>
             </div>
           
@@ -549,7 +549,7 @@
             <div class="site-state-item site-state-categories">
               <a href="/categories">
                 <span class="site-state-item-count">1</span>
-                <span class="site-state-item-name">Kategorien</span>
+                <span class="site-state-item-name">分类</span>
               </a>
             </div>
           
@@ -558,7 +558,7 @@
             <div class="site-state-item site-state-tags">
               <a href="/tags">
                 <span class="site-state-item-count">1</span>
-                <span class="site-state-item-name">Tags</span>
+                <span class="site-state-item-name">标签</span>
               </a>
             </div>
           
@@ -622,11 +622,11 @@
 
 
 <div class="powered-by">
-  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
-  Theme -
+  主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Muse
   </a>
