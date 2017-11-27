@@ -1,0 +1,727 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="学习笔记,读书,物理,费曼," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="此文用来简要记录看费曼物理学讲义过程中的笔记。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="费曼物理 读书笔记">
+<meta property="og:url" content="http://astropeanut.info/2017/04/09/费曼物理-读书笔记/index.html">
+<meta property="og:site_name" content="AstroPeanut's Blog">
+<meta property="og:description" content="此文用来简要记录看费曼物理学讲义过程中的笔记。">
+<meta property="og:updated_time" content="2017-04-08T16:53:44.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="费曼物理 读书笔记">
+<meta name="twitter:description" content="此文用来简要记录看费曼物理学讲义过程中的笔记。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://astropeanut.info/2017/04/09/费曼物理-读书笔记/"/>
+
+
+
+
+
+  <title> 费曼物理 读书笔记 | AstroPeanut's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?d15b8cc355d618f75dfd082559510991";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">AstroPeanut's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle">总学渣也不是个办法</p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://astropeanut.info/2017/04/09/费曼物理-读书笔记/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="陈清祥">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/pic2.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="AstroPeanut's Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="AstroPeanut's Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                费曼物理 读书笔记
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-09T00:17:55+08:00">
+                2017-04-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/work/" itemprop="url" rel="index">
+                    <span itemprop="name">工作和技能</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/04/09/费曼物理-读书笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://astropeanut.info/2017/04/09/费曼物理-读书笔记/" itemprop="commentCount">0</span> comments
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>此文用来简要记录看费曼物理学讲义过程中的笔记。</p>
+<a id="more"></a>
+<h1 id="原子的运动"><a href="#原子的运动" class="headerlink" title="原子的运动"></a>原子的运动</h1><h2 id="引言"><a href="#引言" class="headerlink" title="引言."></a>引言.</h2><h2 id="物质是原子构成的"><a href="#物质是原子构成的" class="headerlink" title="物质是原子构成的"></a>物质是原子构成的</h2><h2 id="原子过程"><a href="#原子过程" class="headerlink" title="原子过程"></a>原子过程</h2><h2 id="化学反应"><a href="#化学反应" class="headerlink" title="化学反应"></a>化学反应</h2><h1 id="基本物理"><a href="#基本物理" class="headerlink" title="基本物理"></a>基本物理</h1><h2 id="引言-1"><a href="#引言-1" class="headerlink" title="引言"></a>引言</h2><h2 id="1920年以前的物理学"><a href="#1920年以前的物理学" class="headerlink" title="1920年以前的物理学"></a>1920年以前的物理学</h2><h2 id="量子物理学"><a href="#量子物理学" class="headerlink" title="量子物理学"></a>量子物理学</h2><h2 id="原子核与粒子"><a href="#原子核与粒子" class="headerlink" title="原子核与粒子"></a>原子核与粒子</h2><h1 id="物理学与其他科学的关系"><a href="#物理学与其他科学的关系" class="headerlink" title="物理学与其他科学的关系"></a>物理学与其他科学的关系</h1><h2 id="引言-2"><a href="#引言-2" class="headerlink" title="引言"></a>引言</h2><h2 id="化学"><a href="#化学" class="headerlink" title="化学"></a>化学</h2><h2 id="生物学"><a href="#生物学" class="headerlink" title="生物学"></a>生物学</h2><h2 id="天文学"><a href="#天文学" class="headerlink" title="天文学"></a>天文学</h2><h2 id="地质学"><a href="#地质学" class="headerlink" title="地质学"></a>地质学</h2><h2 id="心理学"><a href="#心理学" class="headerlink" title="心理学"></a>心理学</h2><h2 id="情况何以会如此"><a href="#情况何以会如此" class="headerlink" title="情况何以会如此"></a>情况何以会如此</h2><h1 id="能量守恒"><a href="#能量守恒" class="headerlink" title="能量守恒"></a>能量守恒</h1><h2 id="什么是能量"><a href="#什么是能量" class="headerlink" title="什么是能量"></a>什么是能量</h2><h2 id="重力势能"><a href="#重力势能" class="headerlink" title="重力势能"></a>重力势能</h2><h2 id="动能"><a href="#动能" class="headerlink" title="动能"></a>动能</h2><h2 id="能量的其他形式"><a href="#能量的其他形式" class="headerlink" title="能量的其他形式"></a>能量的其他形式</h2><h1 id="时间与距离"><a href="#时间与距离" class="headerlink" title="时间与距离"></a>时间与距离</h1><h2 id="运动"><a href="#运动" class="headerlink" title="运动"></a>运动</h2><h2 id="时间"><a href="#时间" class="headerlink" title="时间"></a>时间</h2><h2 id="短的时间"><a href="#短的时间" class="headerlink" title="短的时间"></a>短的时间</h2><h2 id="长的时间"><a href="#长的时间" class="headerlink" title="长的时间"></a>长的时间</h2><h2 id="时间的单位和标准"><a href="#时间的单位和标准" class="headerlink" title="时间的单位和标准"></a>时间的单位和标准</h2><h2 id="长的距离"><a href="#长的距离" class="headerlink" title="长的距离"></a>长的距离</h2><h2 id="短的距离"><a href="#短的距离" class="headerlink" title="短的距离"></a>短的距离</h2><h1 id="概率"><a href="#概率" class="headerlink" title="概率"></a>概率</h1><h2 id="机会和可能性"><a href="#机会和可能性" class="headerlink" title="机会和可能性"></a>机会和可能性</h2><h2 id="涨落"><a href="#涨落" class="headerlink" title="涨落"></a>涨落</h2><h2 id="无规行走"><a href="#无规行走" class="headerlink" title="无规行走"></a>无规行走</h2><h2 id="概率分布"><a href="#概率分布" class="headerlink" title="概率分布"></a>概率分布</h2><h2 id="不确定性原理"><a href="#不确定性原理" class="headerlink" title="不确定性原理"></a>不确定性原理</h2><h1 id="万有引力理论"><a href="#万有引力理论" class="headerlink" title="万有引力理论"></a>万有引力理论</h1><h2 id="行星运动"><a href="#行星运动" class="headerlink" title="行星运动"></a>行星运动</h2><h2 id="开普勒定律"><a href="#开普勒定律" class="headerlink" title="开普勒定律"></a>开普勒定律</h2><h2 id="动力学的发展"><a href="#动力学的发展" class="headerlink" title="动力学的发展"></a>动力学的发展</h2><h2 id="牛顿引力定律"><a href="#牛顿引力定律" class="headerlink" title="牛顿引力定律"></a>牛顿引力定律</h2><h2 id="万有引力"><a href="#万有引力" class="headerlink" title="万有引力"></a>万有引力</h2><h2 id="卡文迪什实验"><a href="#卡文迪什实验" class="headerlink" title="卡文迪什实验"></a>卡文迪什实验</h2><h2 id="什么是引力"><a href="#什么是引力" class="headerlink" title="什么是引力"></a>什么是引力</h2><h2 id="引力与相对论"><a href="#引力与相对论" class="headerlink" title="引力与相对论"></a>引力与相对论</h2><h1 id="运动-1"><a href="#运动-1" class="headerlink" title="运动"></a>运动</h1><h2 id="运动的描述"><a href="#运动的描述" class="headerlink" title="运动的描述"></a>运动的描述</h2><h2 id="速率"><a href="#速率" class="headerlink" title="速率"></a>速率</h2><h2 id="速率作为导数"><a href="#速率作为导数" class="headerlink" title="速率作为导数"></a>速率作为导数</h2><h2 id="距离作为积分"><a href="#距离作为积分" class="headerlink" title="距离作为积分"></a>距离作为积分</h2><h2 id="加速度"><a href="#加速度" class="headerlink" title="加速度"></a>加速度</h2><h1 id="牛顿的动力学定律"><a href="#牛顿的动力学定律" class="headerlink" title="牛顿的动力学定律"></a>牛顿的动力学定律</h1><h2 id="动量和力"><a href="#动量和力" class="headerlink" title="动量和力"></a>动量和力</h2><h2 id="速率与速度"><a href="#速率与速度" class="headerlink" title="速率与速度"></a>速率与速度</h2><h2 id="速度、加速度以及力的分量"><a href="#速度、加速度以及力的分量" class="headerlink" title="速度、加速度以及力的分量"></a>速度、加速度以及力的分量</h2><h2 id="什么是力"><a href="#什么是力" class="headerlink" title="什么是力"></a>什么是力</h2><h2 id="动力学方程的含义"><a href="#动力学方程的含义" class="headerlink" title="动力学方程的含义"></a>动力学方程的含义</h2><h2 id="方程的数值解"><a href="#方程的数值解" class="headerlink" title="方程的数值解"></a>方程的数值解</h2><h2 id="行星运动-1"><a href="#行星运动-1" class="headerlink" title="行星运动"></a>行星运动</h2><h1 id="动量守恒"><a href="#动量守恒" class="headerlink" title="动量守恒"></a>动量守恒</h1><h2 id="牛顿第三定律"><a href="#牛顿第三定律" class="headerlink" title="牛顿第三定律"></a>牛顿第三定律</h2><h2 id="动量守恒-1"><a href="#动量守恒-1" class="headerlink" title="动量守恒"></a>动量守恒</h2><h2 id="动量是守恒的"><a href="#动量是守恒的" class="headerlink" title="动量是守恒的"></a>动量是守恒的</h2><h2 id="动量和能量"><a href="#动量和能量" class="headerlink" title="动量和能量"></a>动量和能量</h2><h2 id="相对论性动量"><a href="#相对论性动量" class="headerlink" title="相对论性动量"></a>相对论性动量</h2><h1 id="矢量"><a href="#矢量" class="headerlink" title="矢量"></a>矢量</h1><h2 id="物理学中的对称性"><a href="#物理学中的对称性" class="headerlink" title="物理学中的对称性"></a>物理学中的对称性</h2><h2 id="平移"><a href="#平移" class="headerlink" title="平移"></a>平移</h2><h2 id="转动"><a href="#转动" class="headerlink" title="转动"></a>转动</h2><h2 id="矢量-1"><a href="#矢量-1" class="headerlink" title="矢量"></a>矢量</h2><h2 id="矢量代数"><a href="#矢量代数" class="headerlink" title="矢量代数"></a>矢量代数</h2><h2 id="牛顿定律的矢量表示法"><a href="#牛顿定律的矢量表示法" class="headerlink" title="牛顿定律的矢量表示法"></a>牛顿定律的矢量表示法</h2><h2 id="矢量的标积"><a href="#矢量的标积" class="headerlink" title="矢量的标积"></a>矢量的标积</h2><h1 id="力的特性"><a href="#力的特性" class="headerlink" title="力的特性"></a>力的特性</h1><h2 id="什么是力-1"><a href="#什么是力-1" class="headerlink" title="什么是力"></a>什么是力</h2><h2 id="摩擦力"><a href="#摩擦力" class="headerlink" title="摩擦力"></a>摩擦力</h2><h2 id="分子力"><a href="#分子力" class="headerlink" title="分子力"></a>分子力</h2><h2 id="基本力、场"><a href="#基本力、场" class="headerlink" title="基本力、场"></a>基本力、场</h2><h2 id="赝力"><a href="#赝力" class="headerlink" title="赝力"></a>赝力</h2><h2 id="核力"><a href="#核力" class="headerlink" title="核力"></a>核力</h2><h1 id="功与势能-上"><a href="#功与势能-上" class="headerlink" title="功与势能(上)"></a>功与势能(上)</h1><h2 id="落体的能量"><a href="#落体的能量" class="headerlink" title="落体的能量"></a>落体的能量</h2><h2 id="万有引力所作的功"><a href="#万有引力所作的功" class="headerlink" title="万有引力所作的功"></a>万有引力所作的功</h2><h2 id="能量的求和"><a href="#能量的求和" class="headerlink" title="能量的求和"></a>能量的求和</h2><h2 id="巨大物体的引力场"><a href="#巨大物体的引力场" class="headerlink" title="巨大物体的引力场"></a>巨大物体的引力场</h2><h1 id="功与势能-下"><a href="#功与势能-下" class="headerlink" title="功与势能(下)"></a>功与势能(下)</h1><h2 id="功"><a href="#功" class="headerlink" title="功"></a>功</h2><h2 id="约束运动"><a href="#约束运动" class="headerlink" title="约束运动"></a>约束运动</h2><h2 id="保守力"><a href="#保守力" class="headerlink" title="保守力"></a>保守力</h2><h2 id="非保守力"><a href="#非保守力" class="headerlink" title="非保守力"></a>非保守力</h2><h2 id="势与场"><a href="#势与场" class="headerlink" title="势与场"></a>势与场</h2><h1 id="狭义相对论"><a href="#狭义相对论" class="headerlink" title="狭义相对论"></a>狭义相对论</h1><h2 id="相对性原理"><a href="#相对性原理" class="headerlink" title="相对性原理"></a>相对性原理</h2><h2 id="洛伦兹变换"><a href="#洛伦兹变换" class="headerlink" title="洛伦兹变换"></a>洛伦兹变换</h2><h2 id="迈克耳逊—莫雷实验"><a href="#迈克耳逊—莫雷实验" class="headerlink" title="迈克耳逊—莫雷实验"></a>迈克耳逊—莫雷实验</h2><h2 id="时间的变换"><a href="#时间的变换" class="headerlink" title="时间的变换"></a>时间的变换</h2><h2 id="洛伦兹收缩"><a href="#洛伦兹收缩" class="headerlink" title="洛伦兹收缩"></a>洛伦兹收缩</h2><h2 id="同时性"><a href="#同时性" class="headerlink" title="同时性"></a>同时性</h2><h2 id="四维矢量"><a href="#四维矢量" class="headerlink" title="四维矢量"></a>四维矢量</h2><h2 id="相对论动力学"><a href="#相对论动力学" class="headerlink" title="相对论动力学"></a>相对论动力学</h2><h2 id="质能相当性"><a href="#质能相当性" class="headerlink" title="质能相当性"></a>质能相当性</h2><h1 id="相对论中的能量与动量"><a href="#相对论中的能量与动量" class="headerlink" title="相对论中的能量与动量"></a>相对论中的能量与动量</h1><h2 id="相对论与哲学家"><a href="#相对论与哲学家" class="headerlink" title="相对论与哲学家"></a>相对论与哲学家</h2><h2 id="孪生子佯谬"><a href="#孪生子佯谬" class="headerlink" title="孪生子佯谬"></a>孪生子佯谬</h2><h2 id="速度的变换"><a href="#速度的变换" class="headerlink" title="速度的变换"></a>速度的变换</h2><h2 id="相对论性质量"><a href="#相对论性质量" class="headerlink" title="相对论性质量"></a>相对论性质量</h2><h2 id="相对论性能量"><a href="#相对论性能量" class="headerlink" title="相对论性能量"></a>相对论性能量</h2><h1 id="时空"><a href="#时空" class="headerlink" title="时空"></a>时空</h1><h2 id="时空几何学"><a href="#时空几何学" class="headerlink" title="时空几何学"></a>时空几何学</h2><h2 id="时空间隔"><a href="#时空间隔" class="headerlink" title="时空间隔"></a>时空间隔</h2><h2 id="过去，现在和将来"><a href="#过去，现在和将来" class="headerlink" title="过去，现在和将来"></a>过去，现在和将来</h2><h2 id="四维矢量的进一步讨论"><a href="#四维矢量的进一步讨论" class="headerlink" title="四维矢量的进一步讨论"></a>四维矢量的进一步讨论</h2><h2 id="四维矢量代数"><a href="#四维矢量代数" class="headerlink" title="四维矢量代数"></a>四维矢量代数</h2><h1 id="二维空间中的转动"><a href="#二维空间中的转动" class="headerlink" title="二维空间中的转动"></a>二维空间中的转动</h1><h2 id="质心"><a href="#质心" class="headerlink" title="质心"></a>质心</h2><h2 id="刚体的转动"><a href="#刚体的转动" class="headerlink" title="刚体的转动"></a>刚体的转动</h2><h2 id="角动量"><a href="#角动量" class="headerlink" title="角动量"></a>角动量</h2><h2 id="角动量守恒"><a href="#角动量守恒" class="headerlink" title="角动量守恒"></a>角动量守恒</h2><h1 id="质心、转动惯量"><a href="#质心、转动惯量" class="headerlink" title="质心、转动惯量"></a>质心、转动惯量</h1><h2 id="质心的性质"><a href="#质心的性质" class="headerlink" title="质心的性质"></a>质心的性质</h2><h2 id="质心位置的确定"><a href="#质心位置的确定" class="headerlink" title="质心位置的确定"></a>质心位置的确定</h2><h2 id="转动惯量的求法"><a href="#转动惯量的求法" class="headerlink" title="转动惯量的求法"></a>转动惯量的求法</h2><h2 id="转动动能"><a href="#转动动能" class="headerlink" title="转动动能"></a>转动动能</h2><h1 id="空间转动"><a href="#空间转动" class="headerlink" title="空间转动"></a>空间转动</h1><h2 id="三维空间中的转矩"><a href="#三维空间中的转矩" class="headerlink" title="三维空间中的转矩"></a>三维空间中的转矩</h2><h2 id="用叉积表示的转动方程式"><a href="#用叉积表示的转动方程式" class="headerlink" title="用叉积表示的转动方程式"></a>用叉积表示的转动方程式</h2><h2 id="回转仪"><a href="#回转仪" class="headerlink" title="回转仪"></a>回转仪</h2><h2 id="固体的角动量"><a href="#固体的角动量" class="headerlink" title="固体的角动量"></a>固体的角动量</h2><h1 id="谐振子"><a href="#谐振子" class="headerlink" title="谐振子"></a>谐振子</h1><h2 id="线性微分方程"><a href="#线性微分方程" class="headerlink" title="线性微分方程"></a>线性微分方程</h2><h2 id="谐振子-1"><a href="#谐振子-1" class="headerlink" title="谐振子"></a>谐振子</h2><h2 id="简谐运动和圆周运动"><a href="#简谐运动和圆周运动" class="headerlink" title="简谐运动和圆周运动"></a>简谐运动和圆周运动</h2><h2 id="初始条件"><a href="#初始条件" class="headerlink" title="初始条件"></a>初始条件</h2><h2 id="受迫振动"><a href="#受迫振动" class="headerlink" title="受迫振动"></a>受迫振动</h2><h1 id="代数学"><a href="#代数学" class="headerlink" title="代数学"></a>代数学</h1><h2 id="加法和乘法"><a href="#加法和乘法" class="headerlink" title="加法和乘法"></a>加法和乘法</h2><h2 id="逆运算"><a href="#逆运算" class="headerlink" title="逆运算"></a>逆运算</h2><h2 id="抽象和推广"><a href="#抽象和推广" class="headerlink" title="抽象和推广"></a>抽象和推广</h2><h2 id="无理数的近似计算"><a href="#无理数的近似计算" class="headerlink" title="无理数的近似计算"></a>无理数的近似计算</h2><h2 id="复数"><a href="#复数" class="headerlink" title="复数"></a>复数</h2><h2 id="虚指数"><a href="#虚指数" class="headerlink" title="虚指数"></a>虚指数</h2><h1 id="共振"><a href="#共振" class="headerlink" title="共振"></a>共振</h1><h2 id="复数和简谐运动"><a href="#复数和简谐运动" class="headerlink" title="复数和简谐运动"></a>复数和简谐运动</h2><h2 id="有阻尼的受迫振子"><a href="#有阻尼的受迫振子" class="headerlink" title="有阻尼的受迫振子"></a>有阻尼的受迫振子</h2><h2 id="电共振"><a href="#电共振" class="headerlink" title="电共振"></a>电共振</h2><h2 id="自然界中的共振现象"><a href="#自然界中的共振现象" class="headerlink" title="自然界中的共振现象"></a>自然界中的共振现象</h2><h1 id="瞬变态"><a href="#瞬变态" class="headerlink" title="瞬变态"></a>瞬变态</h1><h2 id="振子的能量"><a href="#振子的能量" class="headerlink" title="振子的能量"></a>振子的能量</h2><h2 id="阻尼振动"><a href="#阻尼振动" class="headerlink" title="阻尼振动"></a>阻尼振动</h2><h2 id="电瞬变态"><a href="#电瞬变态" class="headerlink" title="电瞬变态"></a>电瞬变态</h2><h1 id="线性系统及其综述"><a href="#线性系统及其综述" class="headerlink" title="线性系统及其综述"></a>线性系统及其综述</h1><h2 id="线性微分方程-1"><a href="#线性微分方程-1" class="headerlink" title="线性微分方程"></a>线性微分方程</h2><h2 id="解的叠力口"><a href="#解的叠力口" class="headerlink" title="解的叠力口"></a>解的叠力口</h2><h2 id="线性系统中的振动"><a href="#线性系统中的振动" class="headerlink" title="线性系统中的振动"></a>线性系统中的振动</h2><h2 id="物理学中的类比"><a href="#物理学中的类比" class="headerlink" title="物理学中的类比"></a>物理学中的类比</h2><h2 id="串联和并联阻抗"><a href="#串联和并联阻抗" class="headerlink" title="串联和并联阻抗"></a>串联和并联阻抗</h2><h1 id="光学：最短时间原理"><a href="#光学：最短时间原理" class="headerlink" title="光学：最短时间原理"></a>光学：最短时间原理</h1><h2 id="光"><a href="#光" class="headerlink" title="光.."></a>光..</h2><h2 id="反射与折射"><a href="#反射与折射" class="headerlink" title="反射与折射"></a>反射与折射</h2><h2 id="费马最短时间原理"><a href="#费马最短时间原理" class="headerlink" title="费马最短时间原理"></a>费马最短时间原理</h2><h2 id="费马原理的应用"><a href="#费马原理的应用" class="headerlink" title="费马原理的应用"></a>费马原理的应用</h2><h2 id="费马原理的更精确表述"><a href="#费马原理的更精确表述" class="headerlink" title="费马原理的更精确表述"></a>费马原理的更精确表述</h2><h2 id="最短时间原理是怎样起作用的"><a href="#最短时间原理是怎样起作用的" class="headerlink" title="最短时间原理是怎样起作用的"></a>最短时间原理是怎样起作用的</h2><h1 id="几何光学"><a href="#几何光学" class="headerlink" title="几何光学"></a>几何光学</h1><h2 id="引言-3"><a href="#引言-3" class="headerlink" title="引言"></a>引言</h2><h2 id="球面的焦距"><a href="#球面的焦距" class="headerlink" title="球面的焦距"></a>球面的焦距</h2><h2 id="透镜的焦距"><a href="#透镜的焦距" class="headerlink" title="透镜的焦距"></a>透镜的焦距</h2><h2 id="放大率"><a href="#放大率" class="headerlink" title="放大率"></a>放大率</h2><h2 id="透镜组"><a href="#透镜组" class="headerlink" title="透镜组"></a>透镜组</h2><h2 id="像差"><a href="#像差" class="headerlink" title="像差"></a>像差</h2><h2 id="分辨本领"><a href="#分辨本领" class="headerlink" title="分辨本领"></a>分辨本领</h2><h1 id="电磁辐射"><a href="#电磁辐射" class="headerlink" title="电磁辐射"></a>电磁辐射</h1><h2 id="电磁学"><a href="#电磁学" class="headerlink" title="电磁学"></a>电磁学</h2><h2 id="辐射"><a href="#辐射" class="headerlink" title="辐射"></a>辐射</h2><h2 id="偶极辐射子"><a href="#偶极辐射子" class="headerlink" title="偶极辐射子"></a>偶极辐射子</h2><h2 id="干涉"><a href="#干涉" class="headerlink" title="干涉"></a>干涉</h2><h1 id="干涉-1"><a href="#干涉-1" class="headerlink" title="干涉"></a>干涉</h1><h2 id="电磁波"><a href="#电磁波" class="headerlink" title="电磁波"></a>电磁波</h2><h2 id="辐射的能量"><a href="#辐射的能量" class="headerlink" title="辐射的能量"></a>辐射的能量</h2><h2 id="正弦波"><a href="#正弦波" class="headerlink" title="正弦波"></a>正弦波</h2><h2 id="两个偶极辐射子"><a href="#两个偶极辐射子" class="headerlink" title="两个偶极辐射子"></a>两个偶极辐射子</h2><h2 id="干涉的数学"><a href="#干涉的数学" class="headerlink" title="干涉的数学"></a>干涉的数学</h2><h1 id="衍射"><a href="#衍射" class="headerlink" title="衍射"></a>衍射</h1><h2 id="n个相同振子的合振幅"><a href="#n个相同振子的合振幅" class="headerlink" title="n个相同振子的合振幅"></a>n个相同振子的合振幅</h2><h2 id="衍射光栅"><a href="#衍射光栅" class="headerlink" title="衍射光栅"></a>衍射光栅</h2><h2 id="光栅的分辨本领"><a href="#光栅的分辨本领" class="headerlink" title="光栅的分辨本领"></a>光栅的分辨本领</h2><h2 id="抛物形天线"><a href="#抛物形天线" class="headerlink" title="抛物形天线"></a>抛物形天线</h2><h2 id="彩色薄膜、晶体"><a href="#彩色薄膜、晶体" class="headerlink" title="彩色薄膜、晶体"></a>彩色薄膜、晶体</h2><h2 id="不透明屏的衍射"><a href="#不透明屏的衍射" class="headerlink" title="不透明屏的衍射"></a>不透明屏的衍射</h2><h2 id="振荡电荷组成的平面所产生的场"><a href="#振荡电荷组成的平面所产生的场" class="headerlink" title="振荡电荷组成的平面所产生的场"></a>振荡电荷组成的平面所产生的场</h2><h1 id="折射率的起源"><a href="#折射率的起源" class="headerlink" title="折射率的起源"></a>折射率的起源</h1><h2 id="折射率"><a href="#折射率" class="headerlink" title="折射率"></a>折射率</h2><h2 id="物质引起的场"><a href="#物质引起的场" class="headerlink" title="物质引起的场"></a>物质引起的场</h2><h2 id="色散"><a href="#色散" class="headerlink" title="色散"></a>色散</h2><h2 id="吸收"><a href="#吸收" class="headerlink" title="吸收"></a>吸收</h2><h2 id="电波所携带的能量"><a href="#电波所携带的能量" class="headerlink" title="电波所携带的能量"></a>电波所携带的能量</h2><h2 id="屏的衍射"><a href="#屏的衍射" class="headerlink" title="屏的衍射"></a>屏的衍射</h2><h1 id="辐射阻尼、光的散射"><a href="#辐射阻尼、光的散射" class="headerlink" title="辐射阻尼、光的散射"></a>辐射阻尼、光的散射</h1><h2 id="辐射电阻"><a href="#辐射电阻" class="headerlink" title="辐射电阻"></a>辐射电阻</h2><h2 id="台皂量辐射率"><a href="#台皂量辐射率" class="headerlink" title="台皂量辐射率"></a>台皂量辐射率</h2><h2 id="辐射阻尼"><a href="#辐射阻尼" class="headerlink" title="辐射阻尼"></a>辐射阻尼</h2><h2 id="独立的辐射源"><a href="#独立的辐射源" class="headerlink" title="独立的辐射源"></a>独立的辐射源</h2><h2 id="光的散射"><a href="#光的散射" class="headerlink" title="光的散射"></a>光的散射</h2><h1 id="偏振"><a href="#偏振" class="headerlink" title="偏振"></a>偏振</h1><h2 id="光的电矢量"><a href="#光的电矢量" class="headerlink" title="光的电矢量"></a>光的电矢量</h2><h2 id="散射光的偏振性"><a href="#散射光的偏振性" class="headerlink" title="散射光的偏振性"></a>散射光的偏振性</h2><h2 id="双折射"><a href="#双折射" class="headerlink" title="双折射"></a>双折射</h2><h2 id="起偏振器"><a href="#起偏振器" class="headerlink" title="起偏振器"></a>起偏振器</h2><h2 id="旋光性"><a href="#旋光性" class="headerlink" title="旋光性"></a>旋光性</h2><h2 id="反射光的强度"><a href="#反射光的强度" class="headerlink" title="反射光的强度"></a>反射光的强度</h2><h2 id="反常折射"><a href="#反常折射" class="headerlink" title="反常折射"></a>反常折射</h2><h1 id="辐射中的相对论性效应"><a href="#辐射中的相对论性效应" class="headerlink" title="辐射中的相对论性效应"></a>辐射中的相对论性效应</h1><h2 id="运动辐射源"><a href="#运动辐射源" class="headerlink" title="运动辐射源"></a>运动辐射源</h2><h2 id="求“表观”运动"><a href="#求“表观”运动" class="headerlink" title="求“表观”运动"></a>求“表观”运动</h2><h2 id="同步辐射"><a href="#同步辐射" class="headerlink" title="同步辐射"></a>同步辐射</h2><h2 id="宇宙中的同步辐射"><a href="#宇宙中的同步辐射" class="headerlink" title="宇宙中的同步辐射"></a>宇宙中的同步辐射</h2><h2 id="轫致辐射"><a href="#轫致辐射" class="headerlink" title="轫致辐射"></a>轫致辐射</h2><h2 id="多普勒效应"><a href="#多普勒效应" class="headerlink" title="多普勒效应"></a>多普勒效应</h2><h2 id="w、k四元矢量"><a href="#w、k四元矢量" class="headerlink" title="w、k四元矢量"></a>w、k四元矢量</h2><h2 id="光行差"><a href="#光行差" class="headerlink" title="光行差"></a>光行差</h2><h2 id="光的动量"><a href="#光的动量" class="headerlink" title="光的动量"></a>光的动量</h2><h1 id="色视觉"><a href="#色视觉" class="headerlink" title="色视觉"></a>色视觉</h1><h2 id="人眼"><a href="#人眼" class="headerlink" title="人眼"></a>人眼</h2><h2 id="颜色依赖于光的强度"><a href="#颜色依赖于光的强度" class="headerlink" title="颜色依赖于光的强度"></a>颜色依赖于光的强度</h2><h2 id="色感觉的测量"><a href="#色感觉的测量" class="headerlink" title="色感觉的测量"></a>色感觉的测量</h2><h2 id="色品图"><a href="#色品图" class="headerlink" title="色品图"></a>色品图</h2><h2 id="色视觉的机制"><a href="#色视觉的机制" class="headerlink" title="色视觉的机制"></a>色视觉的机制</h2><h2 id="色视觉的生理化学"><a href="#色视觉的生理化学" class="headerlink" title="色视觉的生理化学"></a>色视觉的生理化学</h2><h1 id="视觉的机制"><a href="#视觉的机制" class="headerlink" title="视觉的机制"></a>视觉的机制</h1><h2 id="颜色的感觉"><a href="#颜色的感觉" class="headerlink" title="颜色的感觉"></a>颜色的感觉</h2><h2 id="眼睛的生理学"><a href="#眼睛的生理学" class="headerlink" title="眼睛的生理学"></a>眼睛的生理学</h2><h2 id="视杆细胞"><a href="#视杆细胞" class="headerlink" title="视杆细胞"></a>视杆细胞</h2><h2 id="昆虫的-复眼"><a href="#昆虫的-复眼" class="headerlink" title="(昆虫的)复眼"></a>(昆虫的)复眼</h2><h2 id="其他的眼睛"><a href="#其他的眼睛" class="headerlink" title="其他的眼睛"></a>其他的眼睛</h2><h2 id="视觉的神经学"><a href="#视觉的神经学" class="headerlink" title="视觉的神经学"></a>视觉的神经学</h2><h1 id="量子行为"><a href="#量子行为" class="headerlink" title="量子行为"></a>量子行为</h1><h2 id="原子力学"><a href="#原子力学" class="headerlink" title="原子力学"></a>原子力学</h2><h2 id="子弹实验"><a href="#子弹实验" class="headerlink" title="子弹实验"></a>子弹实验</h2><h2 id="波的实验"><a href="#波的实验" class="headerlink" title="波的实验"></a>波的实验</h2><h2 id="电子的实验"><a href="#电子的实验" class="headerlink" title="电子的实验"></a>电子的实验</h2><h2 id="电子波的干涉"><a href="#电子波的干涉" class="headerlink" title="电子波的干涉"></a>电子波的干涉</h2><h2 id="追踪电子"><a href="#追踪电子" class="headerlink" title="追踪电子"></a>追踪电子</h2><h2 id="量子力学的基本原理"><a href="#量子力学的基本原理" class="headerlink" title="量子力学的基本原理"></a>量子力学的基本原理</h2><h2 id="不确定性原理-1"><a href="#不确定性原理-1" class="headerlink" title="不确定性原理"></a>不确定性原理</h2><h1 id="波动观点与粒子观点的关系"><a href="#波动观点与粒子观点的关系" class="headerlink" title="波动观点与粒子观点的关系"></a>波动观点与粒子观点的关系</h1><h2 id="概率波幅"><a href="#概率波幅" class="headerlink" title="概率波幅"></a>概率波幅</h2><h2 id="位置与动量的测量"><a href="#位置与动量的测量" class="headerlink" title="位置与动量的测量"></a>位置与动量的测量</h2><h2 id="晶体衍射"><a href="#晶体衍射" class="headerlink" title="晶体衍射"></a>晶体衍射</h2><h2 id="原子的大小"><a href="#原子的大小" class="headerlink" title="原子的大小"></a>原子的大小</h2><h2 id="能级"><a href="#能级" class="headerlink" title="能级"></a>能级</h2><h2 id="哲学含义"><a href="#哲学含义" class="headerlink" title="哲学含义"></a>哲学含义</h2><h1 id="气体分子动理论"><a href="#气体分子动理论" class="headerlink" title="气体分子动理论"></a>气体分子动理论</h1><h2 id="物质的性质"><a href="#物质的性质" class="headerlink" title="物质的性质"></a>物质的性质</h2><h2 id="气体的压强"><a href="#气体的压强" class="headerlink" title="气体的压强"></a>气体的压强</h2><h2 id="辐射的压缩性"><a href="#辐射的压缩性" class="headerlink" title="辐射的压缩性"></a>辐射的压缩性</h2><h2 id="温度和动能"><a href="#温度和动能" class="headerlink" title="温度和动能"></a>温度和动能</h2><h2 id="理想气体定律"><a href="#理想气体定律" class="headerlink" title="理想气体定律"></a>理想气体定律</h2><h1 id="统计力学原理"><a href="#统计力学原理" class="headerlink" title="统计力学原理"></a>统计力学原理</h1><h2 id="大气的指数变化律"><a href="#大气的指数变化律" class="headerlink" title="大气的指数变化律"></a>大气的指数变化律</h2><h2 id="玻尔兹曼定律"><a href="#玻尔兹曼定律" class="headerlink" title="玻尔兹曼定律"></a>玻尔兹曼定律</h2><h2 id="液体的蒸发"><a href="#液体的蒸发" class="headerlink" title="液体的蒸发"></a>液体的蒸发</h2><h2 id="分子的速率分布"><a href="#分子的速率分布" class="headerlink" title="分子的速率分布"></a>分子的速率分布</h2><h2 id="气体比热"><a href="#气体比热" class="headerlink" title="气体比热"></a>气体比热</h2><h2 id="经典物理的失败"><a href="#经典物理的失败" class="headerlink" title="经典物理的失败"></a>经典物理的失败</h2><h1 id="布朗运动"><a href="#布朗运动" class="headerlink" title="布朗运动"></a>布朗运动</h1><h2 id="能量均分"><a href="#能量均分" class="headerlink" title="能量均分"></a>能量均分</h2><h2 id="辐射的热平衡"><a href="#辐射的热平衡" class="headerlink" title="辐射的热平衡"></a>辐射的热平衡</h2><h2 id="能量均分与量子振子"><a href="#能量均分与量子振子" class="headerlink" title="能量均分与量子振子"></a>能量均分与量子振子</h2><h2 id="无规行走-1"><a href="#无规行走-1" class="headerlink" title="无规行走"></a>无规行走</h2><h1 id="分子动理论的应用"><a href="#分子动理论的应用" class="headerlink" title="分子动理论的应用"></a>分子动理论的应用</h1><h2 id="蒸发"><a href="#蒸发" class="headerlink" title="蒸发"></a>蒸发</h2><h2 id="热离子发射"><a href="#热离子发射" class="headerlink" title="热离子发射"></a>热离子发射</h2><h2 id="热电离"><a href="#热电离" class="headerlink" title="热电离"></a>热电离</h2><h2 id="化学动力学"><a href="#化学动力学" class="headerlink" title="化学动力学"></a>化学动力学</h2><h2 id="爱因斯坦辐射律"><a href="#爱因斯坦辐射律" class="headerlink" title="爱因斯坦辐射律"></a>爱因斯坦辐射律</h2><h1 id="扩散"><a href="#扩散" class="headerlink" title="扩散"></a>扩散</h1><h2 id="分子间的碰撞"><a href="#分子间的碰撞" class="headerlink" title="分子间的碰撞"></a>分子间的碰撞</h2><h2 id="平均自由程"><a href="#平均自由程" class="headerlink" title="平均自由程"></a>平均自由程</h2><h2 id="漂移速率"><a href="#漂移速率" class="headerlink" title="漂移速率"></a>漂移速率</h2><h2 id="离子电导率"><a href="#离子电导率" class="headerlink" title="离子电导率"></a>离子电导率</h2><h2 id="分子扩散"><a href="#分子扩散" class="headerlink" title="分子扩散"></a>分子扩散</h2><h2 id="热导率"><a href="#热导率" class="headerlink" title="热导率"></a>热导率</h2><h1 id="热力学定律"><a href="#热力学定律" class="headerlink" title="热力学定律"></a>热力学定律</h1><h2 id="热机、第一定律"><a href="#热机、第一定律" class="headerlink" title="热机、第一定律"></a>热机、第一定律</h2><h2 id="第二定律"><a href="#第二定律" class="headerlink" title="第二定律"></a>第二定律</h2><h2 id="可逆机"><a href="#可逆机" class="headerlink" title="可逆机"></a>可逆机</h2><h2 id="理想热机的效率"><a href="#理想热机的效率" class="headerlink" title="理想热机的效率"></a>理想热机的效率</h2><h2 id="热力学温度"><a href="#热力学温度" class="headerlink" title="热力学温度"></a>热力学温度</h2><h2 id="熵"><a href="#熵" class="headerlink" title="熵"></a>熵</h2><h1 id="热力学示例"><a href="#热力学示例" class="headerlink" title="热力学示例"></a>热力学示例</h1><h2 id="内能"><a href="#内能" class="headerlink" title="内能"></a>内能</h2><h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><h2 id="克劳修斯—克拉珀龙方程"><a href="#克劳修斯—克拉珀龙方程" class="headerlink" title="克劳修斯—克拉珀龙方程"></a>克劳修斯—克拉珀龙方程</h2><h1 id="棘轮和掣爪"><a href="#棘轮和掣爪" class="headerlink" title="棘轮和掣爪"></a>棘轮和掣爪</h1><h2 id="棘轮是怎样工作的"><a href="#棘轮是怎样工作的" class="headerlink" title="棘轮是怎样工作的"></a>棘轮是怎样工作的</h2><h2 id="作为热机的棘轮"><a href="#作为热机的棘轮" class="headerlink" title="作为热机的棘轮"></a>作为热机的棘轮</h2><h2 id="力学中的可逆性"><a href="#力学中的可逆性" class="headerlink" title="力学中的可逆性"></a>力学中的可逆性</h2><h2 id="不可逆性"><a href="#不可逆性" class="headerlink" title="不可逆性"></a>不可逆性</h2><h2 id="序与熵"><a href="#序与熵" class="headerlink" title="序与熵"></a>序与熵</h2><h1 id="声、波动方程"><a href="#声、波动方程" class="headerlink" title="声、波动方程"></a>声、波动方程</h1><h2 id="波"><a href="#波" class="headerlink" title="波"></a>波</h2><h2 id="声的传播"><a href="#声的传播" class="headerlink" title="声的传播"></a>声的传播</h2><h2 id="波动方程"><a href="#波动方程" class="headerlink" title="波动方程"></a>波动方程</h2><h2 id="波动方程的解"><a href="#波动方程的解" class="headerlink" title="波动方程的解"></a>波动方程的解</h2><h2 id="声速"><a href="#声速" class="headerlink" title="声速"></a>声速</h2><h1 id="拍"><a href="#拍" class="headerlink" title="拍"></a>拍</h1><h2 id="两列波的相加"><a href="#两列波的相加" class="headerlink" title="两列波的相加"></a>两列波的相加</h2><h2 id="拍符和调制"><a href="#拍符和调制" class="headerlink" title="拍符和调制"></a>拍符和调制</h2><h2 id="旁频带"><a href="#旁频带" class="headerlink" title="旁频带"></a>旁频带</h2><h2 id="定域波列"><a href="#定域波列" class="headerlink" title="定域波列"></a>定域波列</h2><h2 id="粒子的概率幅"><a href="#粒子的概率幅" class="headerlink" title="粒子的概率幅"></a>粒子的概率幅</h2><h2 id="三维空间的波"><a href="#三维空间的波" class="headerlink" title="三维空间的波"></a>三维空间的波</h2><h2 id="简正模式"><a href="#简正模式" class="headerlink" title="简正模式"></a>简正模式</h2><h1 id="波模"><a href="#波模" class="headerlink" title="波模"></a>波模</h1><h2 id="波的反射"><a href="#波的反射" class="headerlink" title="波的反射"></a>波的反射</h2><h2 id="具有固有频率的约束波"><a href="#具有固有频率的约束波" class="headerlink" title="具有固有频率的约束波"></a>具有固有频率的约束波</h2><h2 id="二维波模"><a href="#二维波模" class="headerlink" title="二维波模"></a>二维波模</h2><h2 id="耦合摆"><a href="#耦合摆" class="headerlink" title="耦合摆"></a>耦合摆</h2><h2 id="线性系统"><a href="#线性系统" class="headerlink" title="线性系统"></a>线性系统</h2><h1 id="谐波"><a href="#谐波" class="headerlink" title="谐波"></a>谐波</h1><h2 id="乐音"><a href="#乐音" class="headerlink" title="乐音"></a>乐音</h2><h2 id="傅里叶级数"><a href="#傅里叶级数" class="headerlink" title="傅里叶级数"></a>傅里叶级数</h2><h2 id="音色与谐和"><a href="#音色与谐和" class="headerlink" title="音色与谐和"></a>音色与谐和</h2><h2 id="傅里叶系数"><a href="#傅里叶系数" class="headerlink" title="傅里叶系数"></a>傅里叶系数</h2><h2 id="台皂量定理"><a href="#台皂量定理" class="headerlink" title="台皂量定理"></a>台皂量定理</h2><h2 id="非线性响应"><a href="#非线性响应" class="headerlink" title="非线性响应"></a>非线性响应</h2><h1 id="波-1"><a href="#波-1" class="headerlink" title="波"></a>波</h1><h2 id="舷波"><a href="#舷波" class="headerlink" title="舷波"></a>舷波</h2><h2 id="冲击波"><a href="#冲击波" class="headerlink" title="冲击波"></a>冲击波</h2><h2 id="固体中的波"><a href="#固体中的波" class="headerlink" title="固体中的波"></a>固体中的波</h2><h2 id="表面波"><a href="#表面波" class="headerlink" title="表面波"></a>表面波</h2><h1 id="物理定律的对称性"><a href="#物理定律的对称性" class="headerlink" title="物理定律的对称性"></a>物理定律的对称性</h1><h2 id="对称操作"><a href="#对称操作" class="headerlink" title="对称操作"></a>对称操作</h2><h2 id="空间与时间的对称性"><a href="#空间与时间的对称性" class="headerlink" title="空间与时间的对称性"></a>空间与时间的对称性</h2><h2 id="对称性与守恒定律"><a href="#对称性与守恒定律" class="headerlink" title="对称性与守恒定律"></a>对称性与守恒定律</h2><h2 id="镜面反射"><a href="#镜面反射" class="headerlink" title="镜面反射"></a>镜面反射</h2><h2 id="极矢量与轴矢量"><a href="#极矢量与轴矢量" class="headerlink" title="极矢量与轴矢量"></a>极矢量与轴矢量</h2><h2 id="哪一只是右手"><a href="#哪一只是右手" class="headerlink" title="哪一只是右手"></a>哪一只是右手</h2><h2 id="宇称不守恒"><a href="#宇称不守恒" class="headerlink" title="宇称不守恒"></a>宇称不守恒</h2><h2 id="反物质…"><a href="#反物质…" class="headerlink" title="反物质…"></a>反物质…</h2><h2 id="对称破缺"><a href="#对称破缺" class="headerlink" title="对称破缺"></a>对称破缺</h2><p>索引<br>附录</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/学习笔记/" rel="tag"># 学习笔记</a>
+          
+            <a href="/tags/读书/" rel="tag"># 读书</a>
+          
+            <a href="/tags/物理/" rel="tag"># 物理</a>
+          
+            <a href="/tags/费曼/" rel="tag"># 费曼</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/08/天文实用概率论-读书笔记/" rel="next" title="天文实用概率论 读书笔记">
+                <i class="fa fa-chevron-left"></i> 天文实用概率论 读书笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/09/vim段首批量增删字符操作/" rel="prev" title="vim段首批量增删字符操作">
+                vim段首批量增删字符操作 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/pic2.jpg"
+               alt="陈清祥" />
+          <p class="site-author-name" itemprop="name">陈清祥</p>
+          <p class="site-description motion-element" itemprop="description">我们的征途是星辰大海</p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">72</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">74</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#原子的运动"><span class="nav-number">1.</span> <span class="nav-text">原子的运动</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#引言"><span class="nav-number">1.1.</span> <span class="nav-text">引言.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#物质是原子构成的"><span class="nav-number">1.2.</span> <span class="nav-text">物质是原子构成的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原子过程"><span class="nav-number">1.3.</span> <span class="nav-text">原子过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#化学反应"><span class="nav-number">1.4.</span> <span class="nav-text">化学反应</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基本物理"><span class="nav-number">2.</span> <span class="nav-text">基本物理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#引言-1"><span class="nav-number">2.1.</span> <span class="nav-text">引言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1920年以前的物理学"><span class="nav-number">2.2.</span> <span class="nav-text">1920年以前的物理学</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#量子物理学"><span class="nav-number">2.3.</span> <span class="nav-text">量子物理学</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原子核与粒子"><span class="nav-number">2.4.</span> <span class="nav-text">原子核与粒子</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#物理学与其他科学的关系"><span class="nav-number">3.</span> <span class="nav-text">物理学与其他科学的关系</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#引言-2"><span class="nav-number">3.1.</span> <span class="nav-text">引言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#化学"><span class="nav-number">3.2.</span> <span class="nav-text">化学</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生物学"><span class="nav-number">3.3.</span> <span class="nav-text">生物学</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#天文学"><span class="nav-number">3.4.</span> <span class="nav-text">天文学</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#地质学"><span class="nav-number">3.5.</span> <span class="nav-text">地质学</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#心理学"><span class="nav-number">3.6.</span> <span class="nav-text">心理学</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#情况何以会如此"><span class="nav-number">3.7.</span> <span class="nav-text">情况何以会如此</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#能量守恒"><span class="nav-number">4.</span> <span class="nav-text">能量守恒</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是能量"><span class="nav-number">4.1.</span> <span class="nav-text">什么是能量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重力势能"><span class="nav-number">4.2.</span> <span class="nav-text">重力势能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动能"><span class="nav-number">4.3.</span> <span class="nav-text">动能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#能量的其他形式"><span class="nav-number">4.4.</span> <span class="nav-text">能量的其他形式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#时间与距离"><span class="nav-number">5.</span> <span class="nav-text">时间与距离</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#运动"><span class="nav-number">5.1.</span> <span class="nav-text">运动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#时间"><span class="nav-number">5.2.</span> <span class="nav-text">时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#短的时间"><span class="nav-number">5.3.</span> <span class="nav-text">短的时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#长的时间"><span class="nav-number">5.4.</span> <span class="nav-text">长的时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#时间的单位和标准"><span class="nav-number">5.5.</span> <span class="nav-text">时间的单位和标准</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#长的距离"><span class="nav-number">5.6.</span> <span class="nav-text">长的距离</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#短的距离"><span class="nav-number">5.7.</span> <span class="nav-text">短的距离</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#概率"><span class="nav-number">6.</span> <span class="nav-text">概率</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#机会和可能性"><span class="nav-number">6.1.</span> <span class="nav-text">机会和可能性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#涨落"><span class="nav-number">6.2.</span> <span class="nav-text">涨落</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#无规行走"><span class="nav-number">6.3.</span> <span class="nav-text">无规行走</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#概率分布"><span class="nav-number">6.4.</span> <span class="nav-text">概率分布</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不确定性原理"><span class="nav-number">6.5.</span> <span class="nav-text">不确定性原理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#万有引力理论"><span class="nav-number">7.</span> <span class="nav-text">万有引力理论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#行星运动"><span class="nav-number">7.1.</span> <span class="nav-text">行星运动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开普勒定律"><span class="nav-number">7.2.</span> <span class="nav-text">开普勒定律</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动力学的发展"><span class="nav-number">7.3.</span> <span class="nav-text">动力学的发展</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#牛顿引力定律"><span class="nav-number">7.4.</span> <span class="nav-text">牛顿引力定律</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#万有引力"><span class="nav-number">7.5.</span> <span class="nav-text">万有引力</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#卡文迪什实验"><span class="nav-number">7.6.</span> <span class="nav-text">卡文迪什实验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是引力"><span class="nav-number">7.7.</span> <span class="nav-text">什么是引力</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引力与相对论"><span class="nav-number">7.8.</span> <span class="nav-text">引力与相对论</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运动-1"><span class="nav-number">8.</span> <span class="nav-text">运动</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#运动的描述"><span class="nav-number">8.1.</span> <span class="nav-text">运动的描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#速率"><span class="nav-number">8.2.</span> <span class="nav-text">速率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#速率作为导数"><span class="nav-number">8.3.</span> <span class="nav-text">速率作为导数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#距离作为积分"><span class="nav-number">8.4.</span> <span class="nav-text">距离作为积分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#加速度"><span class="nav-number">8.5.</span> <span class="nav-text">加速度</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#牛顿的动力学定律"><span class="nav-number">9.</span> <span class="nav-text">牛顿的动力学定律</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#动量和力"><span class="nav-number">9.1.</span> <span class="nav-text">动量和力</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#速率与速度"><span class="nav-number">9.2.</span> <span class="nav-text">速率与速度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#速度、加速度以及力的分量"><span class="nav-number">9.3.</span> <span class="nav-text">速度、加速度以及力的分量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是力"><span class="nav-number">9.4.</span> <span class="nav-text">什么是力</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动力学方程的含义"><span class="nav-number">9.5.</span> <span class="nav-text">动力学方程的含义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方程的数值解"><span class="nav-number">9.6.</span> <span class="nav-text">方程的数值解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#行星运动-1"><span class="nav-number">9.7.</span> <span class="nav-text">行星运动</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#动量守恒"><span class="nav-number">10.</span> <span class="nav-text">动量守恒</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#牛顿第三定律"><span class="nav-number">10.1.</span> <span class="nav-text">牛顿第三定律</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动量守恒-1"><span class="nav-number">10.2.</span> <span class="nav-text">动量守恒</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动量是守恒的"><span class="nav-number">10.3.</span> <span class="nav-text">动量是守恒的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动量和能量"><span class="nav-number">10.4.</span> <span class="nav-text">动量和能量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相对论性动量"><span class="nav-number">10.5.</span> <span class="nav-text">相对论性动量</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#矢量"><span class="nav-number">11.</span> <span class="nav-text">矢量</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#物理学中的对称性"><span class="nav-number">11.1.</span> <span class="nav-text">物理学中的对称性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#平移"><span class="nav-number">11.2.</span> <span class="nav-text">平移</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#转动"><span class="nav-number">11.3.</span> <span class="nav-text">转动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矢量-1"><span class="nav-number">11.4.</span> <span class="nav-text">矢量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矢量代数"><span class="nav-number">11.5.</span> <span class="nav-text">矢量代数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#牛顿定律的矢量表示法"><span class="nav-number">11.6.</span> <span class="nav-text">牛顿定律的矢量表示法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矢量的标积"><span class="nav-number">11.7.</span> <span class="nav-text">矢量的标积</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#力的特性"><span class="nav-number">12.</span> <span class="nav-text">力的特性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是力-1"><span class="nav-number">12.1.</span> <span class="nav-text">什么是力</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#摩擦力"><span class="nav-number">12.2.</span> <span class="nav-text">摩擦力</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分子力"><span class="nav-number">12.3.</span> <span class="nav-text">分子力</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本力、场"><span class="nav-number">12.4.</span> <span class="nav-text">基本力、场</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#赝力"><span class="nav-number">12.5.</span> <span class="nav-text">赝力</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#核力"><span class="nav-number">12.6.</span> <span class="nav-text">核力</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#功与势能-上"><span class="nav-number">13.</span> <span class="nav-text">功与势能(上)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#落体的能量"><span class="nav-number">13.1.</span> <span class="nav-text">落体的能量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#万有引力所作的功"><span class="nav-number">13.2.</span> <span class="nav-text">万有引力所作的功</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#能量的求和"><span class="nav-number">13.3.</span> <span class="nav-text">能量的求和</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#巨大物体的引力场"><span class="nav-number">13.4.</span> <span class="nav-text">巨大物体的引力场</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#功与势能-下"><span class="nav-number">14.</span> <span class="nav-text">功与势能(下)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#功"><span class="nav-number">14.1.</span> <span class="nav-text">功</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#约束运动"><span class="nav-number">14.2.</span> <span class="nav-text">约束运动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#保守力"><span class="nav-number">14.3.</span> <span class="nav-text">保守力</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#非保守力"><span class="nav-number">14.4.</span> <span class="nav-text">非保守力</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#势与场"><span class="nav-number">14.5.</span> <span class="nav-text">势与场</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#狭义相对论"><span class="nav-number">15.</span> <span class="nav-text">狭义相对论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#相对性原理"><span class="nav-number">15.1.</span> <span class="nav-text">相对性原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#洛伦兹变换"><span class="nav-number">15.2.</span> <span class="nav-text">洛伦兹变换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#迈克耳逊—莫雷实验"><span class="nav-number">15.3.</span> <span class="nav-text">迈克耳逊—莫雷实验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#时间的变换"><span class="nav-number">15.4.</span> <span class="nav-text">时间的变换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#洛伦兹收缩"><span class="nav-number">15.5.</span> <span class="nav-text">洛伦兹收缩</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#同时性"><span class="nav-number">15.6.</span> <span class="nav-text">同时性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四维矢量"><span class="nav-number">15.7.</span> <span class="nav-text">四维矢量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相对论动力学"><span class="nav-number">15.8.</span> <span class="nav-text">相对论动力学</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#质能相当性"><span class="nav-number">15.9.</span> <span class="nav-text">质能相当性</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#相对论中的能量与动量"><span class="nav-number">16.</span> <span class="nav-text">相对论中的能量与动量</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#相对论与哲学家"><span class="nav-number">16.1.</span> <span class="nav-text">相对论与哲学家</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#孪生子佯谬"><span class="nav-number">16.2.</span> <span class="nav-text">孪生子佯谬</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#速度的变换"><span class="nav-number">16.3.</span> <span class="nav-text">速度的变换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相对论性质量"><span class="nav-number">16.4.</span> <span class="nav-text">相对论性质量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相对论性能量"><span class="nav-number">16.5.</span> <span class="nav-text">相对论性能量</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#时空"><span class="nav-number">17.</span> <span class="nav-text">时空</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#时空几何学"><span class="nav-number">17.1.</span> <span class="nav-text">时空几何学</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#时空间隔"><span class="nav-number">17.2.</span> <span class="nav-text">时空间隔</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#过去，现在和将来"><span class="nav-number">17.3.</span> <span class="nav-text">过去，现在和将来</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四维矢量的进一步讨论"><span class="nav-number">17.4.</span> <span class="nav-text">四维矢量的进一步讨论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四维矢量代数"><span class="nav-number">17.5.</span> <span class="nav-text">四维矢量代数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二维空间中的转动"><span class="nav-number">18.</span> <span class="nav-text">二维空间中的转动</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#质心"><span class="nav-number">18.1.</span> <span class="nav-text">质心</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#刚体的转动"><span class="nav-number">18.2.</span> <span class="nav-text">刚体的转动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#角动量"><span class="nav-number">18.3.</span> <span class="nav-text">角动量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#角动量守恒"><span class="nav-number">18.4.</span> <span class="nav-text">角动量守恒</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#质心、转动惯量"><span class="nav-number">19.</span> <span class="nav-text">质心、转动惯量</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#质心的性质"><span class="nav-number">19.1.</span> <span class="nav-text">质心的性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#质心位置的确定"><span class="nav-number">19.2.</span> <span class="nav-text">质心位置的确定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#转动惯量的求法"><span class="nav-number">19.3.</span> <span class="nav-text">转动惯量的求法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#转动动能"><span class="nav-number">19.4.</span> <span class="nav-text">转动动能</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#空间转动"><span class="nav-number">20.</span> <span class="nav-text">空间转动</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#三维空间中的转矩"><span class="nav-number">20.1.</span> <span class="nav-text">三维空间中的转矩</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用叉积表示的转动方程式"><span class="nav-number">20.2.</span> <span class="nav-text">用叉积表示的转动方程式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#回转仪"><span class="nav-number">20.3.</span> <span class="nav-text">回转仪</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#固体的角动量"><span class="nav-number">20.4.</span> <span class="nav-text">固体的角动量</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#谐振子"><span class="nav-number">21.</span> <span class="nav-text">谐振子</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#线性微分方程"><span class="nav-number">21.1.</span> <span class="nav-text">线性微分方程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#谐振子-1"><span class="nav-number">21.2.</span> <span class="nav-text">谐振子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简谐运动和圆周运动"><span class="nav-number">21.3.</span> <span class="nav-text">简谐运动和圆周运动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#初始条件"><span class="nav-number">21.4.</span> <span class="nav-text">初始条件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#受迫振动"><span class="nav-number">21.5.</span> <span class="nav-text">受迫振动</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代数学"><span class="nav-number">22.</span> <span class="nav-text">代数学</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#加法和乘法"><span class="nav-number">22.1.</span> <span class="nav-text">加法和乘法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#逆运算"><span class="nav-number">22.2.</span> <span class="nav-text">逆运算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#抽象和推广"><span class="nav-number">22.3.</span> <span class="nav-text">抽象和推广</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#无理数的近似计算"><span class="nav-number">22.4.</span> <span class="nav-text">无理数的近似计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#复数"><span class="nav-number">22.5.</span> <span class="nav-text">复数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#虚指数"><span class="nav-number">22.6.</span> <span class="nav-text">虚指数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#共振"><span class="nav-number">23.</span> <span class="nav-text">共振</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#复数和简谐运动"><span class="nav-number">23.1.</span> <span class="nav-text">复数和简谐运动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有阻尼的受迫振子"><span class="nav-number">23.2.</span> <span class="nav-text">有阻尼的受迫振子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#电共振"><span class="nav-number">23.3.</span> <span class="nav-text">电共振</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自然界中的共振现象"><span class="nav-number">23.4.</span> <span class="nav-text">自然界中的共振现象</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#瞬变态"><span class="nav-number">24.</span> <span class="nav-text">瞬变态</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#振子的能量"><span class="nav-number">24.1.</span> <span class="nav-text">振子的能量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#阻尼振动"><span class="nav-number">24.2.</span> <span class="nav-text">阻尼振动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#电瞬变态"><span class="nav-number">24.3.</span> <span class="nav-text">电瞬变态</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#线性系统及其综述"><span class="nav-number">25.</span> <span class="nav-text">线性系统及其综述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#线性微分方程-1"><span class="nav-number">25.1.</span> <span class="nav-text">线性微分方程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解的叠力口"><span class="nav-number">25.2.</span> <span class="nav-text">解的叠力口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线性系统中的振动"><span class="nav-number">25.3.</span> <span class="nav-text">线性系统中的振动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#物理学中的类比"><span class="nav-number">25.4.</span> <span class="nav-text">物理学中的类比</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#串联和并联阻抗"><span class="nav-number">25.5.</span> <span class="nav-text">串联和并联阻抗</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#光学：最短时间原理"><span class="nav-number">26.</span> <span class="nav-text">光学：最短时间原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#光"><span class="nav-number">26.1.</span> <span class="nav-text">光..</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#反射与折射"><span class="nav-number">26.2.</span> <span class="nav-text">反射与折射</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#费马最短时间原理"><span class="nav-number">26.3.</span> <span class="nav-text">费马最短时间原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#费马原理的应用"><span class="nav-number">26.4.</span> <span class="nav-text">费马原理的应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#费马原理的更精确表述"><span class="nav-number">26.5.</span> <span class="nav-text">费马原理的更精确表述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最短时间原理是怎样起作用的"><span class="nav-number">26.6.</span> <span class="nav-text">最短时间原理是怎样起作用的</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#几何光学"><span class="nav-number">27.</span> <span class="nav-text">几何光学</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#引言-3"><span class="nav-number">27.1.</span> <span class="nav-text">引言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#球面的焦距"><span class="nav-number">27.2.</span> <span class="nav-text">球面的焦距</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#透镜的焦距"><span class="nav-number">27.3.</span> <span class="nav-text">透镜的焦距</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#放大率"><span class="nav-number">27.4.</span> <span class="nav-text">放大率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#透镜组"><span class="nav-number">27.5.</span> <span class="nav-text">透镜组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#像差"><span class="nav-number">27.6.</span> <span class="nav-text">像差</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分辨本领"><span class="nav-number">27.7.</span> <span class="nav-text">分辨本领</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#电磁辐射"><span class="nav-number">28.</span> <span class="nav-text">电磁辐射</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#电磁学"><span class="nav-number">28.1.</span> <span class="nav-text">电磁学</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#辐射"><span class="nav-number">28.2.</span> <span class="nav-text">辐射</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#偶极辐射子"><span class="nav-number">28.3.</span> <span class="nav-text">偶极辐射子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#干涉"><span class="nav-number">28.4.</span> <span class="nav-text">干涉</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#干涉-1"><span class="nav-number">29.</span> <span class="nav-text">干涉</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#电磁波"><span class="nav-number">29.1.</span> <span class="nav-text">电磁波</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#辐射的能量"><span class="nav-number">29.2.</span> <span class="nav-text">辐射的能量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正弦波"><span class="nav-number">29.3.</span> <span class="nav-text">正弦波</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#两个偶极辐射子"><span class="nav-number">29.4.</span> <span class="nav-text">两个偶极辐射子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#干涉的数学"><span class="nav-number">29.5.</span> <span class="nav-text">干涉的数学</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#衍射"><span class="nav-number">30.</span> <span class="nav-text">衍射</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#n个相同振子的合振幅"><span class="nav-number">30.1.</span> <span class="nav-text">n个相同振子的合振幅</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#衍射光栅"><span class="nav-number">30.2.</span> <span class="nav-text">衍射光栅</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#光栅的分辨本领"><span class="nav-number">30.3.</span> <span class="nav-text">光栅的分辨本领</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#抛物形天线"><span class="nav-number">30.4.</span> <span class="nav-text">抛物形天线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#彩色薄膜、晶体"><span class="nav-number">30.5.</span> <span class="nav-text">彩色薄膜、晶体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不透明屏的衍射"><span class="nav-number">30.6.</span> <span class="nav-text">不透明屏的衍射</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#振荡电荷组成的平面所产生的场"><span class="nav-number">30.7.</span> <span class="nav-text">振荡电荷组成的平面所产生的场</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#折射率的起源"><span class="nav-number">31.</span> <span class="nav-text">折射率的起源</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#折射率"><span class="nav-number">31.1.</span> <span class="nav-text">折射率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#物质引起的场"><span class="nav-number">31.2.</span> <span class="nav-text">物质引起的场</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#色散"><span class="nav-number">31.3.</span> <span class="nav-text">色散</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#吸收"><span class="nav-number">31.4.</span> <span class="nav-text">吸收</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#电波所携带的能量"><span class="nav-number">31.5.</span> <span class="nav-text">电波所携带的能量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#屏的衍射"><span class="nav-number">31.6.</span> <span class="nav-text">屏的衍射</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#辐射阻尼、光的散射"><span class="nav-number">32.</span> <span class="nav-text">辐射阻尼、光的散射</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#辐射电阻"><span class="nav-number">32.1.</span> <span class="nav-text">辐射电阻</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#台皂量辐射率"><span class="nav-number">32.2.</span> <span class="nav-text">台皂量辐射率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#辐射阻尼"><span class="nav-number">32.3.</span> <span class="nav-text">辐射阻尼</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#独立的辐射源"><span class="nav-number">32.4.</span> <span class="nav-text">独立的辐射源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#光的散射"><span class="nav-number">32.5.</span> <span class="nav-text">光的散射</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#偏振"><span class="nav-number">33.</span> <span class="nav-text">偏振</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#光的电矢量"><span class="nav-number">33.1.</span> <span class="nav-text">光的电矢量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#散射光的偏振性"><span class="nav-number">33.2.</span> <span class="nav-text">散射光的偏振性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#双折射"><span class="nav-number">33.3.</span> <span class="nav-text">双折射</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#起偏振器"><span class="nav-number">33.4.</span> <span class="nav-text">起偏振器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#旋光性"><span class="nav-number">33.5.</span> <span class="nav-text">旋光性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#反射光的强度"><span class="nav-number">33.6.</span> <span class="nav-text">反射光的强度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#反常折射"><span class="nav-number">33.7.</span> <span class="nav-text">反常折射</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#辐射中的相对论性效应"><span class="nav-number">34.</span> <span class="nav-text">辐射中的相对论性效应</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#运动辐射源"><span class="nav-number">34.1.</span> <span class="nav-text">运动辐射源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#求“表观”运动"><span class="nav-number">34.2.</span> <span class="nav-text">求“表观”运动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#同步辐射"><span class="nav-number">34.3.</span> <span class="nav-text">同步辐射</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#宇宙中的同步辐射"><span class="nav-number">34.4.</span> <span class="nav-text">宇宙中的同步辐射</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#轫致辐射"><span class="nav-number">34.5.</span> <span class="nav-text">轫致辐射</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多普勒效应"><span class="nav-number">34.6.</span> <span class="nav-text">多普勒效应</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#w、k四元矢量"><span class="nav-number">34.7.</span> <span class="nav-text">w、k四元矢量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#光行差"><span class="nav-number">34.8.</span> <span class="nav-text">光行差</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#光的动量"><span class="nav-number">34.9.</span> <span class="nav-text">光的动量</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#色视觉"><span class="nav-number">35.</span> <span class="nav-text">色视觉</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#人眼"><span class="nav-number">35.1.</span> <span class="nav-text">人眼</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#颜色依赖于光的强度"><span class="nav-number">35.2.</span> <span class="nav-text">颜色依赖于光的强度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#色感觉的测量"><span class="nav-number">35.3.</span> <span class="nav-text">色感觉的测量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#色品图"><span class="nav-number">35.4.</span> <span class="nav-text">色品图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#色视觉的机制"><span class="nav-number">35.5.</span> <span class="nav-text">色视觉的机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#色视觉的生理化学"><span class="nav-number">35.6.</span> <span class="nav-text">色视觉的生理化学</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#视觉的机制"><span class="nav-number">36.</span> <span class="nav-text">视觉的机制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#颜色的感觉"><span class="nav-number">36.1.</span> <span class="nav-text">颜色的感觉</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#眼睛的生理学"><span class="nav-number">36.2.</span> <span class="nav-text">眼睛的生理学</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#视杆细胞"><span class="nav-number">36.3.</span> <span class="nav-text">视杆细胞</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#昆虫的-复眼"><span class="nav-number">36.4.</span> <span class="nav-text">(昆虫的)复眼</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他的眼睛"><span class="nav-number">36.5.</span> <span class="nav-text">其他的眼睛</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#视觉的神经学"><span class="nav-number">36.6.</span> <span class="nav-text">视觉的神经学</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#量子行为"><span class="nav-number">37.</span> <span class="nav-text">量子行为</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#原子力学"><span class="nav-number">37.1.</span> <span class="nav-text">原子力学</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#子弹实验"><span class="nav-number">37.2.</span> <span class="nav-text">子弹实验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#波的实验"><span class="nav-number">37.3.</span> <span class="nav-text">波的实验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#电子的实验"><span class="nav-number">37.4.</span> <span class="nav-text">电子的实验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#电子波的干涉"><span class="nav-number">37.5.</span> <span class="nav-text">电子波的干涉</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#追踪电子"><span class="nav-number">37.6.</span> <span class="nav-text">追踪电子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#量子力学的基本原理"><span class="nav-number">37.7.</span> <span class="nav-text">量子力学的基本原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不确定性原理-1"><span class="nav-number">37.8.</span> <span class="nav-text">不确定性原理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#波动观点与粒子观点的关系"><span class="nav-number">38.</span> <span class="nav-text">波动观点与粒子观点的关系</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概率波幅"><span class="nav-number">38.1.</span> <span class="nav-text">概率波幅</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#位置与动量的测量"><span class="nav-number">38.2.</span> <span class="nav-text">位置与动量的测量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#晶体衍射"><span class="nav-number">38.3.</span> <span class="nav-text">晶体衍射</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原子的大小"><span class="nav-number">38.4.</span> <span class="nav-text">原子的大小</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#能级"><span class="nav-number">38.5.</span> <span class="nav-text">能级</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#哲学含义"><span class="nav-number">38.6.</span> <span class="nav-text">哲学含义</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#气体分子动理论"><span class="nav-number">39.</span> <span class="nav-text">气体分子动理论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#物质的性质"><span class="nav-number">39.1.</span> <span class="nav-text">物质的性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#气体的压强"><span class="nav-number">39.2.</span> <span class="nav-text">气体的压强</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#辐射的压缩性"><span class="nav-number">39.3.</span> <span class="nav-text">辐射的压缩性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#温度和动能"><span class="nav-number">39.4.</span> <span class="nav-text">温度和动能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#理想气体定律"><span class="nav-number">39.5.</span> <span class="nav-text">理想气体定律</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#统计力学原理"><span class="nav-number">40.</span> <span class="nav-text">统计力学原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#大气的指数变化律"><span class="nav-number">40.1.</span> <span class="nav-text">大气的指数变化律</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#玻尔兹曼定律"><span class="nav-number">40.2.</span> <span class="nav-text">玻尔兹曼定律</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#液体的蒸发"><span class="nav-number">40.3.</span> <span class="nav-text">液体的蒸发</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分子的速率分布"><span class="nav-number">40.4.</span> <span class="nav-text">分子的速率分布</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#气体比热"><span class="nav-number">40.5.</span> <span class="nav-text">气体比热</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#经典物理的失败"><span class="nav-number">40.6.</span> <span class="nav-text">经典物理的失败</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#布朗运动"><span class="nav-number">41.</span> <span class="nav-text">布朗运动</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#能量均分"><span class="nav-number">41.1.</span> <span class="nav-text">能量均分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#辐射的热平衡"><span class="nav-number">41.2.</span> <span class="nav-text">辐射的热平衡</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#能量均分与量子振子"><span class="nav-number">41.3.</span> <span class="nav-text">能量均分与量子振子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#无规行走-1"><span class="nav-number">41.4.</span> <span class="nav-text">无规行走</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分子动理论的应用"><span class="nav-number">42.</span> <span class="nav-text">分子动理论的应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#蒸发"><span class="nav-number">42.1.</span> <span class="nav-text">蒸发</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#热离子发射"><span class="nav-number">42.2.</span> <span class="nav-text">热离子发射</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#热电离"><span class="nav-number">42.3.</span> <span class="nav-text">热电离</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#化学动力学"><span class="nav-number">42.4.</span> <span class="nav-text">化学动力学</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#爱因斯坦辐射律"><span class="nav-number">42.5.</span> <span class="nav-text">爱因斯坦辐射律</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#扩散"><span class="nav-number">43.</span> <span class="nav-text">扩散</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#分子间的碰撞"><span class="nav-number">43.1.</span> <span class="nav-text">分子间的碰撞</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#平均自由程"><span class="nav-number">43.2.</span> <span class="nav-text">平均自由程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#漂移速率"><span class="nav-number">43.3.</span> <span class="nav-text">漂移速率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#离子电导率"><span class="nav-number">43.4.</span> <span class="nav-text">离子电导率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分子扩散"><span class="nav-number">43.5.</span> <span class="nav-text">分子扩散</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#热导率"><span class="nav-number">43.6.</span> <span class="nav-text">热导率</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#热力学定律"><span class="nav-number">44.</span> <span class="nav-text">热力学定律</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#热机、第一定律"><span class="nav-number">44.1.</span> <span class="nav-text">热机、第一定律</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二定律"><span class="nav-number">44.2.</span> <span class="nav-text">第二定律</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可逆机"><span class="nav-number">44.3.</span> <span class="nav-text">可逆机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#理想热机的效率"><span class="nav-number">44.4.</span> <span class="nav-text">理想热机的效率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#热力学温度"><span class="nav-number">44.5.</span> <span class="nav-text">热力学温度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#熵"><span class="nav-number">44.6.</span> <span class="nav-text">熵</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#热力学示例"><span class="nav-number">45.</span> <span class="nav-text">热力学示例</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#内能"><span class="nav-number">45.1.</span> <span class="nav-text">内能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用"><span class="nav-number">45.2.</span> <span class="nav-text">应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#克劳修斯—克拉珀龙方程"><span class="nav-number">45.3.</span> <span class="nav-text">克劳修斯—克拉珀龙方程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#棘轮和掣爪"><span class="nav-number">46.</span> <span class="nav-text">棘轮和掣爪</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#棘轮是怎样工作的"><span class="nav-number">46.1.</span> <span class="nav-text">棘轮是怎样工作的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#作为热机的棘轮"><span class="nav-number">46.2.</span> <span class="nav-text">作为热机的棘轮</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#力学中的可逆性"><span class="nav-number">46.3.</span> <span class="nav-text">力学中的可逆性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不可逆性"><span class="nav-number">46.4.</span> <span class="nav-text">不可逆性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#序与熵"><span class="nav-number">46.5.</span> <span class="nav-text">序与熵</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#声、波动方程"><span class="nav-number">47.</span> <span class="nav-text">声、波动方程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#波"><span class="nav-number">47.1.</span> <span class="nav-text">波</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#声的传播"><span class="nav-number">47.2.</span> <span class="nav-text">声的传播</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#波动方程"><span class="nav-number">47.3.</span> <span class="nav-text">波动方程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#波动方程的解"><span class="nav-number">47.4.</span> <span class="nav-text">波动方程的解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#声速"><span class="nav-number">47.5.</span> <span class="nav-text">声速</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#拍"><span class="nav-number">48.</span> <span class="nav-text">拍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#两列波的相加"><span class="nav-number">48.1.</span> <span class="nav-text">两列波的相加</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拍符和调制"><span class="nav-number">48.2.</span> <span class="nav-text">拍符和调制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#旁频带"><span class="nav-number">48.3.</span> <span class="nav-text">旁频带</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定域波列"><span class="nav-number">48.4.</span> <span class="nav-text">定域波列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#粒子的概率幅"><span class="nav-number">48.5.</span> <span class="nav-text">粒子的概率幅</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三维空间的波"><span class="nav-number">48.6.</span> <span class="nav-text">三维空间的波</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简正模式"><span class="nav-number">48.7.</span> <span class="nav-text">简正模式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#波模"><span class="nav-number">49.</span> <span class="nav-text">波模</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#波的反射"><span class="nav-number">49.1.</span> <span class="nav-text">波的反射</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#具有固有频率的约束波"><span class="nav-number">49.2.</span> <span class="nav-text">具有固有频率的约束波</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二维波模"><span class="nav-number">49.3.</span> <span class="nav-text">二维波模</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#耦合摆"><span class="nav-number">49.4.</span> <span class="nav-text">耦合摆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线性系统"><span class="nav-number">49.5.</span> <span class="nav-text">线性系统</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#谐波"><span class="nav-number">50.</span> <span class="nav-text">谐波</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#乐音"><span class="nav-number">50.1.</span> <span class="nav-text">乐音</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#傅里叶级数"><span class="nav-number">50.2.</span> <span class="nav-text">傅里叶级数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#音色与谐和"><span class="nav-number">50.3.</span> <span class="nav-text">音色与谐和</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#傅里叶系数"><span class="nav-number">50.4.</span> <span class="nav-text">傅里叶系数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#台皂量定理"><span class="nav-number">50.5.</span> <span class="nav-text">台皂量定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#非线性响应"><span class="nav-number">50.6.</span> <span class="nav-text">非线性响应</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#波-1"><span class="nav-number">51.</span> <span class="nav-text">波</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#舷波"><span class="nav-number">51.1.</span> <span class="nav-text">舷波</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#冲击波"><span class="nav-number">51.2.</span> <span class="nav-text">冲击波</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#固体中的波"><span class="nav-number">51.3.</span> <span class="nav-text">固体中的波</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表面波"><span class="nav-number">51.4.</span> <span class="nav-text">表面波</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#物理定律的对称性"><span class="nav-number">52.</span> <span class="nav-text">物理定律的对称性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#对称操作"><span class="nav-number">52.1.</span> <span class="nav-text">对称操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#空间与时间的对称性"><span class="nav-number">52.2.</span> <span class="nav-text">空间与时间的对称性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对称性与守恒定律"><span class="nav-number">52.3.</span> <span class="nav-text">对称性与守恒定律</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#镜面反射"><span class="nav-number">52.4.</span> <span class="nav-text">镜面反射</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#极矢量与轴矢量"><span class="nav-number">52.5.</span> <span class="nav-text">极矢量与轴矢量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#哪一只是右手"><span class="nav-number">52.6.</span> <span class="nav-text">哪一只是右手</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#宇称不守恒"><span class="nav-number">52.7.</span> <span class="nav-text">宇称不守恒</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#反物质…"><span class="nav-number">52.8.</span> <span class="nav-text">反物质…</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对称破缺"><span class="nav-number">52.9.</span> <span class="nav-text">对称破缺</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">陈清祥</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+  
+
+
+</body>
+</html>

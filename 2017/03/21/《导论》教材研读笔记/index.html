@@ -1,0 +1,827 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="天文,学习笔记,读书," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="有时间的时候持续更新此页，重打基础。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《导论》教材研读笔记">
+<meta property="og:url" content="http://astropeanut.info/2017/03/21/《导论》教材研读笔记/index.html">
+<meta property="og:site_name" content="AstroPeanut's Blog">
+<meta property="og:description" content="有时间的时候持续更新此页，重打基础。">
+<meta property="og:image" content="http://astropeanut.info/2017/03/21/《导论》教材研读笔记/fig01.01.png">
+<meta property="og:image" content="http://astropeanut.info/2017/03/21/《导论》教材研读笔记/lec04.fig01.png">
+<meta property="og:updated_time" content="2017-04-08T16:16:11.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《导论》教材研读笔记">
+<meta name="twitter:description" content="有时间的时候持续更新此页，重打基础。">
+<meta name="twitter:image" content="http://astropeanut.info/2017/03/21/《导论》教材研读笔记/fig01.01.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://astropeanut.info/2017/03/21/《导论》教材研读笔记/"/>
+
+
+
+
+
+  <title> 《导论》教材研读笔记 | AstroPeanut's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?d15b8cc355d618f75dfd082559510991";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">AstroPeanut's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle">总学渣也不是个办法</p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://astropeanut.info/2017/03/21/《导论》教材研读笔记/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="陈清祥">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/pic2.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="AstroPeanut's Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="AstroPeanut's Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                《导论》教材研读笔记
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-21T18:43:05+08:00">
+                2017-03-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/work/" itemprop="url" rel="index">
+                    <span itemprop="name">工作和技能</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/03/21/《导论》教材研读笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://astropeanut.info/2017/03/21/《导论》教材研读笔记/" itemprop="commentCount">0</span> comments
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>有时间的时候持续更新此页，重打基础。</p>
+<a id="more"></a>
+<h1 id="概论"><a href="#概论" class="headerlink" title="概论"></a>概论</h1><h2 id="地球和太阳系"><a href="#地球和太阳系" class="headerlink" title="地球和太阳系"></a>地球和太阳系</h2><h3 id="地球的参数"><a href="#地球的参数" class="headerlink" title="地球的参数"></a>地球的参数</h3><h3 id="一道几何题：几何法测距"><a href="#一道几何题：几何法测距" class="headerlink" title="一道几何题：几何法测距"></a>一道几何题：几何法测距</h3><h3 id="太阳系内的天体"><a href="#太阳系内的天体" class="headerlink" title="太阳系内的天体"></a>太阳系内的天体</h3><p><strong>Titius-Bode经验规律和冥王星</strong><br>$$R_n=0.4+0.3\times 2^{n-2}(AU)$$<br>除了冥王星以外，几个行星吻合的较好。但是对此经验公式人们并没有理解透彻。</p>
+<center><img src="/2017/03/21/《导论》教材研读笔记/fig01.01.png" width="800px"></center>
+
+<h2 id="恒星与银河系"><a href="#恒星与银河系" class="headerlink" title="恒星与银河系"></a>恒星与银河系</h2><h3 id="HR图"><a href="#HR图" class="headerlink" title="HR图"></a>HR图</h3><p>亮度-温度图。横轴为温度（坐标轴方向反着放），纵轴为光度。<br>90%的恒星在主序带上。<br>一般考虑，体积固定的情况下，温度越高其光度就应该越大，这对主序星是试用的。说明主序星的体积不敏感依赖于恒星的温度。<br>例外的则是</p>
+<ul>
+<li>主序带的右上方，体积太大（所以更亮）温度低，红巨星</li>
+<li>主序带的左下方，体积太小（所以更暗）温度高，白矮星</li>
+</ul>
+<h3 id="非几何法测距：物理测距法"><a href="#非几何法测距：物理测距法" class="headerlink" title="非几何法测距：物理测距法"></a>非几何法测距：物理测距法</h3><p>我们总是可以测量亮度相关的量的，所以考虑找一个和光度L有物理联系的量，X=X(L)，通过得到X来得到其光度，然后根据视亮度推出距离。</p>
+<ul>
+<li>HR图法<br>X选为温度。主序带上，根据光谱性得到T，根据T得到L。极限$\sim 10\ kpc$</li>
+<li>造父变星法<br>X选为光变周期P，而P和L动力学相关。极限$10\ Mpc$</li>
+<li>超新星法<br>Ia理论直接有预期的固定的L。极限$\sim 100\ Mpc$</li>
+</ul>
+<p>视差法极限$\sim 100pc$.</p>
+<ul>
+<li>Tully-Fisher和Faber-Jackson<br>X为谱线宽度。逻辑是这样，星系的物质轨道运动速度随着总质量正相关，总质量和发光物质的多少正相关，发光物质的运动导致多普勒展宽，因此谱线宽度和星系的光度应该有关。这么测的距离极限几乎是整个宇宙，$\sim 10^4\ Mpc$</li>
+</ul>
+<h3 id="银河系"><a href="#银河系" class="headerlink" title="银河系"></a>银河系</h3><ul>
+<li>星族I，银盘中的恒星，富金属，年轻</li>
+<li>星族II，银核、银球以及银晕中的球状星团里，贫金属，年老</li>
+</ul>
+<p>银河系恒星数目估计，和恒星两两相碰时标。</p>
+<p>旋臂缠绕问题和密度波理论。</p>
+<h2 id="星系世界"><a href="#星系世界" class="headerlink" title="星系世界"></a>星系世界</h2><h3 id="星系距离"><a href="#星系距离" class="headerlink" title="星系距离"></a>星系距离</h3><h3 id="星系空间分布"><a href="#星系空间分布" class="headerlink" title="星系空间分布"></a>星系空间分布</h3><p>星系很少孤独存在，倾向于成系统存在。</p>
+<ul>
+<li>星系群 尺度约为1 Mpc，10到几十个星系</li>
+<li>星系团 尺度约为10 Mpc，几百到几千个星系</li>
+<li>大尺度结构 尺不均匀的泡沫状分布（空洞和长城）</li>
+</ul>
+<p>超过50 Mpc尺度宇宙显得各项同性，不再有显著成团结构。</p>
+<h3 id="星系的形态分类——Hubble分类"><a href="#星系的形态分类——Hubble分类" class="headerlink" title="星系的形态分类——Hubble分类"></a>星系的形态分类——Hubble分类</h3><h3 id="正常星系与活动星系"><a href="#正常星系与活动星系" class="headerlink" title="正常星系与活动星系"></a>正常星系与活动星系</h3><h3 id="星系旋转曲线，暗物质的存在"><a href="#星系旋转曲线，暗物质的存在" class="headerlink" title="星系旋转曲线，暗物质的存在"></a>星系旋转曲线，暗物质的存在</h3><h2 id="天体物理中的重大疑难问题"><a href="#天体物理中的重大疑难问题" class="headerlink" title="天体物理中的重大疑难问题"></a>天体物理中的重大疑难问题</h2><h2 id="天文观测设备与展望"><a href="#天文观测设备与展望" class="headerlink" title="天文观测设备与展望"></a>天文观测设备与展望</h2><h1 id="辐射——认识宇宙的重要窗口"><a href="#辐射——认识宇宙的重要窗口" class="headerlink" title="辐射——认识宇宙的重要窗口"></a>辐射——认识宇宙的重要窗口</h1><p>波长大于30m的会被电离层反射。</p>
+<p>地冕。</p>
+<h2 id="热辐射，黑体谱和线谱"><a href="#热辐射，黑体谱和线谱" class="headerlink" title="热辐射，黑体谱和线谱"></a>热辐射，黑体谱和线谱</h2><p>处于热平衡的物体发出的电磁辐射，这类物体可以定义温度T。</p>
+<p><strong>基尔霍夫定律</strong><br>热辐射物体的谱发射通量与谱吸收系数之比与材料无关。</p>
+<p>辐射场的状态方程，$p=\rho /3$。这个式子其实对任何极端相对性的各项同性粒子系统都是成立的。</p>
+<h2 id="典型的非热辐射——荷电粒子作加速运动时产生的辐射"><a href="#典型的非热辐射——荷电粒子作加速运动时产生的辐射" class="headerlink" title="典型的非热辐射——荷电粒子作加速运动时产生的辐射"></a>典型的非热辐射——荷电粒子作加速运动时产生的辐射</h2><h2 id="回旋辐射，同步辐射，曲率辐射"><a href="#回旋辐射，同步辐射，曲率辐射" class="headerlink" title="回旋辐射，同步辐射，曲率辐射"></a>回旋辐射，同步辐射，曲率辐射</h2><h3 id="回旋辐射：-beta-ll-1"><a href="#回旋辐射：-beta-ll-1" class="headerlink" title="回旋辐射：$\beta\ll 1$"></a>回旋辐射：$\beta\ll 1$</h3><h3 id="同步辐射：-gamma-gg-1"><a href="#同步辐射：-gamma-gg-1" class="headerlink" title="同步辐射：$\gamma\gg 1$"></a>同步辐射：$\gamma\gg 1$</h3><h3 id="强磁场中的荷电粒子的朗道能级"><a href="#强磁场中的荷电粒子的朗道能级" class="headerlink" title="强磁场中的荷电粒子的朗道能级"></a>强磁场中的荷电粒子的朗道能级</h3><p>通过朗道能级的测定可以得知磁场强度。</p>
+<h3 id="曲率辐射"><a href="#曲率辐射" class="headerlink" title="曲率辐射"></a>曲率辐射</h3><p>强磁场中的电子智能被束缚在磁力线上运动。电子因而有加速度而必产生辐射。</p>
+<h2 id="康普顿散射和逆康普顿散射"><a href="#康普顿散射和逆康普顿散射" class="headerlink" title="康普顿散射和逆康普顿散射"></a>康普顿散射和逆康普顿散射</h2><p>康普顿散射，是自由电子动能$\ll$光子能量的情况。<br>逆康普顿散射是自由电子动能$\gg$光子能量的情况。</p>
+<h3 id="康普顿散射，艾丁顿光度"><a href="#康普顿散射，艾丁顿光度" class="headerlink" title="康普顿散射，艾丁顿光度"></a>康普顿散射，艾丁顿光度</h3><p>电子不动，光子打过来，这叫做汤姆孙散射。</p>
+<h3 id="逆康普顿散射"><a href="#逆康普顿散射" class="headerlink" title="逆康普顿散射"></a>逆康普顿散射</h3><p>S-Z效应。</p>
+<h2 id="韧致辐射"><a href="#韧致辐射" class="headerlink" title="韧致辐射"></a>韧致辐射</h2><p>“自由-自由”跃迁。</p>
+<h2 id="切伦科夫辐射"><a href="#切伦科夫辐射" class="headerlink" title="切伦科夫辐射"></a>切伦科夫辐射</h2><p>匀速运动的粒子原则上不应该产生辐射。但是在介质中，如果粒子速度比介质中的光速还快，则会有一种集体辐射。这就是切伦科夫辐射。</p>
+<p>这个可以类比于大气中的激波。</p>
+<h2 id="传能与传能方程简介"><a href="#传能与传能方程简介" class="headerlink" title="传能与传能方程简介"></a>传能与传能方程简介</h2><p>对流，热传导，辐射。<br>高温区的粒子通过随机行走传递能量到低能区，这叫对流。而往往电子输能叫做热传导，光子传能叫做辐射。</p>
+<h1 id="磁化等离子体——99-以上宇宙正常物质的状态"><a href="#磁化等离子体——99-以上宇宙正常物质的状态" class="headerlink" title="磁化等离子体——99%以上宇宙正常物质的状态"></a>磁化等离子体——99%以上宇宙正常物质的状态</h1><p>先考虑流体力学。流体力学一般研究的是中性介质的运动学和动力学行为，那么一般只考虑粒子运动产生的压力和因为碰撞产生的黏性作用。</p>
+<p>可是如果一大坨粒子，虽然整体中性，但是局域有电子或离子聚集，也就是局部电导性呢，这个时候还要加上一个长程的电磁作用。这就叫做电磁等离子体，在宇宙中是普遍存在的，并且其电阻还常常比较小。这意味着宇宙中，随处可见不同尺度电流的存在，也随之存在不同尺度的磁场。那么电磁又反过来影响粒子的运动，于是两者耦合在一起，考虑问题的时候往往不能忽略任何一个方面。</p>
+<h2 id="天体磁场的普遍性"><a href="#天体磁场的普遍性" class="headerlink" title="天体磁场的普遍性"></a>天体磁场的普遍性</h2><h3 id="行星磁场"><a href="#行星磁场" class="headerlink" title="行星磁场"></a>行星磁场</h3><h3 id="太阳磁场和太阳活动"><a href="#太阳磁场和太阳活动" class="headerlink" title="太阳磁场和太阳活动"></a>太阳磁场和太阳活动</h3><p>11年的活动周期，黑子对的极性变号，所以太阳的磁活动周期约为22年。</p>
+<h3 id="行星际磁场"><a href="#行星际磁场" class="headerlink" title="行星际磁场"></a>行星际磁场</h3><p>磁流体力学的动力学效应，导致太阳磁场随太阳风按照阿基米德螺旋线扩展到行星际空间。因此分成的几个扇形磁场区域中，相邻区域磁场极性相反。此结构随着太阳的27天自转周期同步旋转。</p>
+<h3 id="恒星磁场"><a href="#恒星磁场" class="headerlink" title="恒星磁场"></a>恒星磁场</h3><h3 id="银河系磁场"><a href="#银河系磁场" class="headerlink" title="银河系磁场"></a>银河系磁场</h3><h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>星系际磁场，星系团磁场，早期宇宙磁场等。</p>
+<p>注意，由于磁场B和电流J本质是同一种物理过程的两种不同描述，所以B的普遍存在说明了宇宙中等离子体电流J的普遍存在。</p>
+<h2 id="等离子体中的电磁作用"><a href="#等离子体中的电磁作用" class="headerlink" title="等离子体中的电磁作用"></a>等离子体中的电磁作用</h2><p>中性流体和等离子体物理上难以划定明确界限。一般认为离子数目占未电离原子数目的千分之一以上的流体可以当做等离子体处理。</p>
+<p>等离子体最重要的两个特征量，是德拜长度和等离子体频率。</p>
+<h3 id="德拜长度"><a href="#德拜长度" class="headerlink" title="德拜长度"></a>德拜长度</h3><p>德拜长度描述的是，等离子体中静电荷电场的典型作用力程，也就是非电中性的空间尺度。</p>
+<p>由于静电屏蔽的存在，一个带电粒子的电场会被周围异形电荷屏蔽掉。这导致等离子体中电荷间的静电作用只能限制于一定距离以内，此即德拜长度。</p>
+<p>$$\lambda _D\equiv\sqrt{\dfrac{k_BT}{4\pi n_0e^2}}\approx 6.9\sqrt{\dfrac{T}{n_0}}\ cm$$</p>
+<p>只有当所讨论的尺度远远大于$\lambda_D$时才可以把等离子体看成整体电中性的。</p>
+<h3 id="等离子体频率"><a href="#等离子体频率" class="headerlink" title="等离子体频率"></a>等离子体频率</h3><p>等离子体频率用来描述等离子体中的电荷在静电作用下的典型振荡频率（或者时标）。也就是，非电中性相应频率（或者时间尺度）。</p>
+<p>这个和德拜长度相对应，一个描述空间尺度一个描述时间尺度。</p>
+<p>$$\omega_p=\sqrt{\dfrac{4\pi e^2n_0}{m}}\approx 5.6\times 10^4\sqrt{n_0}\ s^{-1}$$</p>
+<p>如果外界的电磁扰动频率低于这个数，则等离子体中的自由电荷分布将会快速调整，使得电磁扰动不能再等离子体中传递。</p>
+<p>这里注意一点，等离子体频率同时也是评价是否能成为等离子体的一个指标。只有当电磁作用远快于粒子碰撞的时候，才能看做等离子体。这个标准可以用来确定等离子体的临界电离度。</p>
+<h2 id="磁流体力学"><a href="#磁流体力学" class="headerlink" title="磁流体力学"></a>磁流体力学</h2><h3 id="磁流体力学方程组"><a href="#磁流体力学方程组" class="headerlink" title="磁流体力学方程组"></a>磁流体力学方程组</h3><p>涉及四个量，密度，速度，压强和电流。</p>
+<p>质量守恒（连续性方程）</p>
+<p>$$\dfrac{\partial\rho}{\partial t}+\nabla\cdot\left(\rho \textbf{v}\right)=0$$</p>
+<p>动量方程</p>
+<p>$$\rho\dfrac{d\textbf{v}}{dt}=-\nabla p+\dfrac{1}{c}\left(\textbf{J}\times\textbf{B}\right)+\eta\nabla ^2\textbf{v}$$</p>
+<p>这里面的$\eta$是黏性系数。如果是非相对论流体，电荷受到静电力和洛伦兹力，那么感应电流为</p>
+<p>$$\textbf{J}=\sigma\left(\textbf{E}+\dfrac{1}{c}\textbf{v}\times\textbf{B}\right)$$</p>
+<p>不考虑位移电流，则描写电磁场的方程为</p>
+<p>$$\nabla\times\textbf{E}=-\dfrac{1}{c}\dfrac{\partial\textbf{B}}{\partial t}$$</p>
+<p>$$\nabla\times\textbf{B}=\dfrac{4\pi}{c}\textbf{J}$$</p>
+<p>还有一个能量方程，最简化的情况下也就是物态方程</p>
+<p>$$p\rho ^{-\gamma}=const$$</p>
+<h3 id="洛伦兹力"><a href="#洛伦兹力" class="headerlink" title="洛伦兹力"></a>洛伦兹力</h3><p>$$\dfrac{1}{c}\textbf{J}\times\textbf{B}=\dfrac{1}{4\pi}\left(\nabla\times\textbf{B}\right)\times\textbf{B}=\dfrac{1}{4\pi}\left(\textbf{B}\cdot\partial\right)\textbf{B}-\nabla\left(\dfrac{B^2}{8\pi}\right)$$</p>
+<h3 id="感应方程"><a href="#感应方程" class="headerlink" title="感应方程"></a>感应方程</h3><h2 id="天体磁场起源的发动机理论简介"><a href="#天体磁场起源的发动机理论简介" class="headerlink" title="天体磁场起源的发动机理论简介"></a>天体磁场起源的发动机理论简介</h2><h2 id="宇宙线及其加速过程"><a href="#宇宙线及其加速过程" class="headerlink" title="宇宙线及其加速过程"></a>宇宙线及其加速过程</h2><h1 id="主序恒星——绝大多数肉眼所见的点点繁星"><a href="#主序恒星——绝大多数肉眼所见的点点繁星" class="headerlink" title="主序恒星——绝大多数肉眼所见的点点繁星"></a>主序恒星——绝大多数肉眼所见的点点繁星</h1><h2 id="恒星演化概貌"><a href="#恒星演化概貌" class="headerlink" title="恒星演化概貌"></a>恒星演化概貌</h2><ul>
+<li>超过$10M_\odot$的大质量恒星内部温度非常高因而可以保证各个核燃烧阶段的稳定进行，最终在中心形成铁核。</li>
+<li>小于$8M_\odot$的较小质量恒星，由于量子简并压的存在，晚期核燃烧不是稳定进行的。某些阶段会形成简并压为主抗衡引力核心，表现为“闪烁”。比如质量小于$2.3M_\odot$的氦闪，质量在$2.3M_\odot - 8M_\odot$的碳闪。</li>
+</ul>
+<center><br><img src="/2017/03/21/《导论》教材研读笔记/lec04.fig01.png" width="800px"><br>恒星初始质量和其演化结局<br><br></center>
+
+<h2 id="恒星的形成"><a href="#恒星的形成" class="headerlink" title="恒星的形成"></a>恒星的形成</h2><h3 id="引力不稳定性"><a href="#引力不稳定性" class="headerlink" title="引力不稳定性"></a>引力不稳定性</h3><p>金斯长度。金斯密度。金斯质量。</p>
+<h3 id="恒星形成过程"><a href="#恒星形成过程" class="headerlink" title="恒星形成过程"></a>恒星形成过程</h3><p>四个阶段。初始质量函数IMF。</p>
+<h2 id="球对称恒星的引力平衡与平衡态附近的振荡"><a href="#球对称恒星的引力平衡与平衡态附近的振荡" class="headerlink" title="球对称恒星的引力平衡与平衡态附近的振荡"></a>球对称恒星的引力平衡与平衡态附近的振荡</h2><h3 id="恒星的流体静力学平衡"><a href="#恒星的流体静力学平衡" class="headerlink" title="恒星的流体静力学平衡"></a>恒星的流体静力学平衡</h3><p>$$\dfrac{dp}{dr}=-\dfrac{Gm\left(r\right)\rho\left(r\right)}{r^2}$$</p>
+<p>这叫做牛顿引力下的球对称恒星流体静力学平衡方程。</p>
+<h3 id="周光关系"><a href="#周光关系" class="headerlink" title="周光关系"></a>周光关系</h3><p>经过数学计算分析，恒星光变周期应该与光度有关系。</p>
+<p>$$T_p\propto M^{1/2}$$</p>
+<h3 id="状态方程"><a href="#状态方程" class="headerlink" title="状态方程"></a>状态方程</h3><h3 id="多方球与Lane-Emden方程"><a href="#多方球与Lane-Emden方程" class="headerlink" title="多方球与Lane-Emden方程"></a>多方球与Lane-Emden方程</h3><h2 id="恒星内部的核燃烧过程"><a href="#恒星内部的核燃烧过程" class="headerlink" title="恒星内部的核燃烧过程"></a>恒星内部的核燃烧过程</h2><h3 id="核燃烧的条件"><a href="#核燃烧的条件" class="headerlink" title="核燃烧的条件"></a>核燃烧的条件</h3><h3 id="反应率和产能率"><a href="#反应率和产能率" class="headerlink" title="反应率和产能率"></a>反应率和产能率</h3><h3 id="比铁轻元素的核合成过程"><a href="#比铁轻元素的核合成过程" class="headerlink" title="比铁轻元素的核合成过程"></a>比铁轻元素的核合成过程</h3><h3 id="比铁重元素的核合成过程"><a href="#比铁重元素的核合成过程" class="headerlink" title="比铁重元素的核合成过程"></a>比铁重元素的核合成过程</h3><h2 id="主序恒星的结构方程"><a href="#主序恒星的结构方程" class="headerlink" title="主序恒星的结构方程"></a>主序恒星的结构方程</h2><h2 id="旋转恒星的平衡位形：Maclaurin椭球"><a href="#旋转恒星的平衡位形：Maclaurin椭球" class="headerlink" title="旋转恒星的平衡位形：Maclaurin椭球"></a>旋转恒星的平衡位形：Maclaurin椭球</h2><h2 id="双星系统中恒星质量的测定"><a href="#双星系统中恒星质量的测定" class="headerlink" title="双星系统中恒星质量的测定"></a>双星系统中恒星质量的测定</h2><h1 id="超新星——主序星临终前的“回光返照”"><a href="#超新星——主序星临终前的“回光返照”" class="headerlink" title="超新星——主序星临终前的“回光返照”"></a>超新星——主序星临终前的“回光返照”</h1><h2 id="超新星简介及其观测特性"><a href="#超新星简介及其观测特性" class="headerlink" title="超新星简介及其观测特性"></a>超新星简介及其观测特性</h2><h2 id="超新星爆发机制：不稳定核燃烧"><a href="#超新星爆发机制：不稳定核燃烧" class="headerlink" title="超新星爆发机制：不稳定核燃烧"></a>超新星爆发机制：不稳定核燃烧</h2><h3 id="简并物质核燃烧是不稳定的"><a href="#简并物质核燃烧是不稳定的" class="headerlink" title="简并物质核燃烧是不稳定的"></a>简并物质核燃烧是不稳定的</h3><h3 id="燃烧过程"><a href="#燃烧过程" class="headerlink" title="燃烧过程"></a>燃烧过程</h3><h3 id="超新星宇宙学"><a href="#超新星宇宙学" class="headerlink" title="超新星宇宙学"></a>超新星宇宙学</h3><h2 id="超新星爆发机制：引力塌缩"><a href="#超新星爆发机制：引力塌缩" class="headerlink" title="超新星爆发机制：引力塌缩"></a>超新星爆发机制：引力塌缩</h2><h3 id="导致铁核塌缩的因素"><a href="#导致铁核塌缩的因素" class="headerlink" title="导致铁核塌缩的因素"></a>导致铁核塌缩的因素</h3><h3 id="铁核塌缩的中微子过程"><a href="#铁核塌缩的中微子过程" class="headerlink" title="铁核塌缩的中微子过程"></a>铁核塌缩的中微子过程</h3><h3 id="反弹激波与瞬时爆"><a href="#反弹激波与瞬时爆" class="headerlink" title="反弹激波与瞬时爆"></a>反弹激波与瞬时爆</h3><h3 id="延迟爆"><a href="#延迟爆" class="headerlink" title="延迟爆"></a>延迟爆</h3><h2 id="超新星遗迹"><a href="#超新星遗迹" class="headerlink" title="超新星遗迹"></a>超新星遗迹</h2><p>根据形态分成两类</p>
+<ul>
+<li>壳层型</li>
+<li>类蟹状星云型（或实心型）</li>
+</ul>
+<p>超新星遗迹的动力学演化有四个阶段</p>
+<ul>
+<li>自由膨胀相</li>
+<li>绝热相</li>
+<li>辐射相</li>
+<li>消失相</li>
+</ul>
+<h2 id="超新星SN1987A"><a href="#超新星SN1987A" class="headerlink" title="超新星SN1987A"></a>超新星SN1987A</h2><p>1987年2月，大麦云。这使得人类第一次测量到这类中微子，共27个。根据中微子能量反推超新星爆发总能量为$10^{53}\ erg$.</p>
+<h1 id="吸积——致密天体的有效产能方式"><a href="#吸积——致密天体的有效产能方式" class="headerlink" title="吸积——致密天体的有效产能方式"></a>吸积——致密天体的有效产能方式</h1><h2 id="天体物理中的吸积过程"><a href="#天体物理中的吸积过程" class="headerlink" title="天体物理中的吸积过程"></a>天体物理中的吸积过程</h2><h3 id="双星演化及其中的吸积过程"><a href="#双星演化及其中的吸积过程" class="headerlink" title="双星演化及其中的吸积过程"></a>双星演化及其中的吸积过程</h3><h3 id="致密天体吸积能够高效地释放能量"><a href="#致密天体吸积能够高效地释放能量" class="headerlink" title="致密天体吸积能够高效地释放能量"></a>致密天体吸积能够高效地释放能量</h3><h3 id="吸积释放能量产生的光子一般在X射线或-gamma-射线波段"><a href="#吸积释放能量产生的光子一般在X射线或-gamma-射线波段" class="headerlink" title="吸积释放能量产生的光子一般在X射线或$\gamma$射线波段"></a>吸积释放能量产生的光子一般在X射线或$\gamma$射线波段</h3><h2 id="球对称吸积——零角动量情形"><a href="#球对称吸积——零角动量情形" class="headerlink" title="球对称吸积——零角动量情形"></a>球对称吸积——零角动量情形</h2><h3 id="静止介质的吸积"><a href="#静止介质的吸积" class="headerlink" title="静止介质的吸积"></a>静止介质的吸积</h3><h3 id="运动介质的吸积"><a href="#运动介质的吸积" class="headerlink" title="运动介质的吸积"></a>运动介质的吸积</h3><h2 id="轴对称吸积——非零角动量情形"><a href="#轴对称吸积——非零角动量情形" class="headerlink" title="轴对称吸积——非零角动量情形"></a>轴对称吸积——非零角动量情形</h2><h3 id="一般分析"><a href="#一般分析" class="headerlink" title="一般分析"></a>一般分析</h3><h3 id="各类吸积盘模型简介"><a href="#各类吸积盘模型简介" class="headerlink" title="各类吸积盘模型简介"></a>各类吸积盘模型简介</h3><h3 id="alpha-盘的稳定性"><a href="#alpha-盘的稳定性" class="headerlink" title="$\alpha$盘的稳定性"></a>$\alpha$盘的稳定性</h3><h2 id="磁化中子星的盘吸积与柱吸积"><a href="#磁化中子星的盘吸积与柱吸积" class="headerlink" title="磁化中子星的盘吸积与柱吸积"></a>磁化中子星的盘吸积与柱吸积</h2><h1 id="白矮星——恒星演化残骸之一"><a href="#白矮星——恒星演化残骸之一" class="headerlink" title="白矮星——恒星演化残骸之一"></a>白矮星——恒星演化残骸之一</h1><h2 id="Fermi子星的研究历史"><a href="#Fermi子星的研究历史" class="headerlink" title="Fermi子星的研究历史"></a>Fermi子星的研究历史</h2><h2 id="白矮星物质的状态方程"><a href="#白矮星物质的状态方程" class="headerlink" title="白矮星物质的状态方程"></a>白矮星物质的状态方程</h2><h3 id="非相对论极限情形"><a href="#非相对论极限情形" class="headerlink" title="非相对论极限情形"></a>非相对论极限情形</h3><h3 id="极端相对论极限情形"><a href="#极端相对论极限情形" class="headerlink" title="极端相对论极限情形"></a>极端相对论极限情形</h3><h3 id="一般情形"><a href="#一般情形" class="headerlink" title="一般情形"></a>一般情形</h3><h3 id="BPS状态方程"><a href="#BPS状态方程" class="headerlink" title="BPS状态方程"></a>BPS状态方程</h3><h2 id="Fermi子星的极限质量——钱德拉塞卡质量"><a href="#Fermi子星的极限质量——钱德拉塞卡质量" class="headerlink" title="Fermi子星的极限质量——钱德拉塞卡质量"></a>Fermi子星的极限质量——钱德拉塞卡质量</h2><h3 id="半定量考虑"><a href="#半定量考虑" class="headerlink" title="半定量考虑"></a>半定量考虑</h3><h3 id="白矮星结构模型与钱德拉塞卡极限质量"><a href="#白矮星结构模型与钱德拉塞卡极限质量" class="headerlink" title="白矮星结构模型与钱德拉塞卡极限质量"></a>白矮星结构模型与钱德拉塞卡极限质量</h3><h2 id="白矮星的结构与冷却"><a href="#白矮星的结构与冷却" class="headerlink" title="白矮星的结构与冷却"></a>白矮星的结构与冷却</h2><h3 id="大气模型"><a href="#大气模型" class="headerlink" title="大气模型"></a>大气模型</h3><h3 id="冷却模型"><a href="#冷却模型" class="headerlink" title="冷却模型"></a>冷却模型</h3><h2 id="行星状星云与白矮星的形成"><a href="#行星状星云与白矮星的形成" class="headerlink" title="行星状星云与白矮星的形成"></a>行星状星云与白矮星的形成</h2><h1 id="脉冲星，中子星和夸克星——恒星演化的残骸之二"><a href="#脉冲星，中子星和夸克星——恒星演化的残骸之二" class="headerlink" title="脉冲星，中子星和夸克星——恒星演化的残骸之二"></a>脉冲星，中子星和夸克星——恒星演化的残骸之二</h1><h2 id="脉冲星类致密星及其形成，冷却"><a href="#脉冲星类致密星及其形成，冷却" class="headerlink" title="脉冲星类致密星及其形成，冷却"></a>脉冲星类致密星及其形成，冷却</h2><h3 id="各类脉冲星类致密星"><a href="#各类脉冲星类致密星" class="headerlink" title="各类脉冲星类致密星"></a>各类脉冲星类致密星</h3><h3 id="中子星的形成和冷却"><a href="#中子星的形成和冷却" class="headerlink" title="中子星的形成和冷却"></a>中子星的形成和冷却</h3><h2 id="中子星与奇异星模型"><a href="#中子星与奇异星模型" class="headerlink" title="中子星与奇异星模型"></a>中子星与奇异星模型</h2><h3 id="质量-半径关系"><a href="#质量-半径关系" class="headerlink" title="质量-半径关系"></a>质量-半径关系</h3><h3 id="中子星的结构"><a href="#中子星的结构" class="headerlink" title="中子星的结构"></a>中子星的结构</h3><h3 id="强磁场中的物质与中子星表层"><a href="#强磁场中的物质与中子星表层" class="headerlink" title="强磁场中的物质与中子星表层"></a>强磁场中的物质与中子星表层</h3><h3 id="奇异星的结构"><a href="#奇异星的结构" class="headerlink" title="奇异星的结构"></a>奇异星的结构</h3><h2 id="转动供能脉冲星"><a href="#转动供能脉冲星" class="headerlink" title="转动供能脉冲星"></a>转动供能脉冲星</h2><h3 id="磁偶极辐射与相关观测量-mu-perp-主导"><a href="#磁偶极辐射与相关观测量-mu-perp-主导" class="headerlink" title="磁偶极辐射与相关观测量($\mu _\perp$主导)"></a>磁偶极辐射与相关观测量($\mu _\perp$主导)</h3><h3 id="单极感应"><a href="#单极感应" class="headerlink" title="单极感应"></a>单极感应</h3><h3 id="旋转磁偶极导电球产生电四极场-mu-parallel-主导"><a href="#旋转磁偶极导电球产生电四极场-mu-parallel-主导" class="headerlink" title="旋转磁偶极导电球产生电四极场($\mu _\parallel$主导)"></a>旋转磁偶极导电球产生电四极场($\mu _\parallel$主导)</h3><h3 id="脉冲星辐射轮廓与唯像模型"><a href="#脉冲星辐射轮廓与唯像模型" class="headerlink" title="脉冲星辐射轮廓与唯像模型"></a>脉冲星辐射轮廓与唯像模型</h3><h3 id="脉冲星辐射模型"><a href="#脉冲星辐射模型" class="headerlink" title="脉冲星辐射模型"></a>脉冲星辐射模型</h3><h3 id="脉冲星制动指数问题"><a href="#脉冲星制动指数问题" class="headerlink" title="脉冲星制动指数问题"></a>脉冲星制动指数问题</h3><h1 id="黑洞——广义相对论预言的天体"><a href="#黑洞——广义相对论预言的天体" class="headerlink" title="黑洞——广义相对论预言的天体"></a>黑洞——广义相对论预言的天体</h1><h2 id="相对论简介"><a href="#相对论简介" class="headerlink" title="相对论简介"></a>相对论简介</h2><h3 id="平直时空——狭义相对论"><a href="#平直时空——狭义相对论" class="headerlink" title="平直时空——狭义相对论"></a>平直时空——狭义相对论</h3><h3 id="弯曲时空——广义相对论"><a href="#弯曲时空——广义相对论" class="headerlink" title="弯曲时空——广义相对论"></a>弯曲时空——广义相对论</h3><h3 id="物质分布决定时空结构——爱因斯坦场方程"><a href="#物质分布决定时空结构——爱因斯坦场方程" class="headerlink" title="物质分布决定时空结构——爱因斯坦场方程"></a>物质分布决定时空结构——爱因斯坦场方程</h3><h2 id="史瓦西黑洞"><a href="#史瓦西黑洞" class="headerlink" title="史瓦西黑洞"></a>史瓦西黑洞</h2><h3 id="史瓦西解"><a href="#史瓦西解" class="headerlink" title="史瓦西解"></a>史瓦西解</h3><h3 id="史瓦西时空结构"><a href="#史瓦西时空结构" class="headerlink" title="史瓦西时空结构"></a>史瓦西时空结构</h3><h3 id="史瓦西时空的主要特征"><a href="#史瓦西时空的主要特征" class="headerlink" title="史瓦西时空的主要特征"></a>史瓦西时空的主要特征</h3><h2 id="其他类型的黑洞，黑洞转动能的提取"><a href="#其他类型的黑洞，黑洞转动能的提取" class="headerlink" title="其他类型的黑洞，黑洞转动能的提取"></a>其他类型的黑洞，黑洞转动能的提取</h2><h2 id="黑洞的量子效应"><a href="#黑洞的量子效应" class="headerlink" title="黑洞的量子效应"></a>黑洞的量子效应</h2><h2 id="黑洞的观测证认"><a href="#黑洞的观测证认" class="headerlink" title="黑洞的观测证认"></a>黑洞的观测证认</h2><h1 id="宇宙-gamma-射线爆发源——仅次于“大爆炸”的现象"><a href="#宇宙-gamma-射线爆发源——仅次于“大爆炸”的现象" class="headerlink" title="宇宙$\gamma$射线爆发源——仅次于“大爆炸”的现象"></a>宇宙$\gamma$射线爆发源——仅次于“大爆炸”的现象</h1><h2 id="历史和基本观测事实"><a href="#历史和基本观测事实" class="headerlink" title="历史和基本观测事实"></a>历史和基本观测事实</h2><h2 id="相对论火球模型"><a href="#相对论火球模型" class="headerlink" title="相对论火球模型"></a>相对论火球模型</h2><h2 id="能源机制"><a href="#能源机制" class="headerlink" title="能源机制"></a>能源机制</h2><h2 id="研究展望"><a href="#研究展望" class="headerlink" title="研究展望"></a>研究展望</h2><h1 id="星系——组成宇宙的基本单元"><a href="#星系——组成宇宙的基本单元" class="headerlink" title="星系——组成宇宙的基本单元"></a>星系——组成宇宙的基本单元</h1><h2 id="星系的宇宙学红移"><a href="#星系的宇宙学红移" class="headerlink" title="星系的宇宙学红移"></a>星系的宇宙学红移</h2><h2 id="引力透镜现象"><a href="#引力透镜现象" class="headerlink" title="引力透镜现象"></a>引力透镜现象</h2><h2 id="活动星系与活动星系核"><a href="#活动星系与活动星系核" class="headerlink" title="活动星系与活动星系核"></a>活动星系与活动星系核</h2><h2 id="AGN的超大质量黑洞吸积图像"><a href="#AGN的超大质量黑洞吸积图像" class="headerlink" title="AGN的超大质量黑洞吸积图像"></a>AGN的超大质量黑洞吸积图像</h2><h2 id="星系中心的黑洞"><a href="#星系中心的黑洞" class="headerlink" title="星系中心的黑洞"></a>星系中心的黑洞</h2><h1 id="宇宙——可观测的一切"><a href="#宇宙——可观测的一切" class="headerlink" title="宇宙——可观测的一切"></a>宇宙——可观测的一切</h1><h2 id="宇宙学的基本观测事实"><a href="#宇宙学的基本观测事实" class="headerlink" title="宇宙学的基本观测事实"></a>宇宙学的基本观测事实</h2><h3 id="大尺度上的均匀性"><a href="#大尺度上的均匀性" class="headerlink" title="大尺度上的均匀性"></a>大尺度上的均匀性</h3><h3 id="Hubble膨胀"><a href="#Hubble膨胀" class="headerlink" title="Hubble膨胀"></a>Hubble膨胀</h3><h3 id="轻元素的丰度"><a href="#轻元素的丰度" class="headerlink" title="轻元素的丰度"></a>轻元素的丰度</h3><h3 id="微波背景辐射"><a href="#微波背景辐射" class="headerlink" title="微波背景辐射"></a>微波背景辐射</h3><h2 id="宇宙学原理与RW度规"><a href="#宇宙学原理与RW度规" class="headerlink" title="宇宙学原理与RW度规"></a>宇宙学原理与RW度规</h2><h2 id="宇宙膨胀动力学"><a href="#宇宙膨胀动力学" class="headerlink" title="宇宙膨胀动力学"></a>宇宙膨胀动力学</h2><h2 id="宇宙的热力学演化"><a href="#宇宙的热力学演化" class="headerlink" title="宇宙的热力学演化"></a>宇宙的热力学演化</h2><h3 id="真空自发破缺相变"><a href="#真空自发破缺相变" class="headerlink" title="真空自发破缺相变"></a>真空自发破缺相变</h3><h3 id="暴涨及其后果"><a href="#暴涨及其后果" class="headerlink" title="暴涨及其后果"></a>暴涨及其后果</h3><h3 id="退耦与背景辐射"><a href="#退耦与背景辐射" class="headerlink" title="退耦与背景辐射"></a>退耦与背景辐射</h3><h3 id="早起核合成"><a href="#早起核合成" class="headerlink" title="早起核合成"></a>早起核合成</h3><h2 id="暗物质与暗能量"><a href="#暗物质与暗能量" class="headerlink" title="暗物质与暗能量"></a>暗物质与暗能量</h2><h3 id="宇宙学常数"><a href="#宇宙学常数" class="headerlink" title="宇宙学常数"></a>宇宙学常数</h3><h3 id="暗物质与暗能量-1"><a href="#暗物质与暗能量-1" class="headerlink" title="暗物质与暗能量"></a>暗物质与暗能量</h3><h1 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h1><h2 id="朗道的“论恒星的理论”"><a href="#朗道的“论恒星的理论”" class="headerlink" title="朗道的“论恒星的理论”"></a>朗道的“论恒星的理论”</h2><h2 id="粒子物理标准模型简介"><a href="#粒子物理标准模型简介" class="headerlink" title="粒子物理标准模型简介"></a>粒子物理标准模型简介</h2><h2 id="粒子天体物理简介"><a href="#粒子天体物理简介" class="headerlink" title="粒子天体物理简介"></a>粒子天体物理简介</h2><h2 id="地外文明与太阳系外行星系统"><a href="#地外文明与太阳系外行星系统" class="headerlink" title="地外文明与太阳系外行星系统"></a>地外文明与太阳系外行星系统</h2><h2 id="数，单位制与常数"><a href="#数，单位制与常数" class="headerlink" title="数，单位制与常数"></a>数，单位制与常数</h2><h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/天文/" rel="tag"># 天文</a>
+          
+            <a href="/tags/学习笔记/" rel="tag"># 学习笔记</a>
+          
+            <a href="/tags/读书/" rel="tag"># 读书</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/21/Dwarf-galaxies-around-the-MW-and-fundamental-problems-of-LCDM/" rel="next" title="Dwarf galaxies around the MW and fundamental problems of LCDM">
+                <i class="fa fa-chevron-left"></i> Dwarf galaxies around the MW and fundamental problems of LCDM
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/22/Mar22的AMT/" rel="prev" title="Mar22的AMT">
+                Mar22的AMT <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/pic2.jpg"
+               alt="陈清祥" />
+          <p class="site-author-name" itemprop="name">陈清祥</p>
+          <p class="site-description motion-element" itemprop="description">我们的征途是星辰大海</p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">72</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">74</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#概论"><span class="nav-number">1.</span> <span class="nav-text">概论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#地球和太阳系"><span class="nav-number">1.1.</span> <span class="nav-text">地球和太阳系</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#地球的参数"><span class="nav-number">1.1.1.</span> <span class="nav-text">地球的参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一道几何题：几何法测距"><span class="nav-number">1.1.2.</span> <span class="nav-text">一道几何题：几何法测距</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#太阳系内的天体"><span class="nav-number">1.1.3.</span> <span class="nav-text">太阳系内的天体</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#恒星与银河系"><span class="nav-number">1.2.</span> <span class="nav-text">恒星与银河系</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HR图"><span class="nav-number">1.2.1.</span> <span class="nav-text">HR图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#非几何法测距：物理测距法"><span class="nav-number">1.2.2.</span> <span class="nav-text">非几何法测距：物理测距法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#银河系"><span class="nav-number">1.2.3.</span> <span class="nav-text">银河系</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#星系世界"><span class="nav-number">1.3.</span> <span class="nav-text">星系世界</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#星系距离"><span class="nav-number">1.3.1.</span> <span class="nav-text">星系距离</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#星系空间分布"><span class="nav-number">1.3.2.</span> <span class="nav-text">星系空间分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#星系的形态分类——Hubble分类"><span class="nav-number">1.3.3.</span> <span class="nav-text">星系的形态分类——Hubble分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正常星系与活动星系"><span class="nav-number">1.3.4.</span> <span class="nav-text">正常星系与活动星系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#星系旋转曲线，暗物质的存在"><span class="nav-number">1.3.5.</span> <span class="nav-text">星系旋转曲线，暗物质的存在</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#天体物理中的重大疑难问题"><span class="nav-number">1.4.</span> <span class="nav-text">天体物理中的重大疑难问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#天文观测设备与展望"><span class="nav-number">1.5.</span> <span class="nav-text">天文观测设备与展望</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#辐射——认识宇宙的重要窗口"><span class="nav-number">2.</span> <span class="nav-text">辐射——认识宇宙的重要窗口</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#热辐射，黑体谱和线谱"><span class="nav-number">2.1.</span> <span class="nav-text">热辐射，黑体谱和线谱</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#典型的非热辐射——荷电粒子作加速运动时产生的辐射"><span class="nav-number">2.2.</span> <span class="nav-text">典型的非热辐射——荷电粒子作加速运动时产生的辐射</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#回旋辐射，同步辐射，曲率辐射"><span class="nav-number">2.3.</span> <span class="nav-text">回旋辐射，同步辐射，曲率辐射</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#回旋辐射：-beta-ll-1"><span class="nav-number">2.3.1.</span> <span class="nav-text">回旋辐射：$\beta\ll 1$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#同步辐射：-gamma-gg-1"><span class="nav-number">2.3.2.</span> <span class="nav-text">同步辐射：$\gamma\gg 1$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#强磁场中的荷电粒子的朗道能级"><span class="nav-number">2.3.3.</span> <span class="nav-text">强磁场中的荷电粒子的朗道能级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#曲率辐射"><span class="nav-number">2.3.4.</span> <span class="nav-text">曲率辐射</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#康普顿散射和逆康普顿散射"><span class="nav-number">2.4.</span> <span class="nav-text">康普顿散射和逆康普顿散射</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#康普顿散射，艾丁顿光度"><span class="nav-number">2.4.1.</span> <span class="nav-text">康普顿散射，艾丁顿光度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#逆康普顿散射"><span class="nav-number">2.4.2.</span> <span class="nav-text">逆康普顿散射</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#韧致辐射"><span class="nav-number">2.5.</span> <span class="nav-text">韧致辐射</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#切伦科夫辐射"><span class="nav-number">2.6.</span> <span class="nav-text">切伦科夫辐射</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#传能与传能方程简介"><span class="nav-number">2.7.</span> <span class="nav-text">传能与传能方程简介</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#磁化等离子体——99-以上宇宙正常物质的状态"><span class="nav-number">3.</span> <span class="nav-text">磁化等离子体——99%以上宇宙正常物质的状态</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#天体磁场的普遍性"><span class="nav-number">3.1.</span> <span class="nav-text">天体磁场的普遍性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#行星磁场"><span class="nav-number">3.1.1.</span> <span class="nav-text">行星磁场</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#太阳磁场和太阳活动"><span class="nav-number">3.1.2.</span> <span class="nav-text">太阳磁场和太阳活动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#行星际磁场"><span class="nav-number">3.1.3.</span> <span class="nav-text">行星际磁场</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#恒星磁场"><span class="nav-number">3.1.4.</span> <span class="nav-text">恒星磁场</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#银河系磁场"><span class="nav-number">3.1.5.</span> <span class="nav-text">银河系磁场</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-number">3.1.6.</span> <span class="nav-text">其他</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#等离子体中的电磁作用"><span class="nav-number">3.2.</span> <span class="nav-text">等离子体中的电磁作用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#德拜长度"><span class="nav-number">3.2.1.</span> <span class="nav-text">德拜长度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#等离子体频率"><span class="nav-number">3.2.2.</span> <span class="nav-text">等离子体频率</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#磁流体力学"><span class="nav-number">3.3.</span> <span class="nav-text">磁流体力学</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#磁流体力学方程组"><span class="nav-number">3.3.1.</span> <span class="nav-text">磁流体力学方程组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#洛伦兹力"><span class="nav-number">3.3.2.</span> <span class="nav-text">洛伦兹力</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#感应方程"><span class="nav-number">3.3.3.</span> <span class="nav-text">感应方程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#天体磁场起源的发动机理论简介"><span class="nav-number">3.4.</span> <span class="nav-text">天体磁场起源的发动机理论简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#宇宙线及其加速过程"><span class="nav-number">3.5.</span> <span class="nav-text">宇宙线及其加速过程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#主序恒星——绝大多数肉眼所见的点点繁星"><span class="nav-number">4.</span> <span class="nav-text">主序恒星——绝大多数肉眼所见的点点繁星</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#恒星演化概貌"><span class="nav-number">4.1.</span> <span class="nav-text">恒星演化概貌</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#恒星的形成"><span class="nav-number">4.2.</span> <span class="nav-text">恒星的形成</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#引力不稳定性"><span class="nav-number">4.2.1.</span> <span class="nav-text">引力不稳定性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#恒星形成过程"><span class="nav-number">4.2.2.</span> <span class="nav-text">恒星形成过程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#球对称恒星的引力平衡与平衡态附近的振荡"><span class="nav-number">4.3.</span> <span class="nav-text">球对称恒星的引力平衡与平衡态附近的振荡</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#恒星的流体静力学平衡"><span class="nav-number">4.3.1.</span> <span class="nav-text">恒星的流体静力学平衡</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#周光关系"><span class="nav-number">4.3.2.</span> <span class="nav-text">周光关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#状态方程"><span class="nav-number">4.3.3.</span> <span class="nav-text">状态方程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多方球与Lane-Emden方程"><span class="nav-number">4.3.4.</span> <span class="nav-text">多方球与Lane-Emden方程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#恒星内部的核燃烧过程"><span class="nav-number">4.4.</span> <span class="nav-text">恒星内部的核燃烧过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#核燃烧的条件"><span class="nav-number">4.4.1.</span> <span class="nav-text">核燃烧的条件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#反应率和产能率"><span class="nav-number">4.4.2.</span> <span class="nav-text">反应率和产能率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#比铁轻元素的核合成过程"><span class="nav-number">4.4.3.</span> <span class="nav-text">比铁轻元素的核合成过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#比铁重元素的核合成过程"><span class="nav-number">4.4.4.</span> <span class="nav-text">比铁重元素的核合成过程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主序恒星的结构方程"><span class="nav-number">4.5.</span> <span class="nav-text">主序恒星的结构方程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#旋转恒星的平衡位形：Maclaurin椭球"><span class="nav-number">4.6.</span> <span class="nav-text">旋转恒星的平衡位形：Maclaurin椭球</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#双星系统中恒星质量的测定"><span class="nav-number">4.7.</span> <span class="nav-text">双星系统中恒星质量的测定</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#超新星——主序星临终前的“回光返照”"><span class="nav-number">5.</span> <span class="nav-text">超新星——主序星临终前的“回光返照”</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#超新星简介及其观测特性"><span class="nav-number">5.1.</span> <span class="nav-text">超新星简介及其观测特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#超新星爆发机制：不稳定核燃烧"><span class="nav-number">5.2.</span> <span class="nav-text">超新星爆发机制：不稳定核燃烧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#简并物质核燃烧是不稳定的"><span class="nav-number">5.2.1.</span> <span class="nav-text">简并物质核燃烧是不稳定的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#燃烧过程"><span class="nav-number">5.2.2.</span> <span class="nav-text">燃烧过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#超新星宇宙学"><span class="nav-number">5.2.3.</span> <span class="nav-text">超新星宇宙学</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#超新星爆发机制：引力塌缩"><span class="nav-number">5.3.</span> <span class="nav-text">超新星爆发机制：引力塌缩</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#导致铁核塌缩的因素"><span class="nav-number">5.3.1.</span> <span class="nav-text">导致铁核塌缩的因素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#铁核塌缩的中微子过程"><span class="nav-number">5.3.2.</span> <span class="nav-text">铁核塌缩的中微子过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#反弹激波与瞬时爆"><span class="nav-number">5.3.3.</span> <span class="nav-text">反弹激波与瞬时爆</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#延迟爆"><span class="nav-number">5.3.4.</span> <span class="nav-text">延迟爆</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#超新星遗迹"><span class="nav-number">5.4.</span> <span class="nav-text">超新星遗迹</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#超新星SN1987A"><span class="nav-number">5.5.</span> <span class="nav-text">超新星SN1987A</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#吸积——致密天体的有效产能方式"><span class="nav-number">6.</span> <span class="nav-text">吸积——致密天体的有效产能方式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#天体物理中的吸积过程"><span class="nav-number">6.1.</span> <span class="nav-text">天体物理中的吸积过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#双星演化及其中的吸积过程"><span class="nav-number">6.1.1.</span> <span class="nav-text">双星演化及其中的吸积过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#致密天体吸积能够高效地释放能量"><span class="nav-number">6.1.2.</span> <span class="nav-text">致密天体吸积能够高效地释放能量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#吸积释放能量产生的光子一般在X射线或-gamma-射线波段"><span class="nav-number">6.1.3.</span> <span class="nav-text">吸积释放能量产生的光子一般在X射线或$\gamma$射线波段</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#球对称吸积——零角动量情形"><span class="nav-number">6.2.</span> <span class="nav-text">球对称吸积——零角动量情形</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#静止介质的吸积"><span class="nav-number">6.2.1.</span> <span class="nav-text">静止介质的吸积</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运动介质的吸积"><span class="nav-number">6.2.2.</span> <span class="nav-text">运动介质的吸积</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#轴对称吸积——非零角动量情形"><span class="nav-number">6.3.</span> <span class="nav-text">轴对称吸积——非零角动量情形</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一般分析"><span class="nav-number">6.3.1.</span> <span class="nav-text">一般分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#各类吸积盘模型简介"><span class="nav-number">6.3.2.</span> <span class="nav-text">各类吸积盘模型简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#alpha-盘的稳定性"><span class="nav-number">6.3.3.</span> <span class="nav-text">$\alpha$盘的稳定性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#磁化中子星的盘吸积与柱吸积"><span class="nav-number">6.4.</span> <span class="nav-text">磁化中子星的盘吸积与柱吸积</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#白矮星——恒星演化残骸之一"><span class="nav-number">7.</span> <span class="nav-text">白矮星——恒星演化残骸之一</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Fermi子星的研究历史"><span class="nav-number">7.1.</span> <span class="nav-text">Fermi子星的研究历史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#白矮星物质的状态方程"><span class="nav-number">7.2.</span> <span class="nav-text">白矮星物质的状态方程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#非相对论极限情形"><span class="nav-number">7.2.1.</span> <span class="nav-text">非相对论极限情形</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#极端相对论极限情形"><span class="nav-number">7.2.2.</span> <span class="nav-text">极端相对论极限情形</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一般情形"><span class="nav-number">7.2.3.</span> <span class="nav-text">一般情形</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BPS状态方程"><span class="nav-number">7.2.4.</span> <span class="nav-text">BPS状态方程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fermi子星的极限质量——钱德拉塞卡质量"><span class="nav-number">7.3.</span> <span class="nav-text">Fermi子星的极限质量——钱德拉塞卡质量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#半定量考虑"><span class="nav-number">7.3.1.</span> <span class="nav-text">半定量考虑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#白矮星结构模型与钱德拉塞卡极限质量"><span class="nav-number">7.3.2.</span> <span class="nav-text">白矮星结构模型与钱德拉塞卡极限质量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#白矮星的结构与冷却"><span class="nav-number">7.4.</span> <span class="nav-text">白矮星的结构与冷却</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#大气模型"><span class="nav-number">7.4.1.</span> <span class="nav-text">大气模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#冷却模型"><span class="nav-number">7.4.2.</span> <span class="nav-text">冷却模型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#行星状星云与白矮星的形成"><span class="nav-number">7.5.</span> <span class="nav-text">行星状星云与白矮星的形成</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#脉冲星，中子星和夸克星——恒星演化的残骸之二"><span class="nav-number">8.</span> <span class="nav-text">脉冲星，中子星和夸克星——恒星演化的残骸之二</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#脉冲星类致密星及其形成，冷却"><span class="nav-number">8.1.</span> <span class="nav-text">脉冲星类致密星及其形成，冷却</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#各类脉冲星类致密星"><span class="nav-number">8.1.1.</span> <span class="nav-text">各类脉冲星类致密星</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#中子星的形成和冷却"><span class="nav-number">8.1.2.</span> <span class="nav-text">中子星的形成和冷却</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#中子星与奇异星模型"><span class="nav-number">8.2.</span> <span class="nav-text">中子星与奇异星模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#质量-半径关系"><span class="nav-number">8.2.1.</span> <span class="nav-text">质量-半径关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#中子星的结构"><span class="nav-number">8.2.2.</span> <span class="nav-text">中子星的结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#强磁场中的物质与中子星表层"><span class="nav-number">8.2.3.</span> <span class="nav-text">强磁场中的物质与中子星表层</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#奇异星的结构"><span class="nav-number">8.2.4.</span> <span class="nav-text">奇异星的结构</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#转动供能脉冲星"><span class="nav-number">8.3.</span> <span class="nav-text">转动供能脉冲星</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#磁偶极辐射与相关观测量-mu-perp-主导"><span class="nav-number">8.3.1.</span> <span class="nav-text">磁偶极辐射与相关观测量($\mu _\perp$主导)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单极感应"><span class="nav-number">8.3.2.</span> <span class="nav-text">单极感应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#旋转磁偶极导电球产生电四极场-mu-parallel-主导"><span class="nav-number">8.3.3.</span> <span class="nav-text">旋转磁偶极导电球产生电四极场($\mu _\parallel$主导)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#脉冲星辐射轮廓与唯像模型"><span class="nav-number">8.3.4.</span> <span class="nav-text">脉冲星辐射轮廓与唯像模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#脉冲星辐射模型"><span class="nav-number">8.3.5.</span> <span class="nav-text">脉冲星辐射模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#脉冲星制动指数问题"><span class="nav-number">8.3.6.</span> <span class="nav-text">脉冲星制动指数问题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#黑洞——广义相对论预言的天体"><span class="nav-number">9.</span> <span class="nav-text">黑洞——广义相对论预言的天体</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#相对论简介"><span class="nav-number">9.1.</span> <span class="nav-text">相对论简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#平直时空——狭义相对论"><span class="nav-number">9.1.1.</span> <span class="nav-text">平直时空——狭义相对论</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#弯曲时空——广义相对论"><span class="nav-number">9.1.2.</span> <span class="nav-text">弯曲时空——广义相对论</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#物质分布决定时空结构——爱因斯坦场方程"><span class="nav-number">9.1.3.</span> <span class="nav-text">物质分布决定时空结构——爱因斯坦场方程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#史瓦西黑洞"><span class="nav-number">9.2.</span> <span class="nav-text">史瓦西黑洞</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#史瓦西解"><span class="nav-number">9.2.1.</span> <span class="nav-text">史瓦西解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#史瓦西时空结构"><span class="nav-number">9.2.2.</span> <span class="nav-text">史瓦西时空结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#史瓦西时空的主要特征"><span class="nav-number">9.2.3.</span> <span class="nav-text">史瓦西时空的主要特征</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他类型的黑洞，黑洞转动能的提取"><span class="nav-number">9.3.</span> <span class="nav-text">其他类型的黑洞，黑洞转动能的提取</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#黑洞的量子效应"><span class="nav-number">9.4.</span> <span class="nav-text">黑洞的量子效应</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#黑洞的观测证认"><span class="nav-number">9.5.</span> <span class="nav-text">黑洞的观测证认</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#宇宙-gamma-射线爆发源——仅次于“大爆炸”的现象"><span class="nav-number">10.</span> <span class="nav-text">宇宙$\gamma$射线爆发源——仅次于“大爆炸”的现象</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#历史和基本观测事实"><span class="nav-number">10.1.</span> <span class="nav-text">历史和基本观测事实</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相对论火球模型"><span class="nav-number">10.2.</span> <span class="nav-text">相对论火球模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#能源机制"><span class="nav-number">10.3.</span> <span class="nav-text">能源机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#研究展望"><span class="nav-number">10.4.</span> <span class="nav-text">研究展望</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#星系——组成宇宙的基本单元"><span class="nav-number">11.</span> <span class="nav-text">星系——组成宇宙的基本单元</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#星系的宇宙学红移"><span class="nav-number">11.1.</span> <span class="nav-text">星系的宇宙学红移</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引力透镜现象"><span class="nav-number">11.2.</span> <span class="nav-text">引力透镜现象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#活动星系与活动星系核"><span class="nav-number">11.3.</span> <span class="nav-text">活动星系与活动星系核</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AGN的超大质量黑洞吸积图像"><span class="nav-number">11.4.</span> <span class="nav-text">AGN的超大质量黑洞吸积图像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#星系中心的黑洞"><span class="nav-number">11.5.</span> <span class="nav-text">星系中心的黑洞</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#宇宙——可观测的一切"><span class="nav-number">12.</span> <span class="nav-text">宇宙——可观测的一切</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#宇宙学的基本观测事实"><span class="nav-number">12.1.</span> <span class="nav-text">宇宙学的基本观测事实</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#大尺度上的均匀性"><span class="nav-number">12.1.1.</span> <span class="nav-text">大尺度上的均匀性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hubble膨胀"><span class="nav-number">12.1.2.</span> <span class="nav-text">Hubble膨胀</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#轻元素的丰度"><span class="nav-number">12.1.3.</span> <span class="nav-text">轻元素的丰度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#微波背景辐射"><span class="nav-number">12.1.4.</span> <span class="nav-text">微波背景辐射</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#宇宙学原理与RW度规"><span class="nav-number">12.2.</span> <span class="nav-text">宇宙学原理与RW度规</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#宇宙膨胀动力学"><span class="nav-number">12.3.</span> <span class="nav-text">宇宙膨胀动力学</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#宇宙的热力学演化"><span class="nav-number">12.4.</span> <span class="nav-text">宇宙的热力学演化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#真空自发破缺相变"><span class="nav-number">12.4.1.</span> <span class="nav-text">真空自发破缺相变</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#暴涨及其后果"><span class="nav-number">12.4.2.</span> <span class="nav-text">暴涨及其后果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#退耦与背景辐射"><span class="nav-number">12.4.3.</span> <span class="nav-text">退耦与背景辐射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#早起核合成"><span class="nav-number">12.4.4.</span> <span class="nav-text">早起核合成</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#暗物质与暗能量"><span class="nav-number">12.5.</span> <span class="nav-text">暗物质与暗能量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#宇宙学常数"><span class="nav-number">12.5.1.</span> <span class="nav-text">宇宙学常数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#暗物质与暗能量-1"><span class="nav-number">12.5.2.</span> <span class="nav-text">暗物质与暗能量</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#附录"><span class="nav-number">13.</span> <span class="nav-text">附录</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#朗道的“论恒星的理论”"><span class="nav-number">13.1.</span> <span class="nav-text">朗道的“论恒星的理论”</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#粒子物理标准模型简介"><span class="nav-number">13.2.</span> <span class="nav-text">粒子物理标准模型简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#粒子天体物理简介"><span class="nav-number">13.3.</span> <span class="nav-text">粒子天体物理简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#地外文明与太阳系外行星系统"><span class="nav-number">13.4.</span> <span class="nav-text">地外文明与太阳系外行星系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数，单位制与常数"><span class="nav-number">13.5.</span> <span class="nav-text">数，单位制与常数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#索引"><span class="nav-number">13.6.</span> <span class="nav-text">索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文献"><span class="nav-number">13.7.</span> <span class="nav-text">参考文献</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">陈清祥</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+  
+
+
+</body>
+</html>

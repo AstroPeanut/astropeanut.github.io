@@ -1,0 +1,811 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="天文,学习笔记,读书,星系," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="不用说，研究星系，肯定其恒星形成是个很重要的事儿，需要来搞清楚。气体的cooling时标要比halo的寿命短，所以它们会失压而掉落到halo势阱中心去进而密度升高。当这个密度已经比halo中心区的密度还要高了，这些cooling gas已经是自引力系统了，并在自身引力作用下持续塌缩。这个自引力系统由于冷却，其塌缩将是持续而“彻底”的，直至密度过高而形成高密的冷气体，进而点燃恒星形成。
+这篇文章基于">
+<meta property="og:type" content="article">
+<meta property="og:title" content="9. 星系的恒星形成">
+<meta property="og:url" content="http://astropeanut.info/2017/02/24/9-星系的恒星形成/index.html">
+<meta property="og:site_name" content="AstroPeanut's Blog">
+<meta property="og:description" content="不用说，研究星系，肯定其恒星形成是个很重要的事儿，需要来搞清楚。气体的cooling时标要比halo的寿命短，所以它们会失压而掉落到halo势阱中心去进而密度升高。当这个密度已经比halo中心区的密度还要高了，这些cooling gas已经是自引力系统了，并在自身引力作用下持续塌缩。这个自引力系统由于冷却，其塌缩将是持续而“彻底”的，直至密度过高而形成高密的冷气体，进而点燃恒星形成。
+这篇文章基于">
+<meta property="og:updated_time" content="2017-03-26T07:33:21.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="9. 星系的恒星形成">
+<meta name="twitter:description" content="不用说，研究星系，肯定其恒星形成是个很重要的事儿，需要来搞清楚。气体的cooling时标要比halo的寿命短，所以它们会失压而掉落到halo势阱中心去进而密度升高。当这个密度已经比halo中心区的密度还要高了，这些cooling gas已经是自引力系统了，并在自身引力作用下持续塌缩。这个自引力系统由于冷却，其塌缩将是持续而“彻底”的，直至密度过高而形成高密的冷气体，进而点燃恒星形成。
+这篇文章基于">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://astropeanut.info/2017/02/24/9-星系的恒星形成/"/>
+
+
+
+
+
+  <title> 9. 星系的恒星形成 | AstroPeanut's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?d15b8cc355d618f75dfd082559510991";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">AstroPeanut's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle">总学渣也不是个办法</p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://astropeanut.info/2017/02/24/9-星系的恒星形成/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="陈清祥">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/pic2.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="AstroPeanut's Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="AstroPeanut's Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                9. 星系的恒星形成
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-24T15:24:55+08:00">
+                2017-02-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/work/" itemprop="url" rel="index">
+                    <span itemprop="name">工作和技能</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/02/24/9-星系的恒星形成/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://astropeanut.info/2017/02/24/9-星系的恒星形成/" itemprop="commentCount">0</span> comments
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>不用说，研究星系，肯定其恒星形成是个很重要的事儿，需要来搞清楚。气体的cooling时标要比halo的寿命短，所以它们会失压而掉落到halo势阱中心去进而密度升高。当这个密度已经比halo中心区的密度还要高了，这些cooling gas已经是自引力系统了，并在自身引力作用下持续塌缩。这个自引力系统由于冷却，其塌缩将是持续而“彻底”的，直至密度过高而形成高密的冷气体，进而点燃恒星形成。</p>
+<p>这篇文章基于的材料是莫厚俊老师的星系形成和演化教科书第9章，但是如果有足够精力和兴趣的话可能会查阅相关资料作为自己知识的补充和拓展。</p>
+<a id="more"></a>
+<p>我们想搞清楚这么几个问题：</p>
+<ul>
+<li>大尺度看上去，星系的SF在何时发生？</li>
+<li>促使SF发生的主要过程有哪些？</li>
+<li>在一团气体云里面，其恒星产生率是多少？</li>
+<li>一坨气体里面有多少质量可以转化为恒星？</li>
+<li>一坨气体里面生成的恒星其质量函数(IMF)有啥分布呢?</li>
+</ul>
+<p>通过对银河系以及近邻星系的观测，我们发现所有的SF都发生在致密的分子云里面。对于星爆星系的CO发射线观测更是发现它们在小尺度上$\le 2kpc$有很大量$\left( 10^8-10^10M_{solar} \right)$的分子气体聚集。</p>
+<p>现在基本上接受了的一个观点是，星系的SFR取决于其产生致密分子云的能力。也因此，考虑星系的SF可以分为两步，两步分别用大尺度和小尺度视角来看。</p>
+<ul>
+<li>前者研究星系里面分子云的形成与其结构</li>
+<li>后者研究分子云中这些单个恒星是咋形成的</li>
+</ul>
+<p>注意的是，星系的SF的研究是非常难以完备的。一个星系级暗晕的质量核密度分别$\sim 10^{11}M<em>{solar}$和$\sim 10^{-24}g cm^{-3}$而对于一个恒星来说，这两个数字分别变成了$\sim 1M</em>{solar}$和$\sim 1g cm^{-3}$。研究跨度上，前者跨越11个数量级，后者跨越24个数量级。在这些量级之间，物理环境变化往往非常大，有些部分甚至我们还远远没有搞清楚。但是整体上讲，我们对于大的空间尺度（或者其他的整体性质比如质量、密度、温度、化学组分….）平均下的SF的理解还是把握的不错的。</p>
+<h1 id="巨分子云：恒星形成的场所"><a href="#巨分子云：恒星形成的场所" class="headerlink" title="巨分子云：恒星形成的场所"></a>巨分子云：恒星形成的场所</h1><p>很明显，我们对于ISM的详细了解仅限于银河系以内。但是由于SF存在于的气体云，其演化时标和尺度都远远小于星系本身。从这个角度上说，不同的星系环境对于SF带来的不同不应该很明显，所以我们应该可以把从银河系研究的结果推广到一般星系的情况。</p>
+<p>银河系的ISM存在于一个非常平展的主要由冷气体组成的盘内。这冷气体主要是中性的氢，大概20%是分子氢。ISM里面有约1%是dust。气体密度越高，分子氢所占组分越大。</p>
+<blockquote>
+<p>在稀薄的ISM里面分子几乎没有，而到了临近银河中心的高密区，分子气体占到了几乎100%。</p>
+</blockquote>
+<p>所有的分子气体都分布在巨分子云里面。</p>
+<h2 id="观测特征"><a href="#观测特征" class="headerlink" title="观测特征"></a>观测特征</h2><p>巨分子云(GMCs)的典型参数：</p>
+<ul>
+<li>质量$10^5-10^6M_{solar}$</li>
+<li>延展几个10pc的量级</li>
+<li>分子密度大概$n_{H_2}\sim 100-500 cm^{-3}$，对应的密度$\rho \sim 10^{-21}g cm^{-3}$</li>
+</ul>
+<p>对于GMCs的发射线观测揭示了其不同尺度上结构如clump以及filament。</p>
+<ul>
+<li>这分子团clump的典型参数<ul>
+<li>质量$\sim 10^2-10^4M_{solar}$</li>
+<li>大小$\sim 1-10pc$</li>
+<li>密度$n_{H<em>2}\sim 10^2-10^4cm^{-3}$，核心区域(core)则有$n</em>{H_2}\gt 10^5cm^{-3}$</li>
+</ul>
+</li>
+</ul>
+<p>SF只在致密的clump或者core里面才能形成。</p>
+<p>观测到的GMCs（以及它们的子团块）的质量函数为一个有比较sharp的截断的幂率关系(power law):</p>
+<p>$$\frac{N}{dlnM}=N_u(\frac{M}{M_u})^{-\eta}$$</p>
+<p>这里面$0.3\lt \eta \lt 0.9$，$M<em>u \sim 5\times 10^6M</em>{solar}$。而观测到的core的质量分布比这个关系陡得多：在质量$\gt 1M_{solar}$位置的指数为$0.9\lt \eta \lt 1.5$。</p>
+<blockquote>
+<p>有证据指出，在1个$M_{solar}$以下，core的质量函数开始下降。并且core的质量函数和年轻恒星的IMF相似，这预示着致密的分子core直接和具体的恒星的形成相联系。</p>
+</blockquote>
+<p>从分子谱线的线比(line ratios)我们得知GMCs的典型温度$\sim 10K$。除了被大质量恒星的UV辐射加热的区域以外，不管是GMCs还是其子团块或者core，其温度是非常均匀的，虽然其密度跨越了三个数量级。</p>
+<blockquote>
+<p>而这说明，主要的加热源来自宇宙线。</p>
+</blockquote>
+<p>GMCs的结构固然复杂，不过它们符合一系列的scaling relations。在质量$10^2M<em>{solar} \le M\le 10^6M</em>{solar}$范围内，单个分子云和团块的质量以及速度宽度非常好的符合如下关系：<br>$$M\prop R^2, \delta v\prop R^{1\div 2}\prop \rho ^{-1\div 2}$$</p>
+<p>除了原恒星核(protostellar cores)，观测到的线宽(\sim 10km s^{-1})远比热致宽数值(10K下\sim 0.2km s^{-1})要大。</p>
+<blockquote>
+<p>这说明了分子团块有着很高的超音速扰动，并且可能对SF过程产生了巨大的影响。</p>
+</blockquote>
+<p>另外人们还发现，GMCs的空间分布和年龄$\le 10^7yr$的恒星很相关，但是和年老恒星没啥相关。</p>
+<blockquote>
+<p>这说明了一个GMCs的典型年龄$\sim 10^7yr$，远比星系的年龄要短。</p>
+</blockquote>
+<h2 id="动力学状态"><a href="#动力学状态" class="headerlink" title="动力学状态"></a>动力学状态</h2><p>那么一坨GMCs其结构会怎么变化呢？扩张？塌缩？静止？这小节来研究这个。</p>
+<p>先来假设，GMCs是自引力的、均匀的、等温球(isothermal spheres)气体组成，并且暂时忽略掉所有可能的扰动以及磁场的影响。在这个情况下，当GMCs质量达到金斯质量的时候它就会在自身引力下塌缩。</p>
+<p>$$M_J=\frac{\pi ^{5\div 2}}{6}\frac{c<em>s^3}{(G^3\rho)^{1\div 2}}\sim 40M</em>{solar}(\frac{c<em>s}{0.2km s^{-1}})^3)(\frac{n</em>{H_2}}{100cm^{-3}})^{-1/2}$$</p>
+<p>这里假设了平均的分子质量为分子氢的质量$3.4\times 10^{24}g$。</p>
+<p>令表面压力(surface pressure)$P_{th}=\rho c_s^2$，我们就得到了一个更合适的金斯质量，叫Bonnor-Ebert质量。</p>
+<p>$$M_{BE}=1.182\frac{c_s^3}{(G^3\rho)^{1/2}}=1.182\frac{c<em>s^4}{(G^3P</em>{th})^{1/2}}$$</p>
+<p>质量大于这个$M_{BE}$的云块，光凭其热压已经无法停止塌缩。</p>
+<blockquote>
+<p>这个表达形式和热金斯质量很像。</p>
+</blockquote>
+<ul>
+<li>protostellar core的质量和这个Bonnor-Ebert质量相拟，于是我们可以粗略的说，基本上它们是由热压来和引力塌缩抗衡的。</li>
+<li>GMCs和分子团块的质量则超出了这个热金斯质量几个量级，这么一来，如果没有其他的压力存在，它们应该在自由落体时标下塌缩：$$\tao =(\frac{3\pi}{32G\mean{\rho}})^{1/2}\sim 3.6\times 10^6yr(\frac{n_{H_2}}{100cm^{-3}})^{-1/2}$$.<ul>
+<li>算一算，这个时标比看到的分子云的年龄小太多了。那么，一定存在一些非热压成分的力量阻止引力塌缩。</li>
+</ul>
+</li>
+</ul>
+<p>那么估计就得考虑扰动了。<br>如果扰动是各项同性的，我们只要把上面的式子中声速替换为一个等效声速$c_{s,eff}^2=c_s^2+\sigma ^2$即可。</p>
+<blockquote>
+<p>这里的$\sigma$理解为扰动产生的均方速度(mean squre velocity).我们可以反推，对于一坨$10^6M_{solar}$的GMC将需要$\sigma \sim 6km s^{-1}$来维持平衡，这个数字和观测到的分子谱线线宽已经相当了。这表明，GMCs以及其子团块很可能就是由扰动支撑的。。</p>
+</blockquote>
+<p>除了扰动以外，还有一个可能的非热压因素——磁场。<br>我们让一坨云的势能和磁场能相等，可得到一个特征质量：<br>$$M<em>\phai \same \frac{5^{3/2}}{48\pi ^2}\frac{B^3}{G^{3/2}\rho ^2} \sim 1.6\times 10^5M</em>{solar}(\frac{n_{H_2}}{100cm^{-3}})^{-2}(\frac{B}{30\miu G})^3$$</p>
+<blockquote>
+<p>这里已经假设了云里面的磁场是均匀的。磁场不一样的话这个特征质量是可能不一样的。<br>质量大于这个特征质量的云块，磁场自身</p>
+</blockquote>
+<h1 id="巨分子云的形成"><a href="#巨分子云的形成" class="headerlink" title="巨分子云的形成"></a>巨分子云的形成</h1><h2 id="分子氢的形成"><a href="#分子氢的形成" class="headerlink" title="分子氢的形成"></a>分子氢的形成</h2><h2 id="“云”的形成"><a href="#“云”的形成" class="headerlink" title="“云”的形成"></a>“云”的形成</h2><h1 id="是什么在控制恒星形成的效率-star-formation-efficiency"><a href="#是什么在控制恒星形成的效率-star-formation-efficiency" class="headerlink" title="是什么在控制恒星形成的效率(star formation efficiency)"></a>是什么在控制恒星形成的效率(star formation efficiency)</h1><h2 id="磁场"><a href="#磁场" class="headerlink" title="磁场"></a>磁场</h2><h2 id="超音速湍流-supersonic-turbulence"><a href="#超音速湍流-supersonic-turbulence" class="headerlink" title="超音速湍流(supersonic turbulence)"></a>超音速湍流(supersonic turbulence)</h2><h2 id="自调整-self-regulation"><a href="#自调整-self-regulation" class="headerlink" title="自调整(self-regulation)"></a>自调整(self-regulation)</h2><h1 id="作为individual-star的形成"><a href="#作为individual-star的形成" class="headerlink" title="作为individual star的形成"></a>作为individual star的形成</h1><h2 id="低质量恒星的形成"><a href="#低质量恒星的形成" class="headerlink" title="低质量恒星的形成"></a>低质量恒星的形成</h2><h2 id="大质量恒星的形成"><a href="#大质量恒星的形成" class="headerlink" title="大质量恒星的形成"></a>大质量恒星的形成</h2><h1 id="恒星形成的经验定律"><a href="#恒星形成的经验定律" class="headerlink" title="恒星形成的经验定律"></a>恒星形成的经验定律</h1><h2 id="the-Kennicutt-Schmidt-Law"><a href="#the-Kennicutt-Schmidt-Law" class="headerlink" title="the Kennicutt-Schmidt Law"></a>the Kennicutt-Schmidt Law</h2><h2 id="Local-Star-Formation-Laws"><a href="#Local-Star-Formation-Laws" class="headerlink" title="Local Star-Formation Laws"></a>Local Star-Formation Laws</h2><h2 id="Star-Formation-Thresholds"><a href="#Star-Formation-Thresholds" class="headerlink" title="Star-Formation Thresholds"></a>Star-Formation Thresholds</h2><h1 id="原初质量函数（IMF）"><a href="#原初质量函数（IMF）" class="headerlink" title="原初质量函数（IMF）"></a>原初质量函数（IMF）</h1><h2 id="观测限制"><a href="#观测限制" class="headerlink" title="观测限制"></a>观测限制</h2><h2 id="理论模型"><a href="#理论模型" class="headerlink" title="理论模型"></a>理论模型</h2><h1 id="第三星族星的形成"><a href="#第三星族星的形成" class="headerlink" title="第三星族星的形成"></a>第三星族星的形成</h1>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/天文/" rel="tag"># 天文</a>
+          
+            <a href="/tags/学习笔记/" rel="tag"># 学习笔记</a>
+          
+            <a href="/tags/读书/" rel="tag"># 读书</a>
+          
+            <a href="/tags/星系/" rel="tag"># 星系</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/02/18/2-观测事实/" rel="next" title="2. 观测事实">
+                <i class="fa fa-chevron-left"></i> 2. 观测事实
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/02/27/通勤线路公交区域与费用调查/" rel="prev" title="通勤线路公交区域与费用调查">
+                通勤线路公交区域与费用调查 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/pic2.jpg"
+               alt="陈清祥" />
+          <p class="site-author-name" itemprop="name">陈清祥</p>
+          <p class="site-description motion-element" itemprop="description">我们的征途是星辰大海</p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">72</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">74</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#巨分子云：恒星形成的场所"><span class="nav-number">1.</span> <span class="nav-text">巨分子云：恒星形成的场所</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#观测特征"><span class="nav-number">1.1.</span> <span class="nav-text">观测特征</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动力学状态"><span class="nav-number">1.2.</span> <span class="nav-text">动力学状态</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#巨分子云的形成"><span class="nav-number">2.</span> <span class="nav-text">巨分子云的形成</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#分子氢的形成"><span class="nav-number">2.1.</span> <span class="nav-text">分子氢的形成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#“云”的形成"><span class="nav-number">2.2.</span> <span class="nav-text">“云”的形成</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#是什么在控制恒星形成的效率-star-formation-efficiency"><span class="nav-number">3.</span> <span class="nav-text">是什么在控制恒星形成的效率(star formation efficiency)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#磁场"><span class="nav-number">3.1.</span> <span class="nav-text">磁场</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#超音速湍流-supersonic-turbulence"><span class="nav-number">3.2.</span> <span class="nav-text">超音速湍流(supersonic turbulence)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自调整-self-regulation"><span class="nav-number">3.3.</span> <span class="nav-text">自调整(self-regulation)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#作为individual-star的形成"><span class="nav-number">4.</span> <span class="nav-text">作为individual star的形成</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#低质量恒星的形成"><span class="nav-number">4.1.</span> <span class="nav-text">低质量恒星的形成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#大质量恒星的形成"><span class="nav-number">4.2.</span> <span class="nav-text">大质量恒星的形成</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#恒星形成的经验定律"><span class="nav-number">5.</span> <span class="nav-text">恒星形成的经验定律</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#the-Kennicutt-Schmidt-Law"><span class="nav-number">5.1.</span> <span class="nav-text">the Kennicutt-Schmidt Law</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Local-Star-Formation-Laws"><span class="nav-number">5.2.</span> <span class="nav-text">Local Star-Formation Laws</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Star-Formation-Thresholds"><span class="nav-number">5.3.</span> <span class="nav-text">Star-Formation Thresholds</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#原初质量函数（IMF）"><span class="nav-number">6.</span> <span class="nav-text">原初质量函数（IMF）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#观测限制"><span class="nav-number">6.1.</span> <span class="nav-text">观测限制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#理论模型"><span class="nav-number">6.2.</span> <span class="nav-text">理论模型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第三星族星的形成"><span class="nav-number">7.</span> <span class="nav-text">第三星族星的形成</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">陈清祥</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+  
+
+
+</body>
+</html>

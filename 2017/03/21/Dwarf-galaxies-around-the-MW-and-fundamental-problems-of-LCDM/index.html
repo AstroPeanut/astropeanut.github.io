@@ -1,0 +1,784 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="天文,作业,paper,矮星系," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="这篇文章涉及两篇paper的阅读，分别是MNRAS 454, 2092–2106 (2015)和MNRAS 457, 1931–1943 (2016)。作为我journal club的作业，读了这两篇文章并且做了适当的比较。为便于以后回顾，将其贴在此处。毕竟这两篇文章，尤其第二篇，我认为还是非常有意思的。$\Lambda CDM$模型已经在多方面获得了成功，美中不足是在小尺度（相对）上依然受到mi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dwarf galaxies around the MW and fundamental problems of LCDM">
+<meta property="og:url" content="http://astropeanut.info/2017/03/21/Dwarf-galaxies-around-the-MW-and-fundamental-problems-of-LCDM/index.html">
+<meta property="og:site_name" content="AstroPeanut's Blog">
+<meta property="og:description" content="这篇文章涉及两篇paper的阅读，分别是MNRAS 454, 2092–2106 (2015)和MNRAS 457, 1931–1943 (2016)。作为我journal club的作业，读了这两篇文章并且做了适当的比较。为便于以后回顾，将其贴在此处。毕竟这两篇文章，尤其第二篇，我认为还是非常有意思的。$\Lambda CDM$模型已经在多方面获得了成功，美中不足是在小尺度（相对）上依然受到mi">
+<meta property="og:image" content="http://astropeanut.info/2017/03/21/Dwarf-galaxies-around-the-MW-and-fundamental-problems-of-LCDM/FIRE_properties.png">
+<meta property="og:image" content="http://astropeanut.info/2017/03/21/Dwarf-galaxies-around-the-MW-and-fundamental-problems-of-LCDM/FIRE_SFR.png">
+<meta property="og:image" content="http://astropeanut.info/2017/03/21/Dwarf-galaxies-around-the-MW-and-fundamental-problems-of-LCDM/FIRE_SFR_and_inner_mass.png">
+<meta property="og:image" content="http://astropeanut.info/2017/03/21/Dwarf-galaxies-around-the-MW-and-fundamental-problems-of-LCDM/APOSTLE_missing_satellite_shaded.png">
+<meta property="og:image" content="http://astropeanut.info/2017/03/21/Dwarf-galaxies-around-the-MW-and-fundamental-problems-of-LCDM/APOSTLE_missing_satallite.png">
+<meta property="og:image" content="http://astropeanut.info/2017/03/21/Dwarf-galaxies-around-the-MW-and-fundamental-problems-of-LCDM/APOSTLE_scatter.png">
+<meta property="og:updated_time" content="2017-03-26T07:34:47.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Dwarf galaxies around the MW and fundamental problems of LCDM">
+<meta name="twitter:description" content="这篇文章涉及两篇paper的阅读，分别是MNRAS 454, 2092–2106 (2015)和MNRAS 457, 1931–1943 (2016)。作为我journal club的作业，读了这两篇文章并且做了适当的比较。为便于以后回顾，将其贴在此处。毕竟这两篇文章，尤其第二篇，我认为还是非常有意思的。$\Lambda CDM$模型已经在多方面获得了成功，美中不足是在小尺度（相对）上依然受到mi">
+<meta name="twitter:image" content="http://astropeanut.info/2017/03/21/Dwarf-galaxies-around-the-MW-and-fundamental-problems-of-LCDM/FIRE_properties.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://astropeanut.info/2017/03/21/Dwarf-galaxies-around-the-MW-and-fundamental-problems-of-LCDM/"/>
+
+
+
+
+
+  <title> Dwarf galaxies around the MW and fundamental problems of LCDM | AstroPeanut's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?d15b8cc355d618f75dfd082559510991";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">AstroPeanut's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle">总学渣也不是个办法</p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://astropeanut.info/2017/03/21/Dwarf-galaxies-around-the-MW-and-fundamental-problems-of-LCDM/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="陈清祥">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/pic2.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="AstroPeanut's Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="AstroPeanut's Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Dwarf galaxies around the MW and fundamental problems of LCDM
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-21T14:46:53+08:00">
+                2017-03-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/work/" itemprop="url" rel="index">
+                    <span itemprop="name">工作和技能</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/03/21/Dwarf-galaxies-around-the-MW-and-fundamental-problems-of-LCDM/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://astropeanut.info/2017/03/21/Dwarf-galaxies-around-the-MW-and-fundamental-problems-of-LCDM/" itemprop="commentCount">0</span> comments
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>这篇文章涉及两篇paper的阅读，分别是MNRAS 454, 2092–2106 (2015)和MNRAS 457, 1931–1943 (2016)。作为我journal club的作业，读了这两篇文章并且做了适当的比较。为便于以后回顾，将其贴在此处。毕竟这两篇文章，尤其第二篇，我认为还是非常有意思的。$\Lambda CDM$模型已经在多方面获得了成功，美中不足是在小尺度（相对）上依然受到missing satellite等问题困扰。而这两篇文章都是利用数值模拟，围绕着研究和解决这个问题的角度展开的。</p>
+<a id="more"></a>
+<h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><p>During the last two decades, the LCDM model has been well accepted because of its overwhelming ability to explain various cosmology observations. However, at relatively small scales, there are still some contradictions that need to deal with. Recently, two simulation series work to solve these problems within the LCDM framework. In this paper, I summarize the main results from the two papers, and give insights of how these two work reflect onto the LCDM model. They are both able to relieve or solve the LCDM problems in Local Group environment, but also have their shortages. From the APOSTILE simulation result, there is very good agreement between the model and what we can get so far from the observation. Indeed, the dark matter only runs show the core-cusp problem, the missing satellite problem, the too-big-to-fail problem. However, when introducing hydrodynamics models in Local-Group-like samples, all these problems are literally disappeared. Overall, this paper shows that actually LCDM agrees fairly well on every aspects so far to the Local Group environment, thus gives a insight that the LCDM not only succeeds in explaining the large scale structure properties, but also on small scales like Local Group dwarf galaxies. For the FIRE simulation work, they have a relatively small sample, with only two dwarf galaxies simulated. They focus on the assembly history of dwarf galaxies and how the galaxy formation paths affect the inner structures and the missing satellites problem. They claim that the problems may be relieved by introducing baryons physics, but it may be somehow stochastic.</p>
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>The LCDM (Lambda cold dark matter) model is now the most favored theory for describing the cosmological structure formation on various scales and epochs. It is now frequently referred as the standard cosmological model. From this model, the structure in the universe formed bottom - up hierarchically. Within the last two decades, our understanding of cosmology and large scale structure formation, and hence the galaxy formation model has been well enriched, thanks to the development of both observations and computational methods. In 1995, by using cosmological dark matter only simulation, people found a beautiful equation to describe the dark matter halo structure, which has been show as a great success to describe the density profiles from the observations of bright galaxies. The NFW profile then gives a very useful prediction from the LCDM structure formation.</p>
+<p>The dramatically development of computational method during the past decades plays a very important role on the understanding of the cosmology, structure formation and the galaxy evolution. It has been a great success in using simulations to reproduce, explain and predict the observational results on large amount of situations. However, the LCDM simulations have shown some contradictory results on small scales. In the Local Group, it should have produced much less dwarf galaxies – the so-called missing satellite problem. But this may not be a surprising result, since the supernova feedback process and cosmic reionization may be able to reduce considerable star formation in less massive halos, with some halos even not being able to form stars at all.</p>
+<p>However, for the relatively massive subhalos, the too-big-to-fail problem arises, which many researchers believe is somehow correlated to the core-cusp problem. These halos should not be affected much by the ultra violate background in the reionization epoch, so explaining the too-big-to-fail problems as well as the missing satellites at the same time has been difficult.</p>
+<p>Moreover, the LCDM halos can be surprisingly well fitted as an NFW profile on very large dynamic scale range, which has been recognized as a marvelous success of the LCDM cosmology, which, has a cusp innermost density profile. This raises the core – cusp problem since the observations on local dwarf satellites show central core profiles.</p>
+<p>Overall, comparison of the model with observations is very successful on large scales, but shows some problems on sub-galaxy scales. It is worth noting that these small scales are usually hard to resolve in computer simulations, so it is not yet clear whether the problem is the simulations, non-standard properties of dark matter, or a more radical error in the model.</p>
+<p>Cosmological simulation researchers have been working on these issues since they arose. In this essay, I am going to introduce two recent work among them, and give some personal criticism on it.</p>
+<p>The FIRE simulation paper simulates two galaxies with very high resolution, having both dark matter only runs and hydrodynamic runs. For the APOSTLE paper, however, it cares about the environmental influence, but with relatively low resolution.</p>
+<p>This essay is organized as follows: in section2, I will review the most important results from both the two work, and try to highlight the main advantages and shortages of them thus give an insight of how reliable the conclusions are. In section 3, I will give my conclusion, mainly focusing on comparing this two work, especially from where they show different or even contradictory results. The FIRE simulation paper and the APOSTLE simulation paper will be denoted as O15 and S16 respectively in this essay.</p>
+<h1 id="Criticisms-on-the-Main-Results"><a href="#Criticisms-on-the-Main-Results" class="headerlink" title="Criticisms on the Main Results"></a>Criticisms on the Main Results</h1><p>In this section I will summarize the main results from both papers, highlighting the advantages and shortages related.</p>
+<h2 id="Results-of-the-FIRE-Simulation-Paper"><a href="#Results-of-the-FIRE-Simulation-Paper" class="headerlink" title="Results of the FIRE Simulation Paper"></a>Results of the FIRE Simulation Paper</h2><h3 id="Sample-Properties"><a href="#Sample-Properties" class="headerlink" title="Sample Properties"></a>Sample Properties</h3><p>The O15 work presents multiple ultrahigh resolution cosmological hydrodynamic simulations of two dwarf galaxies which have $M_\star\sim 10^4-10^{6.4}M_{\odot}$ and host dark matter halo mass of $10^{9.5}-10^{10}M_\odot$. One of the two galaxies has a very low stellar mass at redshift 0, which is only $2.1\times 10^4M_\odot$, denoted as ULTRAFAINT throughout the paper. The relatively large dwarf galaxy has a stellar mass of about $2.5\times 10^6M_\odot$ and dark matter halo mass of ${7.7\times 10^9}M_{\odot}$, which is just at the mass that relates to the Local Group problems. By putting the stellar population models in the SPH kernel particles according to mass-weighting and volumn-weighting schemes, they derived two sets of hydrodynamic simulations. Interestingly, for the larger dwarf galaxy, these different choices lead to very different star formation paths. The Feed-Volume simulation, denoted as DWARF-EARLY, results a very early star burst scenario, showing most of its star formation at early times. The Feed-Mass simulation shown as DWARF-LATE on the other hand, has fairly significant star formation rate at low redshifts.  There is also a simulation run with parameters in between, mainly to test the effects of softing lengths, denoted as DWARF-MIDDLE. By comparing the dark matter only, the  DWARF-LATE and the DWARF-EARLY simulation runs, the authors are able to study the baryons effect on solving the Local Group problems and the role of star formation history.</p>
+<p>The star formation is allowed only in dense, molecular, self-gravitating regions with $n&gt;n_{crit}$. It is worth noting that the $n_{crit}$ used in this work is much higher than that of most other zoom-in galaxy formation simulations. The much higher threshold allows the authors to capture highly clustered star formation, but may potentially lead to the change of star formation history and hence influence the inner structure study of the dwarf galaxies.</p>
+<h3 id="Halo-mass-and-Stellar-mass-relation"><a href="#Halo-mass-and-Stellar-mass-relation" class="headerlink" title="Halo mass and Stellar mass relation"></a>Halo mass and Stellar mass relation</h3><p>Fig.1 shows the stellar mass - halo mass relation for the four hydrodynamical runs compared with the observed relation derived from abundance matching study on Local Group galaxies. Both the simulated galaxies show an excellent agreement with observed relation. By comparison, lots of other work failed to recover the relation since it needs a very strong suppression on the baryons-to-star transition. One important information from this figure is that many of these kind of studies have not quite reached the level of suppression that seems to be required by local galaxy counts at all, highlighting the importance of this work.</p>
+<p><center><img src="/2017/03/21/Dwarf-galaxies-around-the-MW-and-fundamental-problems-of-LCDM/FIRE_properties.png" width="600px"></center></p>
+<p class="text-center">Fig.1. This figure gives the stellar mass to halo mass relation at z = 0 for the FIRE simulations. Filled red triangle stands for the ULTRAFAINT run. Empty red square, filled red pentagon, and filled red diamond stand for the DWARF-EARLY, DWARF-MIDDLE, and DWARF-LATE runs, respectively. Circles stand for other published simulations in the literature using subgrid stellar feedback models.</p>
+
+
+
+<h3 id="Star-Formation-History-as-the-Problem-Solver"><a href="#Star-Formation-History-as-the-Problem-Solver" class="headerlink" title="Star Formation History as the Problem Solver"></a>Star Formation History as the Problem Solver</h3><p>From Fig. 1, the three simulation runs for the DWARF give similar results in the stellar mass -  halo mass plot. However, the ULTRAFAINT ends up with a stellar mass about two orders of magnitude smaller than DWARF, though its host halo mass is actually only about 3 times less massive. Another interesting result is that, the inner structure of the three DWARF runs show much difference in spite of the fact that the total mass is similar. All the DWARF runs succeed producing a core inner structure, while the ULTRAFAINT failed. More interestingly, the DWARF-LATE gives a fairly larger core compared to the DWARF-EARLY.</p>
+<p>The authors try to explain the discrepancies by studying the star formation history. Fig.2 gives the star formation history of all the simulation runs related. The ULTRAFAINT simulation forms no stars after z$\sim$2.5. After  z$\sim$6, the ultraviolet background prevents fresh gas from accretion and the stellar feedback keeps self-quenching the system. Until z$\sim$0, the remaining cold gas in it still has not reached the threshold to form stars. DWARF-EARLY forms more than half of stars before z$\sim$2.5, while the DWARF-LATE has a substantial star formation rate down to z$\sim$0. It is also found that the star formation always happens as star bursts on $\sim$100Myr time-scales.</p>
+<p><center><img src="/2017/03/21/Dwarf-galaxies-around-the-MW-and-fundamental-problems-of-LCDM/FIRE_SFR.png" width="900px"></center></p>
+<p class="text-center">Fig.2. Left-hand panel: star formation rates for the hydrodynamical runs presented in FIRE simulations obtained using two different time bins: 10$^8$ yr (full red lines) and 10$^9$ yr (dashed black lines). Right-hand panel: normalized cumulative SFR history for all the hydrodynamical runs. The vertical grey dashed line marks the reionization redshift assumed.</p>
+
+<p>Combining the fact that the DWARF runs and the ULTRA FAINT have different core - cusp inner profile properties, and that they have different star formation rate histories, the authors explore the effects of star formation histories on the inner structure of z$\sim$0 dwarf galaxies. By default, the structure mergers and assembly processes result in an NFW profile which has a cuspy inner feature. If the star formation mainly happens at very high redshifts, before and during the reionization, then the feedback influences little on the structure formation. During this time, both the halo and stellar grows rapidly and the feedback does not dominate the gas dynamics. From z$\sim$3, halo accretion slows down and feedback may strongly affect the dwarf structure at z$\sim$0. This explanation can be further seen from Fig.3. This figure shows the comparison of the cumulative star formation history and the mass of innermost 300pc, 750pc, 2kpc relatively to the dark matter only run result. The left panel gives the result of the late star burst case and the right one shows the early star burst scenario. It is clear that a higher star formation rate at late times indeed produces a bigger decrease in the central dark matter density. This finally leads to different inner core sizes, with the late run of DWARF having a $\sim$1kpc large constant-density core.</p>
+<p><center><img src="/2017/03/21/Dwarf-galaxies-around-the-MW-and-fundamental-problems-of-LCDM/FIRE_SFR_and_inner_mass.png" width="900px"></center></p>
+<p class="text-center">Fig.3. Relations between star formation history and core formation for DWARF-LATE (left) and DWARF-EARLY (right). The green dashed lines are the cumulative star formation histories for each run normalized to its value at z = 0. The vertical line indicates the end phase of the rapid-accretion epoch. Feedback after this time is most capable of forming stable cores that are not regrown by subsequent mergers. The solid lines show the integrated mass within different radii (as labeled) divided by the same mass in the dark matter only runs. Values less than unity indicate the formation of a lower density core than in the dark-matter-only case.</p>
+
+
+<p>After studying the effect of star formation histories, the authors give their answers to the Local Group problems. As numerous studies have shown that there is a transition mass around 10$^{10}M_{\odot}$ under which the halo is not massive enough to maintain the star formation fuel, it is understandable that the dwarf galaxy counts is much lower than the dark matter only simulation’s prediction. For the core - cusp problem, if a galaxy halo fails to have enough star formation at relatively late epochs, then cuspy inner profile will maintain. Otherwise, the core can be produced due to recent star bursts. This is both compatible with the results of comparison between the ULTRAFAINT run versus DWARF runs and between the DWARF runs. This explanation on the core formation also naturally explains the too-big-to-fail problem.</p>
+<p>Although fairly convincing, it should be noted that this star formation history explanation is based on a very small sample, with only one small dwarf galaxy and one relatively massive galaxy. A larger sample is surely needed to further study whether the results deriving the star formation history - inner structure is universal or not.</p>
+<h2 id="Results-of-the-APOSTLE-Simulation-Paper"><a href="#Results-of-the-APOSTLE-Simulation-Paper" class="headerlink" title="Results of the APOSTLE Simulation Paper"></a>Results of the APOSTLE Simulation Paper</h2><h3 id="Sample-Properties-1"><a href="#Sample-Properties-1" class="headerlink" title="Sample Properties"></a>Sample Properties</h3><p>The S16 work is based on a series of simulations designed to match the Local Group properties. 12 zoom-in regions are chosen from the EAGLE simulation. Then the regions are re-simulated as hydrodynamic simulations and dark matter only simulations, at different resolutions. Rather than simulating the dwarf galaxies alone, they focus on pairs of haloes that match the separation, approach velocity, and relative tangential velocity of the MW and Andromeda (M31). From a large cosmological simulation, 12 pairs of haloes with combined virial masses of $\sim$ $2.3\pm0.6\times 10^{12}M_{\odot}$ are selected, compatible with the most recent constrain from the observational aspect. For the highest resolution runs, each of the main galaxies contains more than 20 million particles, among the highest ones of MW scale simulations.</p>
+<p>Studying the systems very much like the Local Group in simulations is obviously a reasonable way to reveal the physics of why the Local Group dwarf galaxies seem not to obey the LCDM predictions. Indeed, compared to the zoom-in simulations on dwarf galaxies themselves, trying to include the full environment properties of Local Group brings more possible gas dynamics, like tidal striping and ram pressure into consideration.</p>
+<h3 id="Dealing-with-Missing-Satellite-Problem"><a href="#Dealing-with-Missing-Satellite-Problem" class="headerlink" title="Dealing with Missing Satellite Problem"></a>Dealing with Missing Satellite Problem</h3><p>Surprisingly, the Local Group simulations match fairly well with the observations – no missing satellite problem seen at all. Fig.4 shows the stellar mass functions from the simulations with comparison to the observed data. The results are shown within 300 kpc region from the main galaxies, and within 2 Mpc from the Local Group mass center. It is impressive that without any further adjustments, the simulation shows a good agreement with the observed number counts of MW and M31 satellites. This result shows that the LCDM model are actually entirely consistent with the observations in Local Group dwarf galaxy counts and stellar mass functions, free of the missing satellites problem.</p>
+<p><center><img src="/2017/03/21/Dwarf-galaxies-around-the-MW-and-fundamental-problems-of-LCDM/APOSTLE_missing_satellite_shaded.png" width="900px"></center></p>
+<p class="text-center">Fig.4. Stellar mass functions from 12 APOSTLE simulations compared to observations, with shaded region from simulations and the black lines from observation derived results. Without further adjustments, the simulation results naturally agree the observed ones, free of missing satellites problem.</p>
+
+<h3 id="The-effect-of-baryons"><a href="#The-effect-of-baryons" class="headerlink" title="The effect of baryons"></a>The effect of baryons</h3><p>The too-big-to-fail problem is thought to be solved by considering the baryons effect. They find that the subhalos with $V_{max} &lt; 30 km\ s^{-1} $ are well affected by the tidal stripping and the suppression of gas supply. As shown in Fig.5, when we consider the dark matter only simulations, the MWs and M31s have averaged 7-8 satellietes with $V_{max} &gt; 30 km\ s^{-1}$ inside 300 kpc, showing a discrepancy to the observations. However, when considering the hydrodynamics simulations, this number drops to 3-4, making a good agreement with observed results.</p>
+<p><center><img src="/2017/03/21/Dwarf-galaxies-around-the-MW-and-fundamental-problems-of-LCDM/APOSTLE_missing_satallite.png" width="600px"></center></p>
+<p class="text-center">Fig.5. Cumulative number of haloes as a function of maximum circular velocity.  The four bottom curves correspond to satellite haloes within 300 kpc of each of the two main galaxies; the top two curves to all systems within 2 Mpc from the Local Group barycentre. Grey/black curves are from dark matter only (DMO) simulations. Coloured curves are for systems that contain luminous galaxies in the hydrodynamic runs. Red circles show measurements of the most massive MW satellites in literature. The dashed line denotes a $V_{max}$ value of 30km/s. The abundance of satellites with $V_{max}&gt;30$ km/s is halved in the hydrodynamic simulations and matches the Milky Way observations. At lower values of $V_{max}$, the drop in the abundance relative to the DMO case increases as fewer and fewer subhaloes host an observable galaxy.</p>
+
+
+
+<h3 id="Stellar-mass-to-halo-mass-relation"><a href="#Stellar-mass-to-halo-mass-relation" class="headerlink" title="Stellar mass to halo mass relation"></a>Stellar mass to halo mass relation</h3><p>The authors also try to see whether they can further meet the the Local Group observations. From Fig.6, the authors claim they can reproduce the right satellites in right halos. It should be noted the Fornax is roughly 100 times brighter than Draco but the halo mass between the two appears similar. Thus models should be able to allocate the satellites into halos with a fairly large scatter. For the satellites with $V_{max}$ below 30 km/s, the scenario is fairly stochastic, with some halos remaining dark, some halos containing a MW dwarf spheroidal like galaxy which typically has experienced severe tidal striping - this leads to a great mass reduction. In the figure the authors compare the circular velocity - stellar mass relation between galaxies in different environments. The blue circles in the left panel are isolated galaxies while the red circles in the right panel are from satellites galaxies. Obviously, even for the similar massive halos, the resulted stellar mass in different environment can have huge differences. Typically, the observed Local Group dwarf galaxies can be reproduced in the similar environment in the LCDM scenario. With the simulation reproduced large scatter on the $V_{max}$ - stellar mass plane, the Local Group dwarf satellites can be easily allocated.</p>
+<p><center><img src="/2017/03/21/Dwarf-galaxies-around-the-MW-and-fundamental-problems-of-LCDM/APOSTLE_scatter.png" width="900px"></center></p>
+<p class="text-center">Fig.6. Stellar mass as a function of maximum circular velocity, for isolated galaxies (blue circles, left) and satellite galaxies (red circles, right) from two LG simulations.</p>
+
+
+<h1 id="Summary-and-Conclusion"><a href="#Summary-and-Conclusion" class="headerlink" title="Summary and Conclusion"></a>Summary and Conclusion</h1><p>It turns out that, in S16 work, the baryons and environment both play a very important role to reproduce the Local Group dwarf satellites related observations. When taking reasonable environment effects into consideration, LCDM hydrodynamic simulation can fairly well reproduce the observed results, free of missing satellites problem, core and cusp problem and too-big-to-fail problem. It is really a convincing work, showing that we can actually find numerous Local Groups in a LCDM-derived simulation, which are compatible with the observations so far with no apparent contradictions. However, due to the fact that this work is limited by resolution and also the potentially existed inappropriate subgrid physics models, it may be still early to confidently claim that the problems on small scales have been indeed solved. Both the development on the simulations and observations are further needed. For example, the observations deriving subhalo masses in literature come from various assumptions and the results are not constrained well yet.</p>
+<p>The O15 work has a even higher resolution on the dwarf galaxy scale. Their idea of solving the Local Group problems are to study the influences from star formation histories. Dwarf galaxies that have late star formation histories tend to have a big inner core, while those whose star formation mainly happens at high redshift have a cuspy inner density profile. By introducing the star formation history effects, the inner structures are able to be changed into cores, solving the core - cusp problem and hence the too-big-to-fail problem. For the missing satellites problem, both these two papers explain it through the idea of considering the critical transition mass from where the subhalo cannot maintain gas.</p>
+<p>The shortage of the O15 work is obvious. In spite of the truth that this work is also limited by the current understanding of subgrid physics: 1.) This work only studies two dwarf galaxies, one is massive and one is less massive. Even though the star formation history model reflects the real physics in the simulated dwarf galaxies, it is far not sure whether this is typical in the dwarf galaxy formation, especially for Local Group dwarfs. 2.) It is worth noting that the density threshold of star formation in this work is much higher than other zoom-in simulations. It is possible that this may lead to a problematic star formation history. Since most of the results are derived from the star formation result, it is worth checking whether this fairly high threshold is reasonable and how much it will affect the results. 3.) From the S16 work, it is likely that environment plays a very important role on reproducing the Local Group observations. Thus it may be problematic to just study a zoom-in galaxy formation. Indeed, this work has low resolution particles around, which can introduce some environment effects. But it in principle can only account in the tidal stripping, without ram pressure effects. What is worse, the ability to capturing tidal stripping may still affected by resolution issues.</p>
+<p>In summary, these two papers both show fairly nice work on solving the LCDM problems from Local Group observations. However, I suggest the S16 work be more convincing at explaining the physical origin of the problems because of the reasons shown above.</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/天文/" rel="tag"># 天文</a>
+          
+            <a href="/tags/作业/" rel="tag"># 作业</a>
+          
+            <a href="/tags/paper/" rel="tag"># paper</a>
+          
+            <a href="/tags/矮星系/" rel="tag"># 矮星系</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/20/IMAGINE项目/" rel="next" title="IMAGINE项目">
+                <i class="fa fa-chevron-left"></i> IMAGINE项目
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/21/《导论》教材研读笔记/" rel="prev" title="《导论》教材研读笔记">
+                《导论》教材研读笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/pic2.jpg"
+               alt="陈清祥" />
+          <p class="site-author-name" itemprop="name">陈清祥</p>
+          <p class="site-description motion-element" itemprop="description">我们的征途是星辰大海</p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">72</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">74</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">2.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Criticisms-on-the-Main-Results"><span class="nav-number">3.</span> <span class="nav-text">Criticisms on the Main Results</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Results-of-the-FIRE-Simulation-Paper"><span class="nav-number">3.1.</span> <span class="nav-text">Results of the FIRE Simulation Paper</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Sample-Properties"><span class="nav-number">3.1.1.</span> <span class="nav-text">Sample Properties</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Halo-mass-and-Stellar-mass-relation"><span class="nav-number">3.1.2.</span> <span class="nav-text">Halo mass and Stellar mass relation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Star-Formation-History-as-the-Problem-Solver"><span class="nav-number">3.1.3.</span> <span class="nav-text">Star Formation History as the Problem Solver</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Results-of-the-APOSTLE-Simulation-Paper"><span class="nav-number">3.2.</span> <span class="nav-text">Results of the APOSTLE Simulation Paper</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Sample-Properties-1"><span class="nav-number">3.2.1.</span> <span class="nav-text">Sample Properties</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dealing-with-Missing-Satellite-Problem"><span class="nav-number">3.2.2.</span> <span class="nav-text">Dealing with Missing Satellite Problem</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-effect-of-baryons"><span class="nav-number">3.2.3.</span> <span class="nav-text">The effect of baryons</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Stellar-mass-to-halo-mass-relation"><span class="nav-number">3.2.4.</span> <span class="nav-text">Stellar mass to halo mass relation</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Summary-and-Conclusion"><span class="nav-number">4.</span> <span class="nav-text">Summary and Conclusion</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">陈清祥</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+  
+
+
+</body>
+</html>

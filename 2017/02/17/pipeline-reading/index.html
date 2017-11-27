@@ -1,0 +1,896 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="天文,pipeline,HI文章,代码," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="要尽快读懂Attila的pipeline代码，并且运行。同时运行。遇到的问题这两天同步问他搞懂。至于pipeline的运行方式，可以参考NRAO的pipeline官方介绍文档。
+
+由于这个pipeline是小老板在官方的原始pipeline基础上修改成的，所以官方对于这些代码的一些说明是值得注意的。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="pipeline_reading">
+<meta property="og:url" content="http://astropeanut.info/2017/02/17/pipeline-reading/index.html">
+<meta property="og:site_name" content="AstroPeanut's Blog">
+<meta property="og:description" content="要尽快读懂Attila的pipeline代码，并且运行。同时运行。遇到的问题这两天同步问他搞懂。至于pipeline的运行方式，可以参考NRAO的pipeline官方介绍文档。
+
+由于这个pipeline是小老板在官方的原始pipeline基础上修改成的，所以官方对于这些代码的一些说明是值得注意的。">
+<meta property="og:image" content="http://astropeanut.info/2017/02/17/pipeline-reading/flow_chart_1.png">
+<meta property="og:image" content="http://astropeanut.info/2017/02/17/pipeline-reading/flow_chart_2.png">
+<meta property="og:image" content="http://astropeanut.info/2017/02/17/pipeline-reading/flow_chart_3.png">
+<meta property="og:updated_time" content="2017-03-26T07:40:32.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="pipeline_reading">
+<meta name="twitter:description" content="要尽快读懂Attila的pipeline代码，并且运行。同时运行。遇到的问题这两天同步问他搞懂。至于pipeline的运行方式，可以参考NRAO的pipeline官方介绍文档。
+
+由于这个pipeline是小老板在官方的原始pipeline基础上修改成的，所以官方对于这些代码的一些说明是值得注意的。">
+<meta name="twitter:image" content="http://astropeanut.info/2017/02/17/pipeline-reading/flow_chart_1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://astropeanut.info/2017/02/17/pipeline-reading/"/>
+
+
+
+
+
+  <title> pipeline_reading | AstroPeanut's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?d15b8cc355d618f75dfd082559510991";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">AstroPeanut's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle">总学渣也不是个办法</p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://astropeanut.info/2017/02/17/pipeline-reading/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="陈清祥">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/pic2.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="AstroPeanut's Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="AstroPeanut's Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                pipeline_reading
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-17T17:10:23+08:00">
+                2017-02-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/work/" itemprop="url" rel="index">
+                    <span itemprop="name">工作和技能</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/02/17/pipeline-reading/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://astropeanut.info/2017/02/17/pipeline-reading/" itemprop="commentCount">0</span> comments
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>要尽快读懂Attila的pipeline代码，并且运行。同时运行。遇到的问题这两天同步问他搞懂。<br>至于pipeline的运行方式，可以参考NRAO的pipeline官方介绍文档。</p>
+</blockquote>
+<p>由于这个pipeline是小老板在官方的原始pipeline基础上修改成的，所以官方对于这些代码的一些说明是值得注意的。<a id="more"></a><br>其在2016年3月的workshop幻灯片里面给出的pipeline流程图：<br><img src="/2017/02/17/pipeline-reading/flow_chart_1.png" alt="流程图1" title="流程图1"><br><img src="/2017/02/17/pipeline-reading/flow_chart_2.png" alt="流程图2" title="流程图2"><br><img src="/2017/02/17/pipeline-reading/flow_chart_3.png" alt="流程图3" title="流程图3"></p>
+<p>以及，幻灯片里面提到的，谱线观测特别需要注意的地方：</p>
+<p>Several steps in the real-time pipeline may not be appropriate for spectral line data:</p>
+<ul>
+<li>Hanning smoothing (increases effective channel width)</li>
+<li>Last run of RFLAG on target (may eliminate your line as interference!)</li>
+<li>Statwt calculates rms based on scatter of channels per spw, per visibility; may want to run manually with channel selection turned on to eliminate use of channels containing line emission in calculating the rms</li>
+</ul>
+<h2 id="The-Pipeline"><a href="#The-Pipeline" class="headerlink" title="The Pipeline"></a>The Pipeline</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">version = &quot;1.2.2&quot;</div><div class="line">svnrevision = &apos;9883&apos;</div><div class="line">date = &quot;2013May16&quot;</div><div class="line"></div><div class="line">print &quot;Pipeline version &quot;+version+&quot; for use with CASA 4.1.0&quot;</div><div class="line">import sys</div><div class="line"></div><div class="line">[major,minor,revision] = casadef.casa_version.split(&apos;.&apos;)</div><div class="line">casa_version = 100*int(major)+10*int(minor)+int(revision)</div><div class="line">if casa_version &lt; 410:</div><div class="line">    sys.exit(&quot;Your CASA version is &quot;+casadef.casa_version+&quot;, please re-start using CASA 4.1.0&quot;)</div></pre></td></tr></table></figure>
+<p>这里定义脚本所在目录位置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># Define location of pipeline</div><div class="line">#pipepath=&apos;/lustre/aoc/users/emomjian/HI/pipeline/scripts_chiles/&apos;</div><div class="line">pipepath=&apos;/home/apopping/JVLA_stacking/scripts_jvla/&apos;</div></pre></td></tr></table></figure>
+<p>这里定义日志存放位置及其他日志相关输出设置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">#This is the default time-stamped casa log file, in case we</div><div class="line">#    need to return to it at any point in the script</div><div class="line">log_dir=&apos;logs&apos;</div><div class="line">if not os.path.exists(log_dir):</div><div class="line">    os.makedirs(log_dir)</div><div class="line"></div><div class="line">maincasalog = casalogger.func_globals[&apos;thelogfile&apos;]</div><div class="line"></div><div class="line">def logprint(msg, logfileout=maincasalog):</div><div class="line">    print (msg)</div><div class="line">    casalog.setlogfile(logfileout)</div><div class="line">    casalog.post(msg)</div><div class="line">    casalog.setlogfile(maincasalog)</div><div class="line">    casalog.post(msg)</div><div class="line">    return</div></pre></td></tr></table></figure>
+<p>这里配置时间输出文档，记录程序各部分时间消耗相关信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">#Create timing profile list and file if they don&apos;t already exist</div><div class="line">if &apos;time_list&apos; not in globals():</div><div class="line">    time_list = []</div><div class="line"></div><div class="line">timing_file=&apos;logs/timing.log&apos;</div><div class="line"></div><div class="line">if not os.path.exists(timing_file):</div><div class="line">    timelog=open(timing_file,&apos;w&apos;)</div><div class="line">else:</div><div class="line">    timelog=open(timing_file,&apos;a&apos;)</div><div class="line"></div><div class="line">def runtiming(pipestate, status):</div><div class="line">    &apos;&apos;&apos;Determine profile for a given state/stage of the pipeline</div><div class="line">    &apos;&apos;&apos;</div><div class="line">    time_list.append(&#123;&apos;pipestate&apos;:pipestate, &apos;time&apos;:time.time(), &apos;status&apos;:status&#125;)</div><div class="line"></div><div class="line">    if (status == &quot;end&quot;):</div><div class="line">        timelog=open(timing_file,&apos;a&apos;)</div><div class="line">        timelog.write(pipestate+&apos;: &apos;+str(time_list[-1][&apos;time&apos;] - time_list[-2][&apos;time&apos;])+&apos; sec \n&apos;)</div><div class="line">        timelog.flush()</div><div class="line">        timelog.close()</div><div class="line">        #with open(maincasalog, &apos;a&apos;) as casalogfile:</div><div class="line">        #    tempfile = open(&apos;logs/&apos;+pipestate+&apos;.log&apos;,&apos;r&apos;)</div><div class="line">        #    casalogfile.write(tempfile.read())</div><div class="line">        #    tempfile.close()</div><div class="line">        #casalogfile.close()</div><div class="line"></div><div class="line">    return time_list</div></pre></td></tr></table></figure>
+<p>“正文”开始</p>
+<blockquote>
+<p>startup这个脚本里面主要是一堆的import，比如import了numpy, casa….,另外运行了EVLA_functions.py和lib_EVLApipeutils.py。这两个里面都定义和编写了一些pipeline运行过程中可能会用到的函数。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">######################################################################</div><div class="line"></div><div class="line"># The following script includes all the definitions and functions and</div><div class="line"># prior inputs needed by a run of the pipeline.</div><div class="line"></div><div class="line">time_list=runtiming(&apos;startup&apos;, &apos;start&apos;)</div><div class="line">execfile(pipepath+&apos;EVLA_pipe_startup.py&apos;)</div><div class="line">time_list=runtiming(&apos;startup&apos;, &apos;end&apos;)</div><div class="line">pipeline_save()</div></pre></td></tr></table></figure>
+<p>python里面的try..except语句是用来做异常处理的。try后面跟操作，但是异常发生，则执行except.这里出现try的动机可以理解为防止出现异常的编程模式。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">######################################################################</div><div class="line"></div><div class="line">try:</div><div class="line"></div><div class="line">######################################################################</div></pre></td></tr></table></figure>
+<p>EVLA_pipe_import.py是用来导入数据的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># IMPORT THE DATA TO CASA</div><div class="line"></div><div class="line">    execfile(pipepath+&apos;EVLA_pipe_import.py&apos;)</div></pre></td></tr></table></figure>
+<p>EVLA_pipe_hanning.py是用来对数据进行hanning平滑的。可选操作。如果有窄带RFI的话会比较重要。这个脚本主要是执行casa的hanningsmooth命令。<br>疑问？</p>
+<ol>
+<li>RFI的窄带和宽带？</li>
+<li>hanning平滑的相关知识？</li>
+<li>为什么hanning对于窄带RFI比较重要？</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">######################################################################</div><div class="line"></div><div class="line"># HANNING SMOOTH (OPTIONAL, MAY BE IMPORTANT IF THERE IS NARROWBAND RFI)</div><div class="line"></div><div class="line">    execfile(pipepath+&apos;EVLA_pipe_hanning.py&apos;)</div></pre></td></tr></table></figure>
+<p>EVLA_pipe_msinfo.py是用来收集数据的一些基本信息的，并画出一些统计图样。<br>这个脚本中主要用到的casa命令有listobs,plotms,plotants,flagcmd。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">######################################################################</div><div class="line"></div><div class="line"># GET SOME INFORMATION FROM THE MS THAT WILL BE NEEDED LATER, LIST</div><div class="line"># THE DATA, AND MAKE SOME PLOTS</div><div class="line"></div><div class="line">    execfile(pipepath+&apos;EVLA_pipe_msinfo.py&apos;)</div><div class="line"></div><div class="line">######################################################################</div></pre></td></tr></table></figure>
+<p>EVLA_pipe_flagall.py用来执行一些初始的flagging操作：<br>里面用到的flag模式有，summary,’antennas not on source’, shadow, zeros.<br>这里的这个online flags是什么(?)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">time based:</div><div class="line"></div><div class="line">online flags (?)</div><div class="line">shadowed data flagging;</div><div class="line">zeros;</div><div class="line">pointing scans (?)</div><div class="line">quacking;</div><div class="line"></div><div class="line">channel based:</div></pre></td></tr></table></figure>
+<p>EVLA_pipe_flagall.py每个spw的最后5%的channel丢掉，每个基带的最后10个channel丢掉。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"># DETERMINISTIC FLAGGING:</div><div class="line"># TIME-BASED: online flags, shadowed data, zeroes, pointing scans, quacking</div><div class="line"># EM: The next part has been removed from the code</div><div class="line"># CHANNEL-BASED: end 5% of channels of each spw, 10 end channels at</div><div class="line"># edges of basebands</div><div class="line"></div><div class="line">    execfile(pipepath+&apos;EVLA_pipe_flagall.py&apos;)</div><div class="line"></div><div class="line">######################################################################</div><div class="line"></div><div class="line"># SPLIT THE CONTINUUM (128 MHZ WIDE) SPWS AND FLAG THEM</div><div class="line"># EM: use this only for the main CHILES survey</div><div class="line"></div><div class="line">#AP     execfile(pipepath+&apos;EVLA_pipe_continuum_split.py&apos;)</div><div class="line"></div><div class="line">######################################################################</div></pre></td></tr></table></figure>
+<p>EVLA_pipe_flagant.py用来flag掉不理想的天线的数据。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"># FLAGGING BAD ANTENNAS:</div><div class="line"></div><div class="line">    execfile(pipepath+&apos;EVLA_pipe_flagant.py&apos;)</div><div class="line"></div><div class="line">######################################################################</div><div class="line"></div><div class="line"># PREPARE FOR CALIBRATIONS</div><div class="line"># Fill model columns for primary calibrators</div></pre></td></tr></table></figure>
+<p>EVLA_pipe_calprep.py做一些校准之前的准备工作：把model数据的信息给主校准源。这里用到的命令是setjy</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">    execfile(pipepath+&apos;EVLA_pipe_calprep.py&apos;)</div><div class="line"></div><div class="line">######################################################################</div></pre></td></tr></table></figure>
+<p>EVLA_pipe_priorcals.py用来做预校准。（因为总是校准-flag-校准…这么来的）这一步骤相当于我原先写的pipeline的“事先准备”部分<br>包括：<br>gain curves校准；<br>opacities校准；<br>天线位置校正；<br>requantizer gains (?)</p>
+<p>用到的命令为’gc’的gencal. (L band的大气影响很小，所以不需要’opac’模式的gencal了)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"># PRIOR CALIBRATIONS</div><div class="line"># Gain curves, opacities, antenna position corrections,</div><div class="line"># requantizer gains (NB: requires CASA 4.1!).  Also plots switched</div><div class="line"># power tables, but these are not currently used in the calibration</div><div class="line"># EM: removed making and plotting switched power tables; not needed.</div><div class="line"></div><div class="line">    execfile(pipepath+&apos;EVLA_pipe_priorcals.py&apos;)</div><div class="line"></div><div class="line">#*********************************************************************</div></pre></td></tr></table></figure>
+<p>EVLA_testBPdcals.py用来先看下目前得到的结果是啥样子——通过查看bandpass校准源和delay校准源。这里用到了gaincal, bandpass, plotcal.是用目前的还很raw的数据来做phase校准然后做bandpass校准，并且画出两个calibrator分别的amp和phase的solution的图。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># INITIAL TEST CALIBRATIONS USING BANDPASS AND DELAY CALIBRATORS</div><div class="line"></div><div class="line">    execfile(pipepath+&apos;EVLA_pipe_testBPdcals.py&apos;)</div><div class="line"></div><div class="line">#*********************************************************************</div></pre></td></tr></table></figure>
+<p>注意这一步骤取消掉了，attila的笔记说是这一步骤对于有RFI的L-band数据效果非常糟糕。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"># IDENTIFY AND FLAG BASEBANDS WITH BAD DEFORMATTERS OR RFI BASED ON</div><div class="line"># BP TABLE AMPS</div><div class="line"># EM: removed this; severe consequences for L-band data with RFI</div><div class="line"></div><div class="line">#    execfile(pipepath+&apos;EVLA_pipe_flag_baddeformatters.py&apos;)</div><div class="line"></div><div class="line">#*********************************************************************</div><div class="line"></div><div class="line"># IDENTIFY AND FLAG BASEBANDS WITH BAD DEFORMATTERS OR RFI BASED ON</div><div class="line"># BP TABLE PHASES</div><div class="line"># EM: removed this; severe consequences for L-band data with RFI</div><div class="line"></div><div class="line">#    execfile(pipepath+&apos;EVLA_pipe_flag_baddeformattersphase.py&apos;)</div><div class="line"></div><div class="line">######################################################################</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"># Flag spws that have no calibration at this point</div><div class="line"># EM: removed this, delays will be per 1 spw per baseband. This will flag many spw&apos;s.</div><div class="line"></div><div class="line">#    execfile(pipepath+&apos;EVLA_pipe_flag_uncalspws1.py&apos;)</div><div class="line"></div><div class="line">#*********************************************************************</div></pre></td></tr></table></figure>
+<p>EVLA_pipe_checkflag.py在这里用来rflag一下所有的校准源用以去除可能的RFI。这里被attila改成了两个iterations。<br>这里面的流程如下：</p>
+<ol>
+<li>手动flag，应该会出来一个界面或者至少让输入flag的区间然后flag掉</li>
+<li>clip。这里设置了阈值为40 Jy</li>
+<li>rflag。阈值选取的sigma分别为4和3</li>
+<li>extend flagging</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"># FLAG POSSIBLE RFI ON BP CALIBRATOR USING RFLAG</div><div class="line"># EM: The script here has been modified to do two iterations of RFLAG on the BP cal</div><div class="line"></div><div class="line">    execfile(pipepath+&apos;EVLA_pipe_checkflag.py&apos;)</div><div class="line"></div><div class="line">######################################################################</div><div class="line"></div><div class="line"># DO SEMI-FINAL DELAY AND BANDPASS CALIBRATIONS</div><div class="line"># (semi-final because we have not yet determined the spectral index</div><div class="line"># of the bandpass calibrator)</div></pre></td></tr></table></figure>
+<p>这里的EVLA_pipe_semiFinalBPdcals1.py用来做delay和bandpass校准。<br>这里包括：</p>
+<ol>
+<li>重新选取reference antenna。（这一步骤应该是自动进行的，需要手工操作。动机是，经过前面那么一堆flag的折腾，说不定这个参考天线应该换一换了。）</li>
+<li>对phase校准源进行G类型p模式的gaincal，并plotcal，横轴是频率纵轴是delay</li>
+<li>对bandpass校准源进行G类型p模式的gaincal，scan被combine。然后plotcal，横轴是时间，纵轴是phase</li>
+<li>对bandpass校准源执行B类型的bandpass操作。scan被combine。然后把bpsolution用plotcal画出来。横轴是频率纵轴是amp，以及横轴是频率纵轴是phase</li>
+<li>把结果applycal到所有的校准源数据</li>
+<li>把bandpass校准源的横轴频率纵轴amp的结果图plotms出来。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">    execfile(pipepath+&apos;EVLA_pipe_semiFinalBPdcals1.py&apos;)</div><div class="line"></div><div class="line">######################################################################</div><div class="line"></div><div class="line"># Use flagdata again on calibrators</div><div class="line"># EM: The script here has been modified to do two iterations of RFLAG on calibrators</div></pre></td></tr></table></figure>
+<p>这里的EVLA_pipe_checkflag_semiFinal.py用来对calibrator做rflag。被attila修正为两个iterations.</p>
+<ol>
+<li>先把校准源执行clip的flagging操作，阈值分别设置为40Jy何20Jy</li>
+<li>对校准源rflag</li>
+<li>对校准源extend flagging</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">    execfile(pipepath+&apos;EVLA_pipe_checkflag_semiFinal.py&apos;)</div><div class="line"></div><div class="line">######################################################################</div></pre></td></tr></table></figure>
+<p>再做semiFinalBPdcals.py。这个程序跟上面那个*BPcals1.py差别不大。先找到参考天线，然后做一系列的校准并画图。这里提到了说进阶这来个rflag，但是我在这个脚本里面没看到再次进行flag的程序段。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"># RE-RUN semiFinalBPdcals.py FOLLOWING rflag</div><div class="line"></div><div class="line">    execfile(pipepath+&apos;EVLA_pipe_semiFinalBPdcals2.py&apos;)</div><div class="line"></div><div class="line">######################################################################</div><div class="line"></div><div class="line"># Flag spws that have no calibration at this point</div><div class="line"># EM: removed this, delays will be per 1 spw per baseband. This will flag many spw&apos;s.</div><div class="line"></div><div class="line">#    execfile(pipepath+&apos;EVLA_pipe_flag_uncalspws1b.py&apos;)</div><div class="line"></div><div class="line">######################################################################</div></pre></td></tr></table></figure>
+<p>EVLA_pipe_solint.py是用来得到scan需要预先知道的solint的。注意solint的意思是solution interval. (?)</p>
+<ol>
+<li>先split，把calibrator数据拿出来</li>
+<li>然后分析(?)</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"># DETERMINE SOLINT FOR SCAN-AVERAGE EQUIVALENT</div><div class="line"></div><div class="line">    execfile(pipepath+&apos;EVLA_pipe_solint.py&apos;)</div><div class="line"></div><div class="line">######################################################################</div></pre></td></tr></table></figure>
+<p>EVLA_pipe_testgains.py的目的是DO TEST GAIN CALIBRATIONS TO SEE IF MORE FLAGGING IS NEEDED AND TO ESTABLISH SHORT AND LONG SOLINTS</p>
+<ol>
+<li>重新确定参考天线</li>
+<li>经过一些算法判断solint</li>
+<li>画出gain calibrator的solution</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># DO TEST GAIN CALIBRATIONS TO ESTABLISH SHORT SOLINT</div><div class="line"></div><div class="line">    execfile(pipepath+&apos;EVLA_pipe_testgains.py&apos;)</div><div class="line"></div><div class="line">#*********************************************************************</div></pre></td></tr></table></figure>
+<p>EVLA_pipe_fluxgains.py用来做一个gain table，里面有gain和opacity的校准。这是为了最后的amp.cal服务，并最终为了flux density的bootstraping服务。(?)</p>
+<ol>
+<li>setjy</li>
+<li>G-type p-mode gaincal应用到所有校准源.</li>
+<li>G-type ap-mode gaincal应用到所有校准源。</li>
+</ol>
+<p>啥叫bootstrapping?统计中对应的名词应该是“自举法”。简单说就是对于一个样本进行又放回的抽样，多次后形成一系列的样本，对于这些样本的分析可以得到原始样本统计量的分布。这里的考虑是，如果只有一个样本的话，可以得到相应的统计量，但是无法得到统计量的分布。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"># MAKE GAIN TABLE FOR FLUX DENSITY BOOTSTRAPPING</div><div class="line"># Make a gain table that includes gain and opacity corrections for final</div><div class="line"># amp cal, for flux density bootstrapping</div><div class="line"></div><div class="line">    execfile(pipepath+&apos;EVLA_pipe_fluxgains.py&apos;)</div><div class="line"></div><div class="line">######################################################################</div><div class="line"></div><div class="line"># FLAG GAIN TABLE PRIOR TO FLUX DENSITY BOOTSTRAPPING</div><div class="line"># NB: need to break here to flag the gain table interatively, if</div><div class="line"># desired; not included in real-time pipeline</div><div class="line"></div><div class="line">#    execfile(pipepath+&apos;EVLA_pipe_fluxflag.py&apos;)</div><div class="line"></div><div class="line">#*********************************************************************</div></pre></td></tr></table></figure>
+<p>这里的EVLA_pipe_fluxboot.py是用来对所有的校准源的做谱流量自举分析并进行power law拟合，并把拟合结果加入到model列中 (?)</p>
+<ol>
+<li>fluxscale</li>
+<li>plotms</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"># DO THE FLUX DENSITY BOOTSTRAPPING -- fits spectral index of</div><div class="line"># calibrators with a power-law and puts fit in model column</div><div class="line"></div><div class="line">    execfile(pipepath+&apos;EVLA_pipe_fluxboot.py&apos;)</div><div class="line"></div><div class="line">######################################################################</div></pre></td></tr></table></figure>
+<p>EVLA_pipe_finalcals.py用来制作最终的校准table</p>
+<ol>
+<li>重新找一下参考天线</li>
+<li>G-type p-mode gaincal应用到delay calibrator</li>
+<li>K-type p-mode gaincal应用到delay calibrator。至此delay校准结束。</li>
+<li>G-type p-mode gaincal应用到bandpass calibrator，solint=soilnt_1</li>
+<li>B-type solint=inf的bandpass应用到bandpass calibrator</li>
+<li>这一步，Derive an average phase solution for the bandpass calibrator to apply to all data to make QA plots easier to interpret，对于G-type p-mode的gaincal应用到bandpass calibrator，solint=inf</li>
+<li>unflag操作，对于上一步刚进行的gaincal。因为进行这些gaincal的时候，很不好的solution的数据可能会被flag掉。</li>
+<li>applycal于所有的calibrator</li>
+<li>split不同的calibrator</li>
+<li>对于每一个calibrator执行setjy操作</li>
+<li>对calibrator的数据进行G-type p-mode的gaincal得到phaseshortgaincal.g</li>
+<li>对calibrator的数据进行G-type ap-mode的gaincal，solint=gain_solint_2得到finalampgaincal.g</li>
+<li>对calibrator的数据进行G-type p-mode的gaincal得到finalphasegaincal.g</li>
+<li>plotcal一堆图。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># MAKE FINAL CALIBRATION TABLES</div><div class="line"></div><div class="line">    execfile(pipepath+&apos;EVLA_pipe_finalcals.py&apos;)</div><div class="line"></div><div class="line">######################################################################</div></pre></td></tr></table></figure>
+<p>EVLA_pipe_applycals.py把得到的solution应用到数据中并检查calibrated数据如何</p>
+<ol>
+<li>applycal</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"># APPLY ALL CALIBRATIONS AND CHECK CALIBRATED DATA</div><div class="line"></div><div class="line">    execfile(pipepath+&apos;EVLA_pipe_applycals.py&apos;)</div><div class="line"></div><div class="line">######################################################################</div><div class="line"></div><div class="line"># Flag spws that have no calibration at this point</div><div class="line"># EM: removed this, delays will be per 1 spw per baseband. This will flag many spw&apos;s.</div><div class="line"></div><div class="line">#    execfile(pipepath+&apos;EVLA_pipe_flag_uncalspws2.py&apos;)</div><div class="line"></div><div class="line">######################################################################</div></pre></td></tr></table></figure>
+<p>EVLA_pipe_targetflag.py是用来对包括target的所有数据做一次rflag的。</p>
+<ol>
+<li>clip flagging于所有的数据。对于两个calibrator设置的阈值是不同的，一个是40Jy一个是10Jy</li>
+<li>rflag应用于所有的数据</li>
+<li>extend仅应用于target数据</li>
+<li>plotms</li>
+<li>summary模式flagdata</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"># EM: NOW RUN ALL the CALIBRATED DATA THROUGH rflag</div><div class="line"># EM: This is not limited to the target source (as the name may imply)</div><div class="line"># EM: but it could be made to do target only if need be</div><div class="line"></div><div class="line">    execfile(pipepath+&apos;EVLA_pipe_targetflag.py&apos;)</div><div class="line"></div><div class="line">######################################################################</div><div class="line"># EM: do not do this for spectral line observations</div><div class="line"># CALCULATE DATA WEIGHTS BASED ON ST. DEV. WITHIN EACH SPW</div><div class="line"></div><div class="line">#    execfile(pipepath+&apos;EVLA_pipe_statwt.py&apos;)</div><div class="line"></div><div class="line">######################################################################</div></pre></td></tr></table></figure>
+<p>EVLA_pipe_filecollect.py是用来整理得到的这些table和plots的，以便于下一步weblog的生成。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"># COLLECT RELEVANT PLOTS AND TABLES</div><div class="line"></div><div class="line">    execfile(pipepath+&apos;EVLA_pipe_filecollect.py&apos;)</div><div class="line"></div><div class="line">######################################################################</div></pre></td></tr></table></figure>
+<p>EVLA_pipe_weblog.py用来写入网络日志。各种write.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"># WRITE WEBLOG</div><div class="line"></div><div class="line">    execfile(pipepath+&apos;EVLA_pipe_weblog.py&apos;)</div><div class="line"></div><div class="line">######################################################################</div><div class="line"></div><div class="line"># Incorporate HG&apos;s imaging script</div><div class="line"># The calibrated MS will be averaged in frequency per spw, and</div><div class="line"># continuum images of each field for each spw will be made</div><div class="line"></div><div class="line">#AP    execfile(pipepath+&apos;/imaging/EVLA_imaging.py&apos;)</div><div class="line"></div><div class="line">#######################################</div></pre></td></tr></table></figure>
+<p>这里的JVLA_pipe_uvcontsub.py是小老板加进来的，用来做uv连续谱提取。<br>solint= ‘212.1000000056s’ fitorder = 2</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">#AP</div><div class="line">#  Incorporate a two new scripts that do the continuum subtraction and image making:</div><div class="line"></div><div class="line">    execfile(pipepath + &apos;JVLA_pipe_uvcontsub.py&apos;)</div><div class="line"></div><div class="line">#    execfile(pipepath + &apos;JVLA_pipe_clean.py&apos;)</div></pre></td></tr></table></figure>
+<p>就到此为止了，这个pipeline运行完了以后不会成图，图要自己再继续搞。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">######################################################################</div><div class="line"></div><div class="line">    ## make everything group writable from here down</div><div class="line">    os.system( &apos;chmod -R g+w .&apos; )</div><div class="line"></div><div class="line"># Quit if there have been any exceptions caught:</div><div class="line"></div><div class="line">except KeyboardInterrupt, keyboardException:</div><div class="line">    logprint (&quot;Keyboard Interrupt: &quot; + str(keyboardException))</div><div class="line">except Exception, generalException:</div><div class="line">    logprint (&quot;Exiting script: &quot; + str(generalException))</div></pre></td></tr></table></figure>
+<p>自动运行的pipeline就到此结束了。查看image文件夹，发现需要的一些参数也已经有了。<br>这个文件夹的文件目录：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">EVLA_image_clean.py</div><div class="line">EVLA_image_split.py</div><div class="line">EVLA_image_stat.py</div><div class="line">EVLA_imaging.py</div><div class="line">fluxcal_mask.txt</div><div class="line">phasecal_mask.txt</div><div class="line">target_mask.txt</div></pre></td></tr></table></figure>
+<p>查看EVLA_imaging.py的内容如下：</p>
+<ol>
+<li>split是用来把已经处理好的数据，根据把每个spw内的所有channel平均为一个。</li>
+<li>clean则用mask里面的相关数据等做为输入进行clean</li>
+<li>statistics是输出一些统计参量以供参考。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line">############################################################################################################################################################</div><div class="line">###</div><div class="line">###	NAME : EVLA_imaging.py</div><div class="line">###</div><div class="line">###     SPLITTING CALIBRATED MS FILE INTO EACH FIELD MS PER SPW, AVERAGING THEM IN BANDWIDTH OF EACH SPW,</div><div class="line">###	         MAKING IMAGES OF CALIBRATORS AND TARGET FIELD PER SPECTRAL WINDOW AND GETTING THE STATISTICS OF MAIN PROGRAM</div><div class="line">###</div><div class="line">###		1) SPLITTING : EXECUTING THE SCRIPT OF EVLA_image_split.py</div><div class="line">###		2) IMAGING : EXECUTING THE SCRIPT OF EVLA_image_clean.py</div><div class="line">###		3) STATISTICS : EXECUTING THE SCRIPT OF EVLA_image_stat.py</div><div class="line">###</div><div class="line">###     SPLIT() PERFORMS AVERAGING DATA ON BANDWIDTH OF EACH SPW</div><div class="line">###	THIS SCRIPT MAKES THE FREQUENCY AVERAGED MS OF *_averaged.ms, WHERE * IS A NAME OF CALIBRATED MS.</div><div class="line">###</div><div class="line">###	CLEAN() USES the  mask files SUCH AS fluxcal_mask.txt, phasecal_mask.txt AND target_mask.txt WHICH EXIST IN THE SCRIPT DIRECTORY.</div><div class="line">###     THIS SCRIPT MAKES A NEW DIRECTORY STORING IMAGE DIRECTORIES PRODUCED BY CLEAN()</div><div class="line">###                       AND THE NAME OF DIRECTORY IS image_date_time AT EXECUTION.</div><div class="line">###</div><div class="line">###	THE SCRIPT FOR STATISTICS USES IMHEAD() AND IMSTAT() FOR GETTING INFORMATION AND YIELDS THE OUTPUT FILE OF statistics.txt AS A FINAL PRODUCT.</div><div class="line">###</div><div class="line">###	EXECUTION:</div><div class="line">###		CASA[*] : execfile(&apos;/lustre/aoc/users/emomjian/HI/pipeline/scripts_chiles/imaging/EVLA_imaging.py&apos;)</div><div class="line">###</div><div class="line">###	INPUT FILES :</div><div class="line">###		fluxcal_mask.txt, phasecal_mask.txt, and target_mask.txt</div><div class="line">###</div><div class="line">###	OUTPUT FILE :</div><div class="line">###             averaged ms files of flux calibrator, phase calibrator, and target field per SPW by SPLIT()</div><div class="line">###		image files of *.image, *.flux, *.mask, *.model, *.psf, and *.residual produced by CLEAN()</div><div class="line">###		statistics.txt produced by IMHEAD() and IMSTAT()</div><div class="line">###</div><div class="line">###</div><div class="line">###                                                                              NOV. 08 2013</div><div class="line">###                                                                           HANSUNG GIM  (University of Massachusetts, Amherst)</div><div class="line">###</div><div class="line">############################################################################################################################################################</div><div class="line"></div><div class="line">#directory_script=&apos;/lustre/aoc/users/emomjian/HI/pipeline/scripts_chiles/imaging/&apos;</div><div class="line">#directory_script=&apos;/home/apopping/Chiles/Pipeline/scripts_chiles/imaging/&apos;</div><div class="line">directory_script=&apos;/home/apopping/JVLA_stacking/scripts_jvla/imaging/&apos;</div><div class="line"></div><div class="line">execfile(directory_script+&apos;EVLA_image_split.py&apos;)</div><div class="line">execfile(directory_script+&apos;EVLA_image_clean.py&apos;)</div><div class="line">execfile(directory_script+&apos;EVLA_image_stat.py&apos;)</div><div class="line"></div><div class="line">## make everything group writable from here down</div><div class="line">os.system( &apos;chmod -R g+w .&apos; )</div></pre></td></tr></table></figure>
+<p>发现其实就是个split和clean了。split:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div></pre></td><td class="code"><pre><div class="line">###########################################################################################</div><div class="line">###</div><div class="line">###	NAME : EVLA_image_split.py</div><div class="line">###</div><div class="line">###	AVERAGING MS FILES WITH SPECTRAL WINDOWS OF 0~14 AND WRITING A NEW FILE</div><div class="line">###		spw=&apos;0~14:200~1850&apos;</div><div class="line">###             width=&apos;1651&apos;</div><div class="line">###</div><div class="line">###	INPUT FILES :</div><div class="line">###		calibrated ms file</div><div class="line">###</div><div class="line">###	OUTPUT FILES :</div><div class="line">###		frequency averaged ms file</div><div class="line">###</div><div class="line">###########################################################################################</div><div class="line"></div><div class="line">import datetime</div><div class="line">import os</div><div class="line"></div><div class="line">#directory_script=&apos;/lustre/aoc/users/emomjian/HI/pipeline/scripts_chiles/imaging/&apos;</div><div class="line">directory_working=os.getcwd()</div><div class="line"></div><div class="line">try:</div><div class="line">	ms_active</div><div class="line">except NameError:</div><div class="line">	ms_active=raw_input(&quot;Type the name of Measurement Set:&quot;)</div><div class="line"></div><div class="line">ms_name=ms_active[:-3]</div><div class="line">output_ms=ms_name+&apos;_averaged.ms&apos;</div><div class="line"></div><div class="line">print &apos;STARTS AVERAGING DATA&apos;</div><div class="line">default(&apos;split&apos;)</div><div class="line">vis=ms_active</div><div class="line">outputvis=output_ms</div><div class="line">datacolumn=&apos;corrected&apos;</div><div class="line">field=&apos;&apos;</div><div class="line">#AP spw=&apos;0~14:200~1850&apos;</div><div class="line">#AP width=&apos;1651&apos;</div><div class="line">spw=&apos;0~27:16~240&apos;</div><div class="line">width=&apos;225&apos;</div><div class="line">antenna=&apos;&apos;</div><div class="line">timebin=&apos;&apos;</div><div class="line">timerange=&apos;&apos;</div><div class="line">scan=&apos;&apos;</div><div class="line">intent=&apos;&apos;</div><div class="line">array=&apos;&apos;</div><div class="line">uvrange=&apos;&apos;</div><div class="line">correlation=&apos;&apos;</div><div class="line">observation=&apos;&apos;</div><div class="line">keepflags=False</div><div class="line">keepmms=False</div><div class="line">async=False</div><div class="line">split()</div><div class="line"></div><div class="line"></div><div class="line">print &apos;FINISHED AVERAGING DATA&apos;</div><div class="line"></div><div class="line"></div><div class="line">now=datetime.datetime.now()</div><div class="line">year=now.year</div><div class="line">async=False</div><div class="line">split()</div><div class="line"></div><div class="line"></div><div class="line">print &apos;FINISHED AVERAGING DATA&apos;</div><div class="line"></div><div class="line"></div><div class="line">now=datetime.datetime.now()</div><div class="line">year=now.year</div><div class="line">month=now.month</div><div class="line">day=now.day</div><div class="line">hour=now.hour</div><div class="line">minute=now.minute</div><div class="line">second=now.second</div><div class="line"></div><div class="line">direc=str(year)+str(month)+str(day)+&apos;_&apos;+str(hour)+str(minute)+str(second)</div><div class="line"></div><div class="line">os.makedirs(&apos;./image_&apos;+direc)</div><div class="line"></div><div class="line">os.system(&apos;mv &apos;+output_ms+&apos; ./image_&apos;+direc+&apos;/&apos;)</div><div class="line">os.chdir(&apos;./image_&apos;+direc)</div></pre></td></tr></table></figure>
+<p>以及statas脚本：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div></pre></td><td class="code"><pre><div class="line">##################################################################################################################################################</div><div class="line">###</div><div class="line">###	NAME : EVLA_image_stat.py</div><div class="line">###</div><div class="line">###	GREP STATISTICAL INFORMATION OF</div><div class="line">###	SYNTHESIZED BEAM SIZE (bmaj, bmin), REST FREQUENCY (rfreq), PEAK VALUE (max), and RMS NOISE (rms)</div><div class="line">###	OF FLUX CALIBRATOR, PHASE CALIBRATOR, AND TARGET FIELD FROM THEIR IMAGES GENERATED BY EVLA_image_clean.py</div><div class="line">###	AND WRITE THE DATA FILE OF statistics.dat</div><div class="line">###</div><div class="line">###	THE SYNTHESIZED BEAM SIZE AND REST FREQUENCY ARE TAKEN FROM IMHEAD(),</div><div class="line">###	AND PEAK VALUE AND RMS NOISE ARE TAKEN FROM IMSTAT().</div><div class="line">###     </div><div class="line">###     INPUT FILES :</div><div class="line">###             fluxcalibrator_spw*.image, phasecalibrator_spw*.image, and target_spw*.image</div><div class="line">###     </div><div class="line">###	OUTPUT FILE :</div><div class="line">###		statistics.txt</div><div class="line">###</div><div class="line">###	IN statistics.txt</div><div class="line">###		EACH COLUMN IS CORRESPONDING TO EACH SPECTRAL WINDOW FROM 0 TO 14</div><div class="line">###		EACH ROW IS CORRESPONDING TO MAJOR AXIS (bmaj), MINOR AXIS (bmin), PEAK VALUE (max), AND RMS NOISE (rms).</div><div class="line">###</div><div class="line">##################################################################################################################################################</div><div class="line"></div><div class="line">import os</div><div class="line">import numpy as np</div><div class="line">import math</div><div class="line"></div><div class="line">box_flux=&apos;300,30,460,200&apos;</div><div class="line">box_phase=&apos;300,30,460,200&apos;</div><div class="line">box_target=&apos;1300,1100,1900,1600&apos;</div><div class="line"></div><div class="line">bmaj_flux=[]</div><div class="line">bmin_flux=[]</div><div class="line">rfreq_flux=[]</div><div class="line">max_flux=[]</div><div class="line">rms_flux=[]</div><div class="line"></div><div class="line">bmaj_phase=[]</div><div class="line">bmin_phase=[]</div><div class="line">rfreq_phase=[]</div><div class="line">max_phase=[]</div><div class="line">rms_phase=[]</div><div class="line"></div><div class="line">bmaj_target=[]</div><div class="line">bmin_target=[]</div><div class="line">rfreq_target=[]</div><div class="line">max_target=[]</div><div class="line">rms_target=[]</div><div class="line"></div><div class="line">seq=range(0,15)</div><div class="line">print &quot;START READING STATISTICS FROM IMHEAD() AND IMSTAT()&quot;</div><div class="line">for ii in seq:</div><div class="line"></div><div class="line">	bmaj1=imhead(&apos;fluxcalibrator_spw&apos;+str(ii)+&apos;.image&apos;,mode=&apos;get&apos;,hdkey=&apos;beammajor&apos;)</div><div class="line">        bmaj11=bmaj1[&apos;value&apos;]</div><div class="line">	bmaj_flux.append(bmaj11)</div><div class="line">	bmin1=imhead(&apos;fluxcalibrator_spw&apos;+str(ii)+&apos;.image&apos;,mode=&apos;get&apos;,hdkey=&apos;beamminor&apos;)</div><div class="line">	bmin11=bmin1[&apos;value&apos;]</div><div class="line">	bmin_flux.append(bmin11)</div><div class="line">	freq1=imhead(&apos;fluxcalibrator_spw&apos;+str(ii)+&apos;.image&apos;,mode=&apos;get&apos;,hdkey=&apos;restfreq&apos;)</div><div class="line">	freq11=freq1[&apos;value&apos;]</div><div class="line">	rfreq_flux.append(freq11[0]/1e9)</div><div class="line">	imst1=imstat(&apos;fluxcalibrator_spw&apos;+str(ii)+&apos;.image&apos;)</div><div class="line">	max1=imst1[&apos;max&apos;]</div><div class="line">	max_flux.append(max1[0])</div><div class="line">	imst1=imstat(&apos;fluxcalibrator_spw&apos;+str(ii)+&apos;.image&apos;,box=box_flux)</div><div class="line">        rms1=imst1[&apos;rms&apos;]</div><div class="line">        rms_flux.append(rms1[0]*1e3)</div><div class="line"></div><div class="line">	bmaj1=imhead(&apos;phasecalibrator_spw&apos;+str(ii)+&apos;.image&apos;,mode=&apos;get&apos;,hdkey=&apos;beammajor&apos;)</div><div class="line">	bmaj11=bmaj1[&apos;value&apos;]</div><div class="line">	bmaj_phase.append(bmaj11)</div><div class="line">	bmin1=imhead(&apos;phasecalibrator_spw&apos;+str(ii)+&apos;.image&apos;,mode=&apos;get&apos;,hdkey=&apos;beamminor&apos;)</div><div class="line">	bmin11=bmin1[&apos;value&apos;]</div><div class="line">	bmin_phase.append(bmin11)</div><div class="line">	freq1=imhead(&apos;phasecalibrator_spw&apos;+str(ii)+&apos;.image&apos;,mode=&apos;get&apos;,hdkey=&apos;restfreq&apos;)</div><div class="line">	freq11=freq1[&apos;value&apos;]</div><div class="line">	rfreq_phase.append(freq11[0]/1e9)</div><div class="line">	imst1=imstat(&apos;phasecalibrator_spw&apos;+str(ii)+&apos;.image&apos;)</div><div class="line">	max1=imst1[&apos;max&apos;]</div><div class="line">	max_phase.append(max1[0])</div><div class="line">	imst1=imstat(&apos;phasecalibrator_spw&apos;+str(ii)+&apos;.image&apos;,box=box_phase)</div><div class="line">	rms1=imst1[&apos;rms&apos;]</div><div class="line">	rms_phase.append(rms1[0]*1e3)</div><div class="line"></div><div class="line">	bmaj1=imhead(&apos;target_spw&apos;+str(ii)+&apos;.image&apos;,mode=&apos;get&apos;,hdkey=&apos;beammajor&apos;)</div><div class="line">	bmaj11=bmaj1[&apos;value&apos;]</div><div class="line">	bmaj_target.append(bmaj11)</div><div class="line">	bmin1=imhead(&apos;target_spw&apos;+str(ii)+&apos;.image&apos;,mode=&apos;get&apos;,hdkey=&apos;beamminor&apos;)</div><div class="line">	bmin11=bmin1[&apos;value&apos;]</div><div class="line">	bmin_target.append(bmin11)</div><div class="line">	freq1=imhead(&apos;target_spw&apos;+str(ii)+&apos;.image&apos;,mode=&apos;get&apos;,hdkey=&apos;restfreq&apos;)</div><div class="line">	freq11=freq1[&apos;value&apos;]</div><div class="line">	rfreq_target.append(freq11[0]/1e9)</div><div class="line">	imst1=imstat(&apos;target_spw&apos;+str(ii)+&apos;.image&apos;)</div><div class="line">	max1=imst1[&apos;max&apos;]</div><div class="line">	max_target.append(max1[0]*1e3)</div><div class="line">	imst1=imstat(&apos;target_spw&apos;+str(ii)+&apos;.image&apos;,box=box_target)</div><div class="line">        rms1=imst1[&apos;rms&apos;]</div><div class="line">        rms_target.append(rms1[0]*1e6)</div><div class="line"></div><div class="line"></div><div class="line">print &quot;FINISH READING STATISTICS FROM IMHEAD() AND IMSTAT()&quot;</div><div class="line"></div><div class="line">f=open(&apos;statistics.txt&apos;,&apos;w&apos;)</div><div class="line"></div><div class="line">print &gt;&gt; f, &quot;Flux calibrator&quot;</div><div class="line">print &gt;&gt; f, &quot;major axis [\&quot;] \t&quot;, &quot;&quot;.join([&quot;%12.3f \t&quot; %x for x in bmaj_flux])</div><div class="line">print &gt;&gt; f, &quot;minor axis [\&quot;] \t&quot;, &quot;&quot;.join([&quot;%12.3f \t&quot; %x for x in bmin_flux])</div><div class="line">print &gt;&gt; f, &quot;peak value [Jy] \t&quot;, &quot;&quot;.join([&quot;%12.3f \t&quot; %x for x in max_flux])</div><div class="line">print &gt;&gt; f, &quot;RMS noise [mJy] \t&quot;, &quot;&quot;.join([&quot;%12.3f \t&quot; %x for x in rms_flux])</div><div class="line"></div><div class="line">print &gt;&gt; f, &quot;&quot;</div><div class="line">print &gt;&gt; f, &quot;Phase calibrator&quot;</div><div class="line">print &gt;&gt; f, &quot;major axis [\&quot;] \t&quot;, &quot;&quot;.join([&quot;%12.3f \t&quot; %x for x in bmaj_phase])</div><div class="line">print &gt;&gt; f, &quot;minor axis [\&quot;] \t&quot;, &quot;&quot;.join([&quot;%12.3f \t&quot; %x for x in bmin_phase])</div><div class="line">print &gt;&gt; f, &quot;peak value [Jy] \t&quot;, &quot;&quot;.join([&quot;%12.3f \t&quot; %x for x in max_phase])</div><div class="line">print &gt;&gt; f, &quot;RMS noise [mJy] \t&quot;, &quot;&quot;.join([&quot;%12.3f \t&quot; %x for x in rms_phase])</div><div class="line"></div><div class="line">print &gt;&gt; f, &quot;&quot;</div><div class="line">print &gt;&gt; f, &quot;Deep field&quot;</div><div class="line">print &gt;&gt; f, &quot;major axis [\&quot;] \t&quot;, &quot;&quot;.join([&quot;%12.3f \t&quot; %x for x in bmaj_target])</div><div class="line">print &gt;&gt; f, &quot;minor axis [\&quot;] \t&quot;, &quot;&quot;.join([&quot;%12.3f \t&quot; %x for x in bmin_target])</div><div class="line">print &gt;&gt; f, &quot;peak value [mJy] \t&quot;, &quot;&quot;.join([&quot;%12.3f \t&quot; %x for x in max_target])</div><div class="line">print &gt;&gt; f, &quot;RMS noise [uJy] \t&quot;, &quot;&quot;.join([&quot;%12.3f \t&quot; %x for x in rms_target])</div><div class="line"></div><div class="line">f.close()</div></pre></td></tr></table></figure>
+<p>不过需要注意，小老板在imaging这一步并没有使用这几个script，而是用了自己写的两个，一个用来做uvcontsub，另一个是clean。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line">###########################################################################################</div><div class="line">###</div><div class="line">###  Do the continuum subtraction on uv-data</div><div class="line">###</div><div class="line">###########################################################################################</div><div class="line"></div><div class="line">import datetime</div><div class="line">import os</div><div class="line"></div><div class="line"></div><div class="line">directory_working=os.getcwd()</div><div class="line"></div><div class="line"></div><div class="line">print &apos;START CONTINUUM SUBTRACTION IN UV-DOMAIN&apos;</div><div class="line"></div><div class="line">try:</div><div class="line">	field_names</div><div class="line">except NameError:</div><div class="line">    field_names=raw_input(&quot;give the field name:&quot;)</div><div class="line">    field_names = str(field_names)</div><div class="line"></div><div class="line">if &apos;GAMA09_1&apos; in field_names:</div><div class="line">	fieldid=&apos;GAMA09_1&apos;</div><div class="line">if &apos;GAMA09_2&apos; in field_names:</div><div class="line">	fieldid=&apos;GAMA09_2&apos;</div><div class="line">if &apos;GAMA09_3&apos; in field_names:</div><div class="line">	fieldid=&apos;GAMA09_3&apos;</div><div class="line">if &apos;GAMA09_4&apos; in field_names:</div><div class="line">	fieldid=&apos;GAMA09_4&apos;</div><div class="line">if &apos;GAMA15_5&apos; in field_names:</div><div class="line">	fieldid=&apos;GAMA15_5&apos;</div><div class="line">if &apos;GAMA15_6&apos; in field_names:</div><div class="line">	fieldid=&apos;GAMA15_6&apos;</div><div class="line">if &apos;GAMA02_4&apos; in field_names:</div><div class="line">	fieldid=&apos;GAMA02_4&apos;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">default(&apos;uvcontsub&apos;)</div><div class="line">vis=ms_active</div><div class="line">selectdata=False</div><div class="line">field=fieldid</div><div class="line">fitspw= &apos;&apos;</div><div class="line">excludechans = False</div><div class="line">combine= &apos;&apos;</div><div class="line">solint= &apos;212.1000000056s&apos;</div><div class="line">fitorder = 2</div><div class="line">spw = &apos;&apos;</div><div class="line">want_cont = False</div><div class="line">uvcontsub()</div><div class="line"></div><div class="line">print &apos;CONTINUUM SUBTRACTION FINISHED!!&apos;</div></pre></td></tr></table></figure>
+<p>Clean的脚本：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div></pre></td><td class="code"><pre><div class="line">###########################################################################################</div><div class="line">###</div><div class="line">###  Make a default cube from the stacking data</div><div class="line">###</div><div class="line">###########################################################################################</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">import datetime</div><div class="line">import os</div><div class="line"></div><div class="line"></div><div class="line">directory_working=os.getcwd()</div><div class="line"></div><div class="line"></div><div class="line">print &apos;START MAKING IMAGE CUBE&apos;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">try:</div><div class="line">	field_names</div><div class="line">except NameError:</div><div class="line">    field_names=raw_input(&quot;give the field name:&quot;)</div><div class="line">    field_names = str(field_names)</div><div class="line"></div><div class="line">if &apos;GAMA09_1&apos; in field_names:</div><div class="line">	fieldid=&apos;GAMA09_1&apos;</div><div class="line">if &apos;GAMA09_2&apos; in field_names:</div><div class="line">	fieldid=&apos;GAMA09_2&apos;</div><div class="line">if &apos;GAMA09_3&apos; in field_names:</div><div class="line">	fieldid=&apos;GAMA09_3&apos;</div><div class="line">if &apos;GAMA09_4&apos; in field_names:</div><div class="line">	fieldid=&apos;GAMA09_4&apos;</div><div class="line">if &apos;GAMA15_5&apos; in field_names:</div><div class="line">	fieldid=&apos;GAMA15_5&apos;</div><div class="line">if &apos;GAMA15_6&apos; in field_names:</div><div class="line">	fieldid=&apos;GAMA15_6&apos;</div><div class="line">if &apos;GAMA02_4&apos; in field_names:</div><div class="line">	fieldid=&apos;GAMA02_4&apos;</div><div class="line"></div><div class="line"></div><div class="line"># rename the default &quot;ms_active&quot; to a the MS with continuum subtracted</div><div class="line">ms_contsub = ms_active + &apos;.contsub&apos;</div><div class="line">image_name = &apos;cube_all_spw&apos;</div><div class="line"></div><div class="line"></div><div class="line">default(&apos;clean&apos;)</div><div class="line">vis=ms_contsub</div><div class="line">imagename=image_name</div><div class="line">selectdata=False</div><div class="line">field=fieldid</div><div class="line">spw=&apos;&apos;</div><div class="line">mode=&apos;channel&apos;</div><div class="line">nchan = -1</div><div class="line">start = &apos;&apos;</div><div class="line">width = 2</div><div class="line">interpolation = &apos;nearest&apos;</div><div class="line">chaniter = False</div><div class="line">outframe = &apos;bary&apos;</div><div class="line">gridmode = &apos;&apos;</div><div class="line">niter=0</div><div class="line">gain=0.1</div><div class="line">threshold=&apos;0.0mJy&apos;</div><div class="line">psfmode=&apos;clark&apos;</div><div class="line">imagermode=&apos;csclean&apos;</div><div class="line">cyclefactor=1.5</div><div class="line">cyclespeedup=-1</div><div class="line"></div><div class="line">multiscale=[]</div><div class="line">interactive=False</div><div class="line">mask=[]</div><div class="line">imsize=[512,512]</div><div class="line">cell=[&apos;6.0arcsec&apos;,&apos;6.0arcsec&apos;]</div><div class="line">phasecenter = &apos;&apos;</div><div class="line">restfreq = &apos;1420.405752MHz&apos;</div><div class="line">stokes=&apos;I&apos;</div><div class="line">weighting=&apos;briggs&apos;</div><div class="line">robust=0.8</div><div class="line">uvtaper=False</div><div class="line">modelimage=&apos;&apos;</div><div class="line">restoringbeam=[&apos;&apos;]</div><div class="line">pbcor=False</div><div class="line">usescratch=False</div><div class="line">allowchunk=False</div><div class="line">async=False</div><div class="line">clean()</div><div class="line"></div><div class="line">print &apos;FINISHED IMAGING!!&apos;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/天文/" rel="tag"># 天文</a>
+          
+            <a href="/tags/pipeline/" rel="tag"># pipeline</a>
+          
+            <a href="/tags/HI文章/" rel="tag"># HI文章</a>
+          
+            <a href="/tags/代码/" rel="tag"># 代码</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/02/17/写作计划/" rel="next" title="写作计划">
+                <i class="fa fa-chevron-left"></i> 写作计划
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/02/17/通勤路线坡度调研小记/" rel="prev" title="通勤路线坡度调研小记">
+                通勤路线坡度调研小记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/pic2.jpg"
+               alt="陈清祥" />
+          <p class="site-author-name" itemprop="name">陈清祥</p>
+          <p class="site-description motion-element" itemprop="description">我们的征途是星辰大海</p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">72</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">74</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Pipeline"><span class="nav-number">1.</span> <span class="nav-text">The Pipeline</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">陈清祥</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+  
+
+
+</body>
+</html>

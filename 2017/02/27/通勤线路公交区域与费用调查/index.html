@@ -1,0 +1,790 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="生活,兴趣,开销," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="新家的地理位置太蛋疼了，在transperth规定的zone1和zone2的交界位置，自然的附近的几个公交站也都处于边界。而这个公交的不同区域价格差异很大，长远考虑，花些经历弄清楚收费情况是很有必要的。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="通勤线路公交区域与费用调查">
+<meta property="og:url" content="http://astropeanut.info/2017/02/27/通勤线路公交区域与费用调查/index.html">
+<meta property="og:site_name" content="AstroPeanut's Blog">
+<meta property="og:description" content="新家的地理位置太蛋疼了，在transperth规定的zone1和zone2的交界位置，自然的附近的几个公交站也都处于边界。而这个公交的不同区域价格差异很大，长远考虑，花些经历弄清楚收费情况是很有必要的。">
+<meta property="og:image" content="http://astropeanut.info/2017/02/27/通勤线路公交区域与费用调查/fig.zonemap.pdf">
+<meta property="og:updated_time" content="2017-03-26T07:47:58.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="通勤线路公交区域与费用调查">
+<meta name="twitter:description" content="新家的地理位置太蛋疼了，在transperth规定的zone1和zone2的交界位置，自然的附近的几个公交站也都处于边界。而这个公交的不同区域价格差异很大，长远考虑，花些经历弄清楚收费情况是很有必要的。">
+<meta name="twitter:image" content="http://astropeanut.info/2017/02/27/通勤线路公交区域与费用调查/fig.zonemap.pdf">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://astropeanut.info/2017/02/27/通勤线路公交区域与费用调查/"/>
+
+
+
+
+
+  <title> 通勤线路公交区域与费用调查 | AstroPeanut's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?d15b8cc355d618f75dfd082559510991";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">AstroPeanut's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle">总学渣也不是个办法</p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://astropeanut.info/2017/02/27/通勤线路公交区域与费用调查/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="陈清祥">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/pic2.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="AstroPeanut's Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="AstroPeanut's Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                通勤线路公交区域与费用调查
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-27T12:13:57+08:00">
+                2017-02-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/life/" itemprop="url" rel="index">
+                    <span itemprop="name">生活和提高</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/02/27/通勤线路公交区域与费用调查/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://astropeanut.info/2017/02/27/通勤线路公交区域与费用调查/" itemprop="commentCount">0</span> comments
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>新家的地理位置太蛋疼了，在transperth规定的zone1和zone2的交界位置，自然的附近的几个公交站也都处于边界。而这个公交的不同区域价格差异很大，长远考虑，花些经历弄清楚收费情况是很有必要的。</p>
+<a id="more"></a>
+<h1 id="Transperth的收费标准"><a href="#Transperth的收费标准" class="headerlink" title="Transperth的收费标准"></a>Transperth的收费标准</h1><p>区域划分图如下。根据那些个圈圈划分区域。不同区域收费标准差别非常大，我正处于zone1和zone2的交界处。</p>
+<img src="/2017/02/27/通勤线路公交区域与费用调查/fig.zonemap.pdf" alt="公交的区域划分图" title="公交的区域划分图">
+<p>那么不同的区域怎么收费呢？<br>这里分为starndard fares和concession fares两种。</p>
+<div id="dnn_ctr3557_HtmlModule_lblContent" class="Normal"><h7>Standard Fares收费标准</h7><table class="table table-fancy table-bordered footable"><thead> <tr>      <th>           Fare Type           </th>           <th>            Cash</th>           <th>SmartRider<br>            15% Discount</th>            <th>SmartRider<br>            25% Discount</th>        </tr>    </thead>    <tbody>        <tr>            <td class="no-wrap">            2 Sections</td>            <td>            $2.10</td>            <td>            $1.79</td>            <td>$1.58</td>        </tr>        <tr>            <td class="no-wrap">            1 Zone</td>            <td>            $3.00</td>            <td>            $2.55</td>            <td>$2.25</td>        </tr>        <tr>            <td class="no-wrap">            2 Zones</td>            <td>            $4.60</td>            <td>            $3.91</td>            <td>$3.45</td>        </tr>        <tr>            <td class="no-wrap">            3 Zones</td>            <td>$5.50</td>            <td>            $4.68</td>            <td>$4.13</td>        </tr>        <tr>            <td class="no-wrap">            4 Zones</td>            <td>            $6.50</td>            <td>            $5.53</td>            <td>$4.88</td>        </tr>        <tr>            <td class="no-wrap">5 Zones&nbsp;</td>            <td>$8.10</td>           <td>$6.89</td>            <td>$6.08</td>        </tr>        <tr>            <td class="no-wrap">6 Zones</td>            <td>$9.10</td>            <td>$7.74</td>            <td>$6.83</td>        </tr>        <tr>            <td class="no-wrap">7 Zones</td>            <td>$10.70</td>            <td>$9.10</td>            <td>$8.03</td>        </tr>        <tr>            <td class="no-wrap">8 Zones</td>            <td>$11.60</td>            <td>$9.86</td>            <td>$8.70</td>        </tr>        <tr>            <td class="no-wrap">9 Zones</td>            <td>$12.40</td>            <td>$10.54</td>            <td>$9.30</td>        </tr>        <tr>            <td class="no-wrap">DayRider</td>            <td>$12.40</td>            <td>&nbsp;</td>            <td>&nbsp;</td>        </tr>        <tr>            <td class="no-wrap">FamilyRider</td>            <td>$12.40</td>            <td>&nbsp;</td>           <td>&nbsp;</td>        </tr>    </tbody></table><br>Concession Fares收费标准<br><table class="table table-fancy table-bordered footable">    <thead>        <tr>            <th>            Fare Type            </th>            <th>            Cash</th>            <th>            SmartRider<br>            15% Discount</th>            <th>            SmartRider<br>            25% Discount</th>        </tr>    </thead>    <tbody>        <tr>            <td class="no-wrap">            2 Sections</td>            <td>            $0.80</td>            <td>            $0.68</td>            <td>            $0.60</td>        </tr>        <tr>            <td class="no-wrap">            1 Zone</td>            <td>$1.20</td>            <td>            $1.02</td>            <td>$0.90</td>        </tr>        <tr>            <td class="no-wrap">            2 Zones</td>            <td>            $1.90</td>            <td>            $1.62</td>            <td>            $1.43</td>        </tr>        <tr>            <td class="no-wrap">            3 Zones</td>            <td>            $2.20</td>            <td>            $1.87</td>            <td>            $1.65</td>        </tr>        <tr>            <td class="no-wrap">            4 Zones</td>            <td>$2.60</td>            <td>            $2.21</td>            <td>            $1.95</td>        </tr>        <tr>            <td class="no-wrap">5 Zones</td>            <td>$3.20</td>            <td>$2.72</td>            <td>$2.40</td>        </tr>        <tr>            <td class="no-wrap">6 Zones</td>            <td>$3.70</td>            <td>$3.15<br></td>            <td>$2.78</td>        </tr>        <tr>            <td class="no-wrap">7 Zones</td>            <td>$4.30</td>            <td>$3.66</td>            <td>$3.23</td>        </tr>        <tr>            <td class="no-wrap">8 Zones</td>            <td>$4.60</td>            <td>$3.91</td>            <td>$3.45</td>        </tr>        <tr>            <td class="no-wrap">9 Zones</td>            <td>$5.00</td>            <td>$4.25</td>            <td>$3.75</td>        </tr>        <tr>            <td class="no-wrap">DayRider</td>            <td>$5.00</td>            <td>$3.75</td>            <td>$3.75</td>        </tr>        <tr>            <td class="no-wrap">Student</td>            <td>&nbsp;</td>            <td>60c</td>            <td>60c</td>        </tr>    </tbody></table><p>All fares GST inclusive. Fares calculated are rounded to the nearest whole cent based on normal rounding convention.</p></div>
+
+<h1 id="区域调查"><a href="#区域调查" class="headerlink" title="区域调查"></a>区域调查</h1><p>问题的主要矛盾就是在这儿了，所以肯定要搞个清楚。现在又的资料是之前乘坐车的一些记忆，以及google maps直接的街景地图。记录在此备查。</p>
+<ul>
+<li>Claremont火车站口的那个公交站<blockquote>
+<ul>
+<li>站名叫做Gugeri St Before Bay View Tce</li>
+<li>路北边是zone1站，路南边是zone2站</li>
+<li>可乘坐的车有23,24,25,27,28,102,107</li>
+<li>通勤相关的车位102和107</li>
+<li>Bunnings东侧一点点的那站，因为是102王zone1内部方向，自然也就是zone1了</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li>家往北方向的那个站<blockquote>
+<ul>
+<li>之前来看现在这个房子下车的那一站，在coles超市再往西北方向走一站。</li>
+<li>zone2车站。能坐啥车咱也不坐了。</li>
+<li>马路两边都是zone2，所以不管去哪个方向都离这个站远远的。</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li>Stirling Road再往西一点点的站<blockquote>
+<ul>
+<li>谷歌街景地图看不太清，马路两侧应该都是zone2，找时间看个清楚在此更新</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li>Stirling Hwy上，往UWA方向，离家最近的那个103车站，以及其次近的那个103站(这个站同时是998站)<blockquote>
+<ul>
+<li>都是zone2</li>
+<li>站名分别是Stirling Hwy After Stirling Rd和Stirling Hwy Before Bay View Tce</li>
+<li>第二个站就是Hungry Jacks门口的那个站，不能坐</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li>Stirling Hwy上，往家方向，刚过bunnings之后的那站，在bunnings西边一点点<blockquote>
+<ul>
+<li>站名叫做Stirling Hwy Before Bay View Tce</li>
+<li>是zone1</li>
+<li>此站有车23,24,25,103,999</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<p>总结。仅从zone划分来考虑的话，上班时考虑乘坐的车站，只有火车站门口以及其往东的各站。在Stirling Hwy上乘车的话一定要走到Bunnings往东了。回家的时候保险起见在Bunnings之前下车——实际上不管坐的是999,103,102还是107，在bunnings那个路口的下一站就是极限了，玩脱很悲催。</p>
+<h1 id="2-section"><a href="#2-section" class="headerlink" title="2 section?"></a>2 section?</h1><p>还有个问题，就是最近几次坐车，根据以上的精神来引导，发现消费有时是2 sectiond消费有时是standard 1 zone消费，而这俩差别也不小。<br>不管去还是回，在Bunnings西边乘车/下车都是2 section.在火车站门口坐车去学校是1 standard zone。</p>
+<p>所以想具体了解一下这个2 section的划分规则。原来是小于3.2km的情况。</p>
+<blockquote>
+<p><strong>Two-section fare</strong><br>This is our name for a trip of 3.2 kilometers or less. It gives you a one-way ride on a single bus, train or ferry service.</p>
+<p>If you choose to continue your journey you will need to purchase another ticket, if you are using your SmartRider it will automatically calculate the appropriate zone fare.</p>
+</blockquote>
+<p>PS,查了下从家到bunnings东边那站的距离，不到800米。而之前的住址到950站的距离，为1.4-1.5km。所以目前这个在bunnings东侧坐车的计划真的还可以了。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/生活/" rel="tag"># 生活</a>
+          
+            <a href="/tags/兴趣/" rel="tag"># 兴趣</a>
+          
+            <a href="/tags/开销/" rel="tag"># 开销</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/02/24/9-星系的恒星形成/" rel="next" title="9. 星系的恒星形成">
+                <i class="fa fa-chevron-left"></i> 9. 星系的恒星形成
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/02/27/摄影学习进阶的计划/" rel="prev" title="摄影学习进阶的计划">
+                摄影学习进阶的计划 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/pic2.jpg"
+               alt="陈清祥" />
+          <p class="site-author-name" itemprop="name">陈清祥</p>
+          <p class="site-description motion-element" itemprop="description">我们的征途是星辰大海</p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">72</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">74</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Transperth的收费标准"><span class="nav-number">1.</span> <span class="nav-text">Transperth的收费标准</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#区域调查"><span class="nav-number">2.</span> <span class="nav-text">区域调查</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-section"><span class="nav-number">3.</span> <span class="nav-text">2 section?</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">陈清祥</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+  
+
+
+</body>
+</html>

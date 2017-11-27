@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="技术文档,计算机,代码,兴趣," />
+  <meta name="keywords" content="计算机,博客,代码,hexo,技术文档,兴趣," />
 
 
 
@@ -88,9 +88,9 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="网站架设过程中的trouble shooting记录">
 <meta property="og:url" content="http://astropeanut.info/2017/01/02/网站架设过程中的trouble-shooting记录/index.html">
-<meta property="og:site_name" content="陈清祥的博客">
+<meta property="og:site_name" content="AstroPeanut's Blog">
 <meta property="og:description" content="一开始是因为在国内有了个免费的VPS，通过不断网络搜索大概明白了可以用它来做的事情。翻墙是一个，不过往回翻意义总是小一点。另外一个就是建站。看了些介绍发现建站其实很容易，如果比较幸运没出什么岔子的话一两个小时搞定，不过我显然属于不幸运的那一类。TT 因为比较折腾，所以把这一过程记录下来很有必要，防止以后踩坑。">
-<meta property="og:updated_time" content="2017-01-07T07:53:30.000Z">
+<meta property="og:updated_time" content="2017-03-26T07:47:25.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="网站架设过程中的trouble shooting记录">
 <meta name="twitter:description" content="一开始是因为在国内有了个免费的VPS，通过不断网络搜索大概明白了可以用它来做的事情。翻墙是一个，不过往回翻意义总是小一点。另外一个就是建站。看了些介绍发现建站其实很容易，如果比较幸运没出什么岔子的话一两个小时搞定，不过我显然属于不幸运的那一类。TT 因为比较折腾，所以把这一过程记录下来很有必要，防止以后踩坑。">
@@ -102,7 +102,7 @@
   var CONFIG = {
     root: '/',
     scheme: 'Mist',
-    sidebar: {"position":"left","display":"post"},
+    sidebar: {"position":"left","display":"hide"},
     fancybox: true,
     motion: true,
     duoshuo: {
@@ -127,7 +127,7 @@
 
 
 
-  <title> 网站架设过程中的trouble shooting记录 | 陈清祥的博客 </title>
+  <title> 网站架设过程中的trouble shooting记录 | AstroPeanut's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -168,12 +168,12 @@
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">陈清祥的博客</span>
+      <span class="site-title">AstroPeanut's Blog</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
     
-      <p class="site-subtitle"></p>
+      <p class="site-subtitle">总学渣也不是个办法</p>
     
 </div>
 
@@ -212,6 +212,16 @@
         </li>
       
         
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
@@ -228,16 +238,6 @@
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-sitemap">
-          <a href="/sitemap.xml" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
-            
-            Sitemap
           </a>
         </li>
       
@@ -279,9 +279,9 @@
   </span>
 
   <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="陈清祥的博客">
+    <meta itemprop="name" content="AstroPeanut's Blog">
     <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="陈清祥的博客" src="">
+      <img style="display:none;" itemprop="url image" alt="AstroPeanut's Blog" src="">
     </span>
   </span>
 
@@ -332,8 +332,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/日记/" itemprop="url" rel="index">
-                    <span itemprop="name">日记</span>
+                  <a href="/categories/work/" itemprop="url" rel="index">
+                    <span itemprop="name">工作和技能</span>
                   </a>
                 </span>
 
@@ -351,7 +351,7 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2017/01/02/网站架设过程中的trouble-shooting记录/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/02/网站架设过程中的trouble-shooting记录/" itemprop="commentCount"></span>
+                  <span class="post-comments-count fb-comments-count" data-href="http://astropeanut.info/2017/01/02/网站架设过程中的trouble-shooting记录/" itemprop="commentCount">0</span> comments
                 </a>
               </span>
             
@@ -377,7 +377,7 @@
       
 
       
-        <p>一开始是因为在国内有了个免费的VPS，通过不断网络搜索大概明白了可以用它来做的事情。翻墙是一个，不过往回翻意义总是小一点。另外一个就是建站。看了些介绍发现建站其实很容易，如果比较幸运没出什么岔子的话一两个小时搞定，不过我显然属于不幸运的那一类。TT 因为比较折腾，所以把这一过程记录下来很有必要，防止以后踩坑。 </p>
+        <p>一开始是因为在国内有了个免费的VPS，通过不断网络搜索大概明白了可以用它来做的事情。翻墙是一个，不过往回翻意义总是小一点。另外一个就是建站。看了些介绍发现建站其实很容易，如果比较幸运没出什么岔子的话一两个小时搞定，不过我显然属于不幸运的那一类。TT 因为比较折腾，所以把这一过程记录下来很有必要，防止以后踩坑。</p>
 <a id="more"></a>
 <p>在狗爹godaddy上买了一年的域名，很便宜，8块人民币。然后在github上研究博客。期间捉摸了hexo等工具，比较折腾。现在还是在github上玩着，熟悉了以后看看能不能在VPS上搞。（不知道会不会有政策方面的因素要考虑？估计有备案什么的事儿。）<br>另一方面，写博客也确实有其显而易见的好处。我最近一两年使用OneNote和Evernote记录了很多东西，但是很零碎。我觉得其中一个中啊哟原因，是由于私人化写作容易过于随意而难成体系，博客是公开化的，下笔要考虑到有人看到，某种程度上对自己是种规范。要求提高了，下笔就要稍微考虑一下了。<br>我初步打算在这个博客上记录的内容有，天文知识，技术文档，艺术评论等。  </p>
 <h2 id="配置github页面"><a href="#配置github页面" class="headerlink" title="配置github页面"></a>配置github页面</h2><p>这个github有一个简要介绍的页面<a href="https://pages.github.com" target="_blank" rel="external">https://pages.github.com</a>，很短，仓库里面只有一个输出hello world的index.html就可以工作并能直接访问。<br>因为git和github网址的使用已经有了些经验，这里只说些对我自己算是重要的。在github建立一个新的仓库，名字要用username.github.io命名。然后根据github的那个短文档，加入一个用以输出hello world的index.html。</p>
@@ -437,9 +437,32 @@
 <blockquote>
 <p>后续应该要考虑图床的问题，可以关注一下七牛什么的。</p>
 </blockquote>
-<h3 id="后续问题和解决汇总"><a href="#后续问题和解决汇总" class="headerlink" title="后续问题和解决汇总"></a>后续问题和解决汇总</h3><h4 id="next主题间切换发现网站端不响应"><a href="#next主题间切换发现网站端不响应" class="headerlink" title="next主题间切换发现网站端不响应"></a>next主题间切换发现网站端不响应</h4><p>next主题目前有三个“主题的主题”，next作者将其定义为Schemes。经过对比我发现我更偏爱Mist,于是在主题配置文件中做了修改。在localhost上查看，一切正常，但是刷新到github总是没有变化。今天浏览相关帖子猛然想到，也许需要先清空缓存。即先运行：</p>
+<h2 id="后续问题和解决汇总"><a href="#后续问题和解决汇总" class="headerlink" title="后续问题和解决汇总"></a>后续问题和解决汇总</h2><h3 id="next主题间切换发现网站端不响应"><a href="#next主题间切换发现网站端不响应" class="headerlink" title="next主题间切换发现网站端不响应"></a>next主题间切换发现网站端不响应</h3><p>next主题目前有三个“主题的主题”，next作者将其定义为Schemes。经过对比我发现我更偏爱Mist,于是在主题配置文件中做了修改。在localhost上查看，一切正常，但是刷新到github总是没有变化。今天浏览相关帖子猛然想到，也许需要先清空缓存。即先运行：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo clean</div></pre></td></tr></table></figure>
 <p>然后再deploy。事实也确实是这样，问题解决。</p>
+<h3 id="类别和标签的相关设置"><a href="#类别和标签的相关设置" class="headerlink" title="类别和标签的相关设置"></a>类别和标签的相关设置</h3><p>参考自<a href="http://ijiaober.github.io/2014/08/05/hexo/hexo-04/" target="_blank" rel="external">http://ijiaober.github.io/2014/08/05/hexo/hexo-04/</a></p>
+<p>目前每次新建一个页面的时候，显示的是这样子的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">title: hello world</div><div class="line">date: 201X-XX-XX XX:XX:XX</div><div class="line">tags:</div><div class="line">---</div></pre></td></tr></table></figure></p>
+<p>如果想使用类别管理的话，会希望打开页面能看到categories。那么可以编辑<code>scaffolds/post.md</code>文件并在里面加入<code>categories:</code>。</p>
+<blockquote>
+<p>scaffolds目录下是新建页面的模板，可以根据需求进一步修改</p>
+</blockquote>
+<p>如何替换掉含有类别的中文路径？<br>编辑根目录下的_config.yml找到<code>Category &amp; Tag</code>部分并修改<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"># Category &amp; Tag</div><div class="line">default_category: uncategorized</div><div class="line">category_map:</div><div class="line">	工作: work</div><div class="line">	生活: life</div><div class="line">	其他: other</div><div class="line">tag_map:</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p><code>category_map</code>是用来设置分类的地方，冒号前面是分类名称，后面是访问路径。</p>
+</blockquote>
+<p>标签设置方式</p>
+<p>可以这样<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tags: [标签1,标签2,...标签n]</div></pre></td></tr></table></figure></p>
+<p>也可以<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">- 标签1</div><div class="line">- 标签2</div><div class="line">- ...</div><div class="line">- 标签n</div></pre></td></tr></table></figure></p>
+<h3 id="hexo的配置文件"><a href="#hexo的配置文件" class="headerlink" title="hexo的配置文件"></a>hexo的配置文件</h3><p>参考自<a href="http://ijiaober.github.io/2014/08/04/hexo/hexo-03/" target="_blank" rel="external">http://ijiaober.github.io/2014/08/04/hexo/hexo-03/</a></p>
+<p>两个配置文件。根目录下的那个是整站配置设置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div></pre></td><td class="code"><pre><div class="line"># Hexo Configuration</div><div class="line">## Docs: http://hexo.io/docs/configuration.html</div><div class="line">## Source: https://github.com/hexojs/hexo/</div><div class="line"># Site 这里的配置，哪项配置反映在哪里，可以参考我的博客</div><div class="line">title: GoonX #站点名，站点左上角</div><div class="line">subtitle: 我走的很慢，但我从不后退。 #副标题，站点左上角</div><div class="line">description: GoonX #给搜索引擎看的，对站点的描述，可以自定义</div><div class="line">author: ijiaober #默认在站点左下角可以看到</div><div class="line">email: ijiaober@qq.com #邮箱</div><div class="line">language: zh-CN #语言包设置。</div><div class="line"># URL #访问地址等信息设置，可根据需要自己修改。</div><div class="line">## If your site is put in a subdirectory, set url as &apos;http://yoursite.com/child&apos; and root as &apos;/child/&apos;</div><div class="line">url: http://ijiaober.github.io #访问域名</div><div class="line">root: /</div><div class="line">permalink: :year/:month/:day/:title/ #具体内容页的存储路径结构</div><div class="line">tag_dir: tags #标签目录名</div><div class="line">archive_dir: archives #归档目录名</div><div class="line">category_dir: categories #分类目录名</div><div class="line"># Directory #默认文章和生成目录设置</div><div class="line">source_dir: source</div><div class="line">public_dir: public</div><div class="line"># Writing 文章布局、写作格式的定义</div><div class="line">new_post_name: :title.md # File name of new posts</div><div class="line">default_layout: post</div><div class="line">auto_spacing: false # Add spaces between asian characters and western characters</div><div class="line">titlecase: false # Transform title into titlecase</div><div class="line">max_open_file: 100</div><div class="line">filename_case: 0</div><div class="line">highlight:</div><div class="line">  enable: true</div><div class="line">  backtick_code_block: true</div><div class="line">  line_number: true</div><div class="line">  tab_replace:</div><div class="line"># Category &amp; Tag 分类和标签设置</div><div class="line">default_category: uncategorized</div><div class="line">category_map:</div><div class="line">tag_map:</div><div class="line"># Archives 默认值为2，如果这里都修改为1，相应页面就只会列出标题，而非全文</div><div class="line">## 2: Enable pagination</div><div class="line">## 1: Disable pagination</div><div class="line">## 0: Fully Disable</div><div class="line">archive: 1</div><div class="line">category: 1</div><div class="line">tag: 1</div><div class="line"># Server 本地预览服务信息，默认端口是4000，有需要的话可以自己修改</div><div class="line">## Hexo uses Connect as a server</div><div class="line">## You can customize the logger format as defined in</div><div class="line">## http://www.senchalabs.org/connect/logger.html</div><div class="line">port: 4000</div><div class="line">logger: false</div><div class="line">logger_format:</div><div class="line"># Date / Time format 日期格式</div><div class="line">## Hexo uses Moment.js to parse and display date</div><div class="line">## You can customize the date format as defined in</div><div class="line">## http://momentjs.com/docs/#/displaying/format/</div><div class="line">date_format: MMM D YYYY</div><div class="line">time_format: H:mm:ss</div><div class="line"># Pagination 每页显示文章数，可以自定义</div><div class="line">## Set per_page to 0 to disable pagination</div><div class="line">per_page: 5</div><div class="line">pagination_dir: page</div><div class="line"># Disqus Disqus 插件，我们会替换成“多说”</div><div class="line">disqus_shortname:</div><div class="line"># Extensions</div><div class="line">## Plugins: https://hexo.io/plugins/</div><div class="line">## Themes: https://hexo.io/themes/</div><div class="line">theme: next</div><div class="line">exclude_generator:</div><div class="line"># Deployment 站点部署到github要配置</div><div class="line">## Docs: http://hexo.io/docs/deployment.html</div><div class="line">deploy:</div><div class="line">  type: github</div><div class="line">  repository: path/to/github.io</div><div class="line">  branch: master</div></pre></td></tr></table></figure></p>
+<p>主题配置文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">menu: #右上角导航菜单，冒号前面是菜单名，后面是访问路径。</div><div class="line">  Home: /</div><div class="line">  Archives: /archives</div><div class="line">  About: /about</div><div class="line"></div><div class="line">widgets: #站点右边栏，可以调整顺序和增减内容，会自动调用主题layout/_widget目录下的同名文件。</div><div class="line">- search</div><div class="line">- category</div><div class="line">- tagcloud</div><div class="line">excerpt_link: Read More #列表页里Read more链接名称，可以替换成’查看更多‘等。</div><div class="line">plugins:</div><div class="line">twitter: #右边栏要显示twitter展示的话，需要在此设置</div><div class="line">  username:</div><div class="line">  show_replies: false</div><div class="line">  tweet_count: 5</div><div class="line">addthis: #分享设置</div><div class="line">  enable: true</div><div class="line">  pubid:</div><div class="line">  facebook: true</div><div class="line">  twitter: true</div><div class="line">  google: true</div><div class="line">  pinterest: true</div><div class="line">fancybox: true #图片效果，默认</div><div class="line">google_analytics: #google_analytics统计ID</div><div class="line">rss:  #生成RSS路径</div></pre></td></tr></table></figure>
+<h3 id="怎么添加或删除导航栏目"><a href="#怎么添加或删除导航栏目" class="headerlink" title="怎么添加或删除导航栏目"></a>怎么添加或删除导航栏目</h3><p>编辑主题配置文件，在menu部分修改即可。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">menu:</div><div class="line">  Home: /</div><div class="line">  Archives: /archives</div><div class="line">  About: /about</div></pre></td></tr></table></figure></p>
+<h3 id="添加sitemap"><a href="#添加sitemap" class="headerlink" title="添加sitemap"></a>添加sitemap</h3><p>安装插件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-generator-sitemap</div></pre></td></tr></table></figure></p>
+<p>在整站配置文件中加入如下代码来调用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">plugins:</div><div class="line">- hexo-generator-sitemap</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>然而不知道为什么我设置完这个之后hexo server无法启动。所以现在并没有用sitemap</p>
+</blockquote>
 
       
     </div>
@@ -454,27 +477,6 @@
     <div>
       
         
-  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
-    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
-      <span>赏</span>
-    </button>
-    <div id="QR" style="display: none;">
-      
-        <div id="wechat" style="display: inline-block">
-          <img id="wechat_qr" src="/uploads/donate2.png" alt="陈清祥 WeChat Pay"/>
-          <p>微信打赏</p>
-        </div>
-      
-      
-        <div id="alipay" style="display: inline-block">
-          <img id="alipay_qr" src="/uploads/donate1.png" alt="陈清祥 Alipay"/>
-          <p>支付宝打赏</p>
-        </div>
-      
-    </div>
-  </div>
-
 
       
     </div>
@@ -484,11 +486,15 @@
       
         <div class="post-tags">
           
-            <a href="/tags/技术文档/" rel="tag"># 技术文档</a>
-          
             <a href="/tags/计算机/" rel="tag"># 计算机</a>
           
+            <a href="/tags/博客/" rel="tag"># 博客</a>
+          
             <a href="/tags/代码/" rel="tag"># 代码</a>
+          
+            <a href="/tags/hexo/" rel="tag"># hexo</a>
+          
+            <a href="/tags/技术文档/" rel="tag"># 技术文档</a>
           
             <a href="/tags/兴趣/" rel="tag"># 兴趣</a>
           
@@ -526,25 +532,6 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2017/01/02/网站架设过程中的trouble-shooting记录/"
-     data-title="网站架设过程中的trouble shooting记录"
-     data-content=""
-     data-url="http://astropeanut.info/2017/01/02/网站架设过程中的trouble-shooting记录/">
-  <div class="ds-share-inline">
-    <ul  class="ds-share-icons-16">
-
-      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
-      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
-      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
-      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
-      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
-
-    </ul>
-    <div class="ds-share-icons-more">
-    </div>
-  </div>
-</div>
-      
     </div>
   </div>
 
@@ -555,10 +542,6 @@
 
           
   <div class="comments" id="comments">
-    
-      <div class="ds-thread" data-thread-key="2017/01/02/网站架设过程中的trouble-shooting记录/"
-           data-title="网站架设过程中的trouble shooting记录" data-url="http://astropeanut.info/2017/01/02/网站架设过程中的trouble-shooting记录/">
-      </div>
     
   </div>
 
@@ -604,7 +587,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">72</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -613,7 +596,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -622,7 +605,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">74</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -657,7 +640,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置github页面"><span class="nav-number">1.</span> <span class="nav-text">配置github页面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#把DNS服务器做相应链接"><span class="nav-number">2.</span> <span class="nav-text">把DNS服务器做相应链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网站编辑"><span class="nav-number">3.</span> <span class="nav-text">网站编辑</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装hexo"><span class="nav-number">3.1.</span> <span class="nav-text">安装hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用hexo"><span class="nav-number">3.2.</span> <span class="nav-text">使用hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后续问题和解决汇总"><span class="nav-number">3.3.</span> <span class="nav-text">后续问题和解决汇总</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#next主题间切换发现网站端不响应"><span class="nav-number">3.3.1.</span> <span class="nav-text">next主题间切换发现网站端不响应</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置github页面"><span class="nav-number">1.</span> <span class="nav-text">配置github页面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#把DNS服务器做相应链接"><span class="nav-number">2.</span> <span class="nav-text">把DNS服务器做相应链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网站编辑"><span class="nav-number">3.</span> <span class="nav-text">网站编辑</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装hexo"><span class="nav-number">3.1.</span> <span class="nav-text">安装hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用hexo"><span class="nav-number">3.2.</span> <span class="nav-text">使用hexo</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后续问题和解决汇总"><span class="nav-number">4.</span> <span class="nav-text">后续问题和解决汇总</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#next主题间切换发现网站端不响应"><span class="nav-number">4.1.</span> <span class="nav-text">next主题间切换发现网站端不响应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类别和标签的相关设置"><span class="nav-number">4.2.</span> <span class="nav-text">类别和标签的相关设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo的配置文件"><span class="nav-number">4.3.</span> <span class="nav-text">hexo的配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#怎么添加或删除导航栏目"><span class="nav-number">4.4.</span> <span class="nav-text">怎么添加或删除导航栏目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加sitemap"><span class="nav-number">4.5.</span> <span class="nav-text">添加sitemap</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -775,35 +758,20 @@
 
   
 
-  
-    
-  
 
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"qchen"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
 
-  
-    
-    
-    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
-    <script src="/js/src/hook-duoshuo.js"></script>
   
 
 
 
 
+	
 
 
+
+
+
+  
 
 
 
@@ -812,6 +780,28 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 

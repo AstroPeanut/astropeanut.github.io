@@ -1,0 +1,1107 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="天文,HI文章," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="下周要做annual report了，承晚这周在我GAMA报告结束后提醒我，我的工作很多地方做的不够，对整个流程不够清晰，要多看看他的文章，看看有哪些地方我早就应该做了的。我想了一下觉得确实有必要整理一下这类工作的流程，尤其是考虑到他最近这两年一口气发了好几篇这种文章了，给人的感觉像是流水线作业一样，拿到观测数据填进去就是一篇文章了。所以在此把这类文章中比较重要的读一读，争取搞一个比较清晰的工作流">
+<meta property="og:type" content="article">
+<meta property="og:title" content="谱线叠加得到中性氢密度类工作流程整理">
+<meta property="og:url" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/index.html">
+<meta property="og:site_name" content="AstroPeanut's Blog">
+<meta property="og:description" content="下周要做annual report了，承晚这周在我GAMA报告结束后提醒我，我的工作很多地方做的不够，对整个流程不够清晰，要多看看他的文章，看看有哪些地方我早就应该做了的。我想了一下觉得确实有必要整理一下这类工作的流程，尤其是考虑到他最近这两年一口气发了好几篇这种文章了，给人的感觉像是流水线作业一样，拿到观测数据填进去就是一篇文章了。所以在此把这类文章中比较重要的读一读，争取搞一个比较清晰的工作流">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig01.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig02.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig03.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig04.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig05.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig06.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig07.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig08.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig09.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig10.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig11.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig12.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig13.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig14.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig15.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig16.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig17.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig18.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig19.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig20.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig21.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig22.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig23.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig24.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig25.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig26.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig27.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig28.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig29.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig30.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig31.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig32.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig33.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig34.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig35.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig36.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig37.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig38.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig39.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig40.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig41.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig42.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig43.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig44.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig45.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig46.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig47.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig48.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig49.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig50.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig51.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig52.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig53.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig54.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig55.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig56.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig57.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig58.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig59.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig60.png">
+<meta property="og:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig61.png">
+<meta property="og:updated_time" content="2017-11-12T07:59:31.105Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="谱线叠加得到中性氢密度类工作流程整理">
+<meta name="twitter:description" content="下周要做annual report了，承晚这周在我GAMA报告结束后提醒我，我的工作很多地方做的不够，对整个流程不够清晰，要多看看他的文章，看看有哪些地方我早就应该做了的。我想了一下觉得确实有必要整理一下这类工作的流程，尤其是考虑到他最近这两年一口气发了好几篇这种文章了，给人的感觉像是流水线作业一样，拿到观测数据填进去就是一篇文章了。所以在此把这类文章中比较重要的读一读，争取搞一个比较清晰的工作流">
+<meta name="twitter:image" content="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig01.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/"/>
+
+
+
+
+
+  <title> 谱线叠加得到中性氢密度类工作流程整理 | AstroPeanut's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?d15b8cc355d618f75dfd082559510991";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">AstroPeanut's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle">总学渣也不是个办法</p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="陈清祥">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/pic2.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="AstroPeanut's Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="AstroPeanut's Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                谱线叠加得到中性氢密度类工作流程整理
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-11T10:42:02+08:00">
+                2017-11-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/work/" itemprop="url" rel="index">
+                    <span itemprop="name">工作和技能</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://astropeanut.info/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/" itemprop="commentCount">0</span> comments
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>下周要做annual report了，承晚这周在我GAMA报告结束后提醒我，我的工作很多地方做的不够，对整个流程不够清晰，要多看看他的文章，看看有哪些地方我早就应该做了的。我想了一下觉得确实有必要整理一下这类工作的流程，尤其是考虑到他最近这两年一口气发了好几篇这种文章了，给人的感觉像是流水线作业一样，拿到观测数据填进去就是一篇文章了。所以在此把这类文章中比较重要的读一读，争取搞一个比较清晰的工作流程图出来，这对我目前工作的指导意义是很明显的。</p>
+<a id="more"></a>
+<h1 id="重要文献目录"><a href="#重要文献目录" class="headerlink" title="重要文献目录"></a>重要文献目录</h1><p>这里汇总一下需要重点考虑的文章。</p>
+<p>首先是承晚的几篇文章，我觉得从后往前看可能合理一点。</p>
+<ul>
+<li><p>Neutral hydrogen (HI) gas content of galaxies at $z\sim 0.32$ 这篇文章是今年9月22号投出去的</p>
+</li>
+<li><p>Rhee, J., Lah, P., Chengalur, J., Briggs, F., Colless, M. 2016, ‘Giant Metrewave Radio Telescope observations of neutral atomic hydrogen gas in the COSMOS field at z ~ 0.37’, MONTHLY NOTICES OF THE ROYAL ASTRONOMICAL SOCIETY, 460, 3, pp. 2675-2686.</p>
+</li>
+<li><p>Rhee, J., Zwaan, M., Briggs, F., Chengalur, J., Lah, P., Oosterloo, T., Van Der Hulst, T. 2013, ‘Neutral atomic hydrogen (H I) gas evolution in field galaxies at z~0.1 and ~0.2’, MONTHLY NOTICES OF THE ROYAL ASTRONOMICAL SOCIETY, 435, 2013 September 09, pp. 2693-2706</p>
+</li>
+</ul>
+<p>重点看这几篇文章，其实这几篇文章真的整理的差不多的话，其他人的工作应该很容易就捋明白了，都不可能差很多的。</p>
+<ul>
+<li><p>Detection of HI in distant galaxies using spectral stacking 这篇文章是icrar那个姐姐用来毕业的工作</p>
+</li>
+<li><p>The HI content of star-forming galaxies at z = 0.24 这个<a href="http://adsabs.harvard.edu/abs/2007MNRAS.376.1357L" target="_blank" rel="external">文章</a>是Lah等人做出的</p>
+</li>
+</ul>
+<h1 id="承晚今年9月份投出去的文章"><a href="#承晚今年9月份投出去的文章" class="headerlink" title="承晚今年9月份投出去的文章"></a>承晚今年9月份投出去的文章</h1><p>需要重点关注的部分</p>
+<ul>
+<li>section2: 讲光学数据的选取和处理</li>
+<li>section3: 讲射电数据的处理</li>
+<li>section4: 讲具体的谱线叠加工作</li>
+</ul>
+<h2 id="第二节，光学数据"><a href="#第二节，光学数据" class="headerlink" title="第二节，光学数据"></a>第二节，光学数据</h2><p>用的项目叫做VVDS-wide三个field其中的一个。其特点是，14小时积分时间。VVDS-wide这个项目的目的是用VLT观测$I_{AB}~22.5$亮度极限至红移1. 对应的，这次GMRT的射电数据观测的红移为0.3~0.34。在这个红移范围内，VVDS-wide只有41个比较可靠的红移数据点可供谱线叠加，但是数目这个不够，更糟糕的是，VVDS-wide的光谱数据的光谱分辨率为R=230, 弥散为7A/pixel。所以总之这41个星系样本带来的不确定度太大了。于是去别的地方找光学数据，找到了用6.5-m MMT的Hectospec和用3.9-m Anglo Australian Telescope (AAT)的AAOmega这俩。<br><a href="http://www.wikiwand.com/en/Spectral_resolution" target="_blank" rel="external">光谱分辨率</a>和分辨本领(resolving power)有关系，这里的R用的是分辨本领这个定义。因为$R=\frac{\lambda}{\Delta \lambda}$，分母就是分辨率，那么分母越小越好，对应的就是分辨本领的值越大越好。</p>
+<h3 id="数据样本特点以及选取"><a href="#数据样本特点以及选取" class="headerlink" title="数据样本特点以及选取"></a>数据样本特点以及选取</h3><p>这些光学的观测区域，相当于一个1度的锥形大小天区。这个区域能找到比较丰富的R和I波段的光学image，以及sdss提供的16881数目的可能天体光谱，这个数目对于我们的主要光学数据来源的望远镜来说是太多了，而且其很多的源对于这几个望远镜来说太暗了不可能得到准确红移信息的。但是用已有的测光数据，我们可以和SDSS的进行比对，然后得到一些color上的截断，来选取那些在我们红移范围内比较可能出现的星系。</p>
+<p>其实一切的一切，都是看我们能不能得到确切的红移和位置信息，尤其是红移信息。<br>其中一个方法是用色指数来看。用g-r vs r-i图，来根据r做一个cut规定。这样可以跳出来r波段比较亮的样本。这里要注意其中的逻辑：Hectospec和AAOmega(以及VVDS-wide?)是用来看红移的，那么用的是光谱仪，并没有测光数据，所以才用到了SDSS。根据SDSS的测光数据，找到r<21的样本，这些对应r波段比较亮的，这个样本对应的光谱数据挑出来使用。r>21的部分也不是直接扔掉，而是加一层要求，就是g-r&lt;1.25，如果满足这个也加到考虑的样本。（为啥呢？这是因为，对于这么暗弱的星系，其光谱不大可能给出比较准确的红移信息，除非这个星系有比较明显的发射线特征，而偏蓝的星系更有可能有发射线，这个g-r&lt;1.25就是干这个的）。另外，明亮的星系可能会优先考虑。这样一来就有了一个样本的选取规则。</21的样本，这些对应r波段比较亮的，这个样本对应的光谱数据挑出来使用。r></p>
+<p>根据这个规则在光谱数据里面撒嘛，Hectospec里面找到2240个星系，AAOmega里面找到2161个星系。另外囊括在内的还有VVDS-wide的这41个不太好的星系样本。这41个星系里面有7个是比较暗比较红的，在后续的分析中也没有包括进来。</p>
+<h3 id="观测以及数据处理"><a href="#观测以及数据处理" class="headerlink" title="观测以及数据处理"></a>观测以及数据处理</h3><p>Hectospec的任务是搞定2240个星系，实际上观测到了1526个。然后做后续的处理，在比较高的置信度上，得到的红移样本是1296个。</p>
+<p>剩下的没搞定的944个，拿AAOmega来搞。考虑选择的条件，得到了1398个星系，最终得到比较高置信的红移样本是344个。</p>
+<p>那么一共就是1640个星系红移样本。</p>
+<h3 id="红移测定"><a href="#红移测定" class="headerlink" title="红移测定"></a>红移测定</h3><p>那么既然有了1640个已知的红移样本，选出在GMRT观测波段范围内的，有184个(11%)。<br>在GMRT观测结束以后，VVDS释放了更多的数据，给出了60个在GMRT馆猜测范围内的红移样本，其中的15个是比较可靠的。于是样本进一步增大到了199个。另外比较重要的是研究红移测定的不确定度，大概是30km/s。注意这个数字比较重要，因为它决定了我们做stacking的时候的速度范围的取定。</p>
+<h3 id="星系分类"><a href="#星系分类" class="headerlink" title="星系分类"></a>星系分类</h3><p>根据发射线或者吸收线对于星系谱线的dominant程度，分成early type和late type两类。<br>如果星系有诸如[OII]和$H\alpha$，也就是典型的star forming星系含有的谱线型，那么它被归类为late type.<br>如果星系有强吸收线比如Ca H和K，而没有发射线，那么就给归类为early type.</p>
+<p>184个星系样本里面，early和late分别有34个和150个。<br>通过肉眼观察VVDS的15个星系，给出2个early的13个late的。<br>所以最终用来做stacking的样本，是36个early的和163个late的。</p>
+<p>进一步检查一下。所有的这个199星系的样本，在SDSS都能找到ugriz的测光数据。于是我们根据颜色再做一下检查。在这之前，要先把SDSS的测光数据做银河系dust修正，然后做k改正以便把观测到的星等值都转化到rest frame的星等。结果是，我们的样本里面所欲的early的都有g-r&gt;1，而大多数的late的g-r&lt;1.这就是典型的颜色双峰特性：early的在red sequence里面，大多数的late坐落在blue cloud里面，并且一部分有dust而显得稍微红一些。</p>
+<p>既然看起来没啥毛病，所以这篇文章里面就使用这个分类结果了。</p>
+<h2 id="射电数据"><a href="#射电数据" class="headerlink" title="射电数据"></a>射电数据</h2><h2 id="观测基本信息"><a href="#观测基本信息" class="headerlink" title="观测基本信息"></a>观测基本信息</h2><p>这次的GMRT的uv coverage不错。长短基线都有。总积分时间是136小时。on-source是117小时。<br>早先的GMRT的相关机是俩16MHz的波段。对应本文章的观测为2008年和2009年的部分。<br>然后GMRT进行了升级，波段是连续的一个33MHz的波段。对应本文章的观测为2011年的部分。<br>两部分占比为100hr和36hr，74%和26%.</p>
+<p>早的观测频段是1092-1060MHz,对应红移0.3-0.34.每个波段有128个channel，channel宽度是125kHz.<br>玩的观测频段也是观测这段，但是有256个channel，宽度是130kHz。</p>
+<p>天区范围大概是1度乘以1度。在主beam相应低于10%的部分不被用作stacking。</p>
+<h2 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h2><h3 id="校准"><a href="#校准" class="headerlink" title="校准"></a>校准</h3><p>用casa，做了flagging, calibration, self-calibration, imaging.</p>
+<p>在做calibration之前，我们先用了GMRT提供的一个叫flagcal的软件做了自动化flag的预处理(主要是flag掉一些工作不正常的天线，以及RFI)。这个算法的工作原理是，考虑visibility的数据应该是按照freq和time平缓变化的，那么突然出现了比较大的跳变的数据就是有问题的了。做法是，把增益修正加到数据里面，然后找坏的数据，丢掉坏的数据以后，在做增益修正，然后再搞。(其实就跟正常的pipeline流程差不多的感觉。。) 在这之后才把数据导入到casa开搞。</p>
+<p>在casa中搞的calibration的流程是，先做bandpass calibration (用到了flux和phasecalibrator)，然后做flux和phase的calibration(用到的是3C 147, 3C 286 和 PKS 1345+12)。最后这一步对于每个subband只做了中间的80/128chan，因为外围收rfi影响严重。<br>然后把solution应用到target上，然后split，然后做连续谱image并且在image上查看是不是还有坏的数据并且回去干掉它们。在这一步之后，使用VVDS里面的6个亮源做self-calibration，以此来进一步减小在residual map里面的amp和phase的error。</p>
+<p>为了做self-cal，我们得到的连续谱的image不能太宽，要不会有bandwidth smearing.这里的做法是，128个channel里面只考虑中间的100个，然后每10个channel放一起做image，这样每个image的带宽是1.25MHz，足够小，不会产生bandwidth smearing。流程上，使用了2次phase的self-cal以及2次的amp&amp;phase-cal.所以一共是4次的self-cal。在把新的数据concatenate以后，又在整体进行了一次的self-cal。</p>
+<p>对于2011年的数据，其处理流程和2008-2009的那部分是一致的：先用flagcal做预处理，然后calibration，然后selfcal，再concatenation，然后再self-cal。</p>
+<p>当然最后也做了一下统计，多少数据最后被flag掉了(第一部分&gt;50%，第二部分~42%)。考虑到大概一半的数据被干掉了，这实际上相当于是30个天线中实际工作的只有21个。</p>
+<p>做连续谱图的时候，用的是0.85角秒的pixel大小，brigss0的weight。<br>另外还有一个事儿，就是GMRT的baseline并不都是共面的，这导致了有一个baseline的w方向的影响，这会影响wide-field的imaging。因为我们这个观测的天区已经很大了，所以一定要考虑这个问题。具体的相关解决算法有俩，一个是faceting一个是w-projection.而这俩方法都被casa支持。<br>我们这里用的是w-projection，因为相对faceting这个算法比较高效率，而且给的动态范围比较大。应用这个w-projection之后，连续谱image的亮源的信噪比提高了很多。</p>
+<p>在连续谱上，根据亮源的位置检查了一下astrometric accuracy.通过和FIRST的比对，发现offset大概~0.48个角秒，小于一个pixel的单边长。发现的最大的一个offset的源有1角秒的差别，这个小于GMRT的合成beam大小($3.4’’\times 2.3’’$)</p>
+<p>连续谱image的rms level是15.07个$\mu Jy/beam$.</p>
+<h3 id="data-cube"><a href="#data-cube" class="headerlink" title="data cube"></a>data cube</h3><p>连续谱的扣除使用的是uvsub+imcontsub的策略。后者的fitorder是1，也就是linear fit。<br>这样得到了3个cube。两个是2008-2009年的数据的两个subband，一个是新的2011年的数据。<br>这些cube都做了w-projection，以及briggs0，0.85角秒的pixel。<br>合成beam的大小约为$3.5’’\times 2.4’’$,这对应于红移0.32的$16\times 11 kpc^2$,分辨率这么高，那么我们不大收到confusion的影响。<br>rms level，2008-2009数据的两个cube是$153\mu Jy/beam$，2011年的一个cube是$190\mu Jy/beam$.</p>
+<h2 id="stacking"><a href="#stacking" class="headerlink" title="stacking"></a>stacking</h2><p>第一件事儿永远是看看有没有direct detection.</p>
+<p>如果要求是在$5\sigma$置信度上找到星系的话，它必须小于beam的3.5个角秒，并且在400km/s的速度范围内的HI质量大于$5.7\times 10^{10}M_\odot$.查看local volume的相关文献，看起HI的质量函数，可以得知，这种星系是很稀少的。我们的样本里面出现这种星系的可能性不大。我们用了两种办法来看看是不是有直接探测的星系，一个办法是用眼看，另一个是用source-finding的程序，叫做DUCHAMP.两者给的结论是一致的：木有direct detection.</p>
+<p>199个星系的样本，有些坐落在比较noisy的频率范围，把它们拿掉，就变成了165个星系(32个early，133个late)的样本。<br>咋做呢？就是把每个谱线先做pbc，然后按照红移shift每个谱线，再做加权平均。这个权重，是按照每个谱线对应的rms给的。<br>谱线叠加后得到的HI质量由下面的式子给出</p>
+<p>$$\frac{M_{HI}}{M\odot}=\frac{236}{1+z}(\frac{D_L}{Mpc})^2\frac{\int S_VdV}{mJy\ kms^{-1}}$$</p>
+<p>这里的光度距离是以Mpc为单位的。积分HI发射流量是以mJy km/s为单位的。这里用的积分速度区间是400km/s.</p>
+<p>为什么要用这个速度范围呢？这是用Tully-Fisher关系估计出来的。这里用到了SDSS数据转化出来的B波段星等。我们的样本给出</p>
+<p>$w_{20,mean}=275.5km/s$</p>
+<p>以及$w_{20,max}=491.1km/s$。</p>
+<p>这里的$w_{20}$是HI的peak的20%强度对应的谱线宽度。考虑到红移的不确定度，$2\sigma\sim 60km/s$，我们于是使用400km/s的速度宽度作为积分上下限。我们尝试使用350km/s到500km/s，发现给出的结论是没啥大的区别的。这里的计算使用的红移是样本的平均红移，0.323。这个数字也用于计算光度距离（为什么不每个星系单独计算？）。</p>
+<p>为了计算得到的中性氢叠加质量的不确定度，我们使用了jackknife的方法。</p>
+<p>考虑我们又俩样本用于叠加，一个是early一个是late的，这里看一下两者的HI丰度。使用的物理量是$\frac{M_{HI}}{L_B}$.这里的B波段亮度，是用SDSS提供的数据，当然也要做dust改正和k改正。两个样本进行一对比，不意外的，early的没啥气体，late的很多气体，对应的结果分别是小于0.1和约为0.48。</p>
+<p>和之前我对红移0.1和0.2的叠加文章的结果对比，early大概0.08，late大概0.31.那么，高低红移，early都差不多，但是在$1\sigma$以内似乎late的高红移更富气体一些。但是不论如何，因为误差棒太大，我们在这里无法得出HI质量在演化这样的结论。另外，跟其他人的一些HI的结果来比对，我们的这个值也并没有很大，所以更不好说了。经过和其他的文章进行比对，分析，我们更倾向于这些不同是因为选择效应以及样本大小导致的。</p>
+<p>我们想知道VVDS的星系有没有被GMRT的综合beam解析，我们估计了一下HI的size。具体做法，是使用一个光学-HI size关系，这个关系是1997年一篇文章给出的。光学上找到B波段的光度，结合结构特征，可以估计其HI的尺度大小。<br>他们定义了两种HI的size。<br>一种是$D_{HI}$:</p>
+<p>指的是在面密度为$1M_\odot\ pc^{-2}$所对应的尺度。</p>
+<p>另一个是$D_{eff}$:</p>
+<p>指的是半HI质量半径。</p>
+<p>我们根据这俩定义分析了一下。考虑有效直径定义的话，late样本大多数(77%)都是小于3.5角秒的beam size的，但是如果考虑面密度定义的话，75%的样本要比这个beam size大。这里要注意到的是，这个关系，他们是在100Mpc尺度以内研究并最终给出定义的，但是在0.32左右红移的星系，普遍要小一些。</p>
+<p>那咋办呢？这个解不解析的问题到底会不会影响到我们的stacking呢？<br>我们尝试用不同大小的beam size来探索这个事儿。我们把得到的data cube做平滑，来变成低分辨率的data cube。做的几次实验，分别对应于圆高斯beam等于6角秒，9角秒，12角秒和15角秒。也就是，28，42，56，70kpc。然后stacking的步骤分别应用于这些data cube来检查有没有啥不同。我们最终看到了一个缓慢的上升过程。这个可能部分是由于囊括进入了一些邻近的star forming的矮星系。但是总体来讲，这个变化并不大，所以也还好，这个解析的问题不用太担心。但是这个事儿侧面说明了，他们当年做的optical-HI size关系的工作，一定程度上高估了HI的尺度。这可能是由于他们当时使用的样本太小了不够有代表性。<br>反正不管怎么说，星系解析这个问题不用担心了。</p>
+<h3 id="星系的恒星组分和HI质量"><a href="#星系的恒星组分和HI质量" class="headerlink" title="星系的恒星组分和HI质量"></a>星系的恒星组分和HI质量</h3><p>对于每个星系，我们用卡方SED拟合程序LEPHARE来得到恒星质量。这个code用的星族模型是BC03，以及Chabrier03的IMF。我们考虑了27个模型，对应3种金属丰度，9种指数的star formation下降轮廓(对应$\tau$为0.1,0.3,1,2,3,5,10,15,30Gyr).反正我们根据这个可以得到星系的恒星质量。</p>
+<p>我们想探索一下，对大恒星质量和小恒星质量，中性氢分布有啥不同。于是根据9.5太阳质量的恒星质量分成两个子样本，看看平均的HI质量。结论是，两个样本给出的HI质量差不多，但是这就意味着，对于单个星系的尺度来说，小星系里面HI主导，大星系则是恒星主导。Claudia在14年的一个工作预言了这个演化规律。这个model指出，9.5以下的星系的气体大多是以HI形式存在，但是9.5以上则主要是以分子氢的形式存在。</p>
+<p>有这个规律可以看出，那些optical selected中性氢survey会有bias。</p>
+<h2 id="中性氢密度演化"><a href="#中性氢密度演化" class="headerlink" title="中性氢密度演化"></a>中性氢密度演化</h2><h3 id="rho-HI-质量密度"><a href="#rho-HI-质量密度" class="headerlink" title="$\rho _{HI}$质量密度"></a>$\rho _{HI}$质量密度</h3><p>原则上拿质量除以体积可以得到想要的结果。但是不得不注意的是，有效体积的计算必须得考虑survey样本的incompleteness.毕竟我们的GMRT观测也就高了1度的天区，还是局限在一个小的红移范围。如果扣除掉rfi的红移范围，根据1999年的一篇文章计算一下体积，可以计算出来两个样本的密度。但是别忘了肯定有cosmic variance。我们计算了一下我们的cosmic variance，根据<a href="http://cosmocalc.icrar.org/" target="_blank" rel="external">这个</a>网上的计算器得到我们的计算结果增加了VVDS给出的5%至54%(因为这个观测的红移范围太小)。</p>
+<p>通过我们选取样本的过程可以看出，我们这个工作是有bias的：为了得到比较准确的红移，我们倾向于选取那些late的亮的星系。</p>
+<p>为了对付这个incompleteness以及cosmic variance的问题，我们吧HI密度按照B波段亮度进行归一化。(宇宙的B波段的光度函数了解的很好)注意承晚在13年和16年的两篇文章也是这么做的。</p>
+<p>但是有个问题，虽然ugriz这些波段的数据在VVDS这儿都有了，但是他们没有计算给出这里的光度函数以及密度。所以另寻他法，用了Ilbert05年的结论。他们这个文章利用VVDS的数据计算了星系在UBVRI波段的星系光度函数演化。听起来是不错，但是他们当年的工作考虑了VVDS的两个field，唯独没有考虑我们的这个field。我们假设这几个field的光度函数和密度应该不会差别很大，那么久可以拿Ilbert05年的光度函数以及密度的结论，用0.32红移处的值就好了。</p>
+<p>B波段的光度可以从SDSS得到，自然也要修正dust和k改正。我们用16年工作同样的式子，通过对于整个样本做体积归一化，来计算HI密度。式子如下</p>
+<p>这个体积归一化的办法造成了多大的影响呢？回答是，double了得到的HI密度值。</p>
+<p>到这儿还没完，要考虑一下有些太暗弱的星系，其光谱数据没有被包含到光谱survey中。这个改正，承晚13年的工作里面有，所以继续那个办法就好了。这个改正因子大概是1.41.那么有增大了一半，所以得到的值几乎是一开始直接按照质量除以体积得到的值的3倍。</p>
+<p>这里需要注意的是，因为Ilbert的工作没有区分early和late而是把它们都放一起，我们也不得不这么干了，所以这里只给出了一个值。但是实际上明显应该区分还是好一些的。那么这一点的影响有多大呢？明显的，late的光度函数，如果把early的样本也放在内的话，光度函数的形状会改变。怎么变呢？根据Loverday12年的工作，尤其是会让faint end更加的平缓。我们这个工作对于样本不完备的改正，确实跟光度函数的faint end的斜率比较相关和敏感。光度函数的faint end太平缓，意味着没有囊括进入足够多的B波段暗弱星系，而这会进一步低估结果的HI密度。</p>
+<p>另外有一点可能需要改正的是HI的自吸收问题。但是在这个太难做了所以到目前所有HI密度相关文章都没有做。我们这里也不做，就当没有这事儿。毕竟要考虑的事情太多，光学上的星系倾角信息给的也不足。不过Braun12年的文章给出一个结论说HI的自吸收可能会增大HI密度的测量by 34%。但是无论如何，现在相关工作还不够，我们就不做这个改正了。</p>
+<h3 id="宇宙中性氢密度-Omega-HI"><a href="#宇宙中性氢密度-Omega-HI" class="headerlink" title="宇宙中性氢密度$\Omega_{HI}$"></a>宇宙中性氢密度$\Omega_{HI}$</h3><p>看图，这几个工作的来源列出：</p>
+<ol>
+<li>HI emission from blind 21-cm emission surveys and HI spectral stacking at the lower redshifts (Zwaan et al. 2005; Martin et al. 2010; Freudling et al. 2011; Hoppmann et al. 2015; Delhaize et al. 2013; Rhee et al. 2013; Lah et al. 2007; Rhee et al. 2016);</li>
+<li>HI spectral stacking applied to star-forming galaxies at in- termediate redshift (z ≈ 1.3, Kanekar et al. 2016);</li>
+<li>a targeted survey of Mg ii absorption systems and a blind DLA survey at intermediate redshifts (Rao et al. 2006, 2017; Neeleman et al. 2016);</li>
+<li>large DLA surveys at the higher redshifts (Prochaska et al. 2005; Noterdaeme et al. 2009, 2012; Zafar et al. 2013; Crighton et al. 2015; Bird et al. 2017).</li>
+</ol>
+<p>分析一下目前的研究现状。低红移部分，大家结果一致，没演化。高红移部分，大家的DLAs结果一直，有升高。中红移部分，误差棒很大。中红移部分，0.5~2，这部分对于HI发射线还是DLAs都是很挑战的但是目前还是以DLAs为主。DLAs在这个红移坐落在UV，考虑到只能用HST以及近红移的DLAs较少，大型的survey稀少，给不出足够多的样本，所以他们给的误差棒超级大。</p>
+<p>Rao06根据MgII线预选样本进行了观测研究，样本41个。Neeleman16则是去HST过去20年的数据里面找，极性blind DLAs search，结果只找到了4个。不过有意思的是，他们就用着4个给出了4倍低于Rao06的结果，并且误差棒也挺小的。其结论和近红移的结果就比较一致了。我猜测这个区别是由于Rao06是用MgII作为预选规则的原因。Rao17最近更新了他们的样本，变成了70个，重新做了计算，给出的结果也是降低了一些，和低红移更符合了。然后Rao17年否定他们的样本有选择效应。Kanekar16年通过stack 857个红移1.265的star forming星系样本给出了一个上限，这个上限给Rao的结论不符，支持了Neeleman的结论。但是不管怎么说，这个区域限制很不好，大家吵的很凶，但是数据都不咋地。未来的Dingo或者Laduma上线应该会改变这一点。</p>
+<p>另外要注意一点，就是高红移的HI密度测量普遍较高，而且在升高。DLAs的方法，不仅会测量星系里面的HI，也会测量环境中的，比如filament或者HI流啥的。所以说不定两者的这个不同可以用来研究一下环境中的气体成分。但是不管怎么说，红移&gt;5的部分，整体上密度高于local volumn的两倍还多。</p>
+<p>对这个中性氢密度演化路径的理解，我们天文学家还做的不够。基于半解析的星系演化模拟的结果和近红移结果符合比较好但是高红移不一致，实际上他们发现在高红移恢复这个密度是比较困难的，比如Kim15。这有可能是他们在高红移只考虑在星系里面的气体，说不定需要考虑一下环境中的气体成分。</p>
+<p>但是最近Dave17的数值模拟MUFASA给了个比较好的结果，和我们的观测都挺吻合的。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>我们在红移0.305~0.337的叠加结果，叠了165个星系。&gt;95%的中性氢气体都存在于late里面。中性氢气体质量和蓝色光度的比值对于late(133)是约为0.5。在这些late星系中，低stellar mass星系相对高stellar mass星系更富气体。我们给出了红移0.32的宇宙HI密度，是约为$0.5\times 10^{-3}$.</p>
+<h2 id="重要的图表"><a href="#重要的图表" class="headerlink" title="重要的图表"></a>重要的图表</h2><p>这里贴上他这个工作所有的图表备查。</p>
+<center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig01.png" width="800px"><br></center>
+
+<center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig02.png" width="800px"><br></center>
+
+<center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig03.png" width="800px"><br></center>
+
+<center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig04.png" width="800px"><br></center>
+
+<center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig05.png" width="800px"><br></center>
+
+<center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig06.png" width="800px"><br></center>
+
+<center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig07.png" width="800px"><br></center>
+
+<center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig08.png" width="800px"><br></center>
+
+<center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig09.png" width="800px"><br></center>
+
+<center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig10.png" width="800px"><br></center>
+
+
+<center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig11.png" width="800px"><br></center>
+
+<center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig12.png" width="800px"><br></center>
+
+<center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig13.png" width="800px"><br></center>
+
+<center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig14.png" width="800px"><br></center>
+
+<center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig15.png" width="800px"><br></center>
+
+<center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig16.png" width="800px"><br></center>
+
+<center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig17.png" width="800px"><br></center>
+
+<center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig18.png" width="800px"><br></center>
+
+<center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig19.png" width="800px"><br></center>
+
+
+<h1 id="承晚16年的文章"><a href="#承晚16年的文章" class="headerlink" title="承晚16年的文章"></a>承晚16年的文章</h1><p>这个文章给出的数据点在红移0.37.用的是GMRT,对应的光学天区是COSMOS。</p>
+<p>叠加了474个field galaxy。叠加得到的中性氢质量，置信度是$3\sigma$.通过使用叠加到的中性氢质量，配合样本星系B波段的光度，以及COSMOS天区的光度密度，我们可以把这个质量做体积归一化以得到密度。得到的密度结果是0.42.这篇工作给出的点是目前HI谱线叠加方法给的最高红移的点。把目前所有的红移小于0.4的点，做个加权平均，得到平均的小于0.4红移范围内的中性氢密度是0.35.与之对应，高于红移2部分的用DLAs得到的值是这个的约两倍。</p>
+<p>读这篇文章重点要放在：</p>
+<ul>
+<li>section2, COSMOS天区的光学数据介绍</li>
+<li>section3, GMRT观测射电数据介绍，数据质量分析，以及数据处理流程介绍</li>
+<li>section4, 谱线叠加分析流程</li>
+<li>section5, 主要结果</li>
+<li>section6, 我们结果有啥用呢？这里探讨一下</li>
+</ul>
+<h2 id="光学数据"><a href="#光学数据" class="headerlink" title="光学数据"></a>光学数据</h2><p>COSMOS这个天区，多波段数据很全，从X射线一直到射电。其下属的一个项目，zCOSMOS提供了大量的谱线红移信息。注意这个天区也是JVLA的那个CHILES的观测天区(the COSMOS HI Large Extragalactic Survey)。所以总的来说，这个天区很重要，很厉害。</p>
+<h3 id="测光数据"><a href="#测光数据" class="headerlink" title="测光数据"></a>测光数据</h3><p>光谱数据当然是极端重要的，要不我们不知道红移，没法谱线叠加。但是测光数据也是很重要的，因为这给我们提供宇宙整体上的HI密度，以及HI气体组分和其他的星系性质之间的联系(比如形态学特征啥的)。</p>
+<p>我们把zCOSMOS提供的红移信息，在这个天区内cross match一下能找到的测光的catalog，得到的测光波段一共有27个。</p>
+<p>我们做了0点shift的改正，做了银河系dust改正，用卡方样板拟合方法做了k改正。</p>
+<h3 id="光谱数据"><a href="#光谱数据" class="headerlink" title="光谱数据"></a>光谱数据</h3><p>zCOSMOS的目的是干到红移1，分为两部分，zCOSMOS-bright和zCOSMOS-deep.前者对应亮度$I_{AB}&lt;22.5$，输入catalog是红移0.1到1.2的由HST给出的约两万个星系，cover整个COSMOS天区(1.7个平方度)。后者对应1万个星系，根据颜色预选，红移是1.4-3，集中于中心的1平方度的天区。</p>
+<p>本文用的红移信息，是来自前者，一共有10644个星系，他们称它做10k明亮样本。根据统计信息完备性来看，一共是10109个星系。</p>
+<p>这种星系红移观测都是会给个评级的，我们根据结果可靠性以及对应GMRT观测天区以及红移范围0.35-0.39进行了筛选，结果是506个星系的样本。</p>
+<h3 id="星系分类-1"><a href="#星系分类-1" class="headerlink" title="星系分类"></a>星系分类</h3><p>用了两种办法，一个是根据形态学分类，一个是根据光谱信息分类。</p>
+<p>COSMOS的已有数据，已经做了归类，分成三种：early, spiral, irregular.</p>
+<p>光谱信息分类上，我们根据rest frame的亮度和颜色，看和哪些template比较匹配，以此来分类。用的代码是LEPHARE,结果是把星系样本分成了4类:</p>
+<ul>
+<li>early-type E/S0 (Type 1)</li>
+<li>early spirals Sa/Sb (Type 2)</li>
+<li>late spirals Sc/Sd (Type 3)</li>
+<li>irregular and star- burst galaxies (Type 4).</li>
+</ul>
+<p>为了比较一下这两种办法得到的结论，用了颜色-颜色图来查看。</p>
+<p>根据对这个颜色颜色图的分析，我们发现根据形态学做分类有些不靠谱，对我们的谱线叠加会产生影响，于是使用后者的分类方式。</p>
+<p>注意即使是后者的分类方式，也有一种很讨厌的情况：有些red spirals会被分类成Type1但是却又spiral的特征。这些星系的倾角太大了，由于dust的影响变的比较红。这个样本确实会影响我们的谱线叠加结果，但是因为这种星系数目太少了，只有5%不到，我们认为对结果的影响可以忽略不计。</p>
+<h2 id="射电数据-1"><a href="#射电数据-1" class="headerlink" title="射电数据"></a>射电数据</h2><h3 id="观测细节"><a href="#观测细节" class="headerlink" title="观测细节"></a>观测细节</h3><p>积分时间134个小时。on-source是115小时。观测年份是08年和09年。</p>
+<p>那时候的相关器还比较老，工作方式是两个16MHz的子宽带。每个子带宽有128个channel和两个极化。所以channel宽度是125kHz，对应于红移0.37的36.3km/s.主波束大小是32.25角分。10%主波束大小是月1度。</p>
+<h3 id="数据处理-1"><a href="#数据处理-1" class="headerlink" title="数据处理"></a>数据处理</h3><p>先用GMRT提供的flagcal搞一搞。做了几个iteration，因为各种各样的因素对我们的数据影响比较严重。</p>
+<p>然后用casa开搞。用了中间的80channel来做flux和phase calibration。如果有必要再flag一下。</p>
+<blockquote>
+<p>这里啥意思呢？是说选了一些channel做calibration，得到的calibration solution再应用到全部带宽么？</p>
+</blockquote>
+<p>然后根据日期split一下，分别做连续谱图来进一步查看有没有坏的数据。最后再给concatenate一下。注意COSMOS天区，在设计的时候就避免了很亮的源的存在，于是我们尝试了一下self-cal但是没有很大的改善，于是就不用self-cal了。</p>
+<h3 id="连续谱图"><a href="#连续谱图" class="headerlink" title="连续谱图"></a>连续谱图</h3><p>跟17年文章一样，100个channel按照10个一组，搞连续谱图。像素大小是0.9角秒，weighting是briggs0，用了w-projection。最终的连续谱图的rms level是$12.4\mu Jy/beam$, 合成孔径波束大小是$3.5\times 2.4 arcsec^2$.<br>astrometric accuracy是这么做的：在image里面找置信度大于$5\sigma$的源，对比他们和VLA的FIRST的位置。平均的offset是0.68角秒，小于我们一个像素大小。醉倒的offset是1.8个角秒，远远小于一个我们的合成波束。</p>
+<h3 id="data-cube-1"><a href="#data-cube-1" class="headerlink" title="data cube"></a>data cube</h3><p>基本参数跟连续谱的图一致。beam大小也一样，对应红移0.37的尺度是$17.9\times 12.0 kpc^2$.</p>
+<p>连续谱扣除，是先用uvsub，再imcontsub。<br>每个channel的rms level,在lower子带宽部分是是$140\mu Jy/beam$，在upper子带宽部分是$117\mu Jy/beam$.</p>
+<h2 id="谱线叠加，以及叠加中性氢质量的获得"><a href="#谱线叠加，以及叠加中性氢质量的获得" class="headerlink" title="谱线叠加，以及叠加中性氢质量的获得"></a>谱线叠加，以及叠加中性氢质量的获得</h2><p>第一步是啥，大声告诉我！<br>找！源！<br>所以先用DUCHAMP找了找有没有直接探测。另外也用眼睛找了找。结论是木有。</p>
+<p>最后在我们残余的cube里面，对应的星系有474个：</p>
+<ul>
+<li>95 galaxies with spectrophotometric Type 1</li>
+<li>58 with Type 2</li>
+<li>321 with Type 3 or 4</li>
+</ul>
+<p>每个谱线都抽出来。做pbc：</p>
+<p>$$gain=e^{-(2\sqrt{ln2}d/\theta)}$$</p>
+<p>其中</p>
+<p>$$\theta = 26.2\times \frac{1280MHz}{f_{obs}}$$</p>
+<p>角度$\theta$是HPBW.</p>
+<p>然后做加权平均，权重是对应每个pbc过的谱线的rms噪声。我们队每个不同的分类样本进行了stacking，对整体也做了一下。</p>
+<p>计算中性氢质量的式子是</p>
+<p>$$\frac{M}{M_\odot}=\frac{236}{1+z}(\frac{D_L}{Mpc})^2(\frac{\int S_VdV}{mJy\ kms^{-1}})$$</p>
+<p>我们用红移0.37这个值(是中位数)，来计算这个式子。这个值也被用来计算光度距离。</p>
+<p>那么速度积分区间咋搞呢？我们用T-F关系。对于late，平均的$w_{20}$是278.8km/s，最大值是571km/s.考虑进来红移的不确定度，大概110km/s,我们最终用了500km/s的积分区间。<br>那么得到的HI质量，误差棒怎么分析呢？用jackknife.</p>
+<p>我们得到了$\frac{M}{L_B}$的值，发现late的结果和local universe得到的Sc和Sd星系的中位数结果一致。</p>
+<p>这里注意一点，叠加的这些星系时假定了，它们都没有被合成beam给resolve。</p>
+<p>为了验证这一个假设，用了97年的一篇文章，那篇文章给出了HI size与B波段亮度的关系，给出了两个定义。承晚17年文章提到的就是这两个定义。式子如下</p>
+<p>$$log(D_{HI})=(-0.1673\pm 0.0142)\times M_B -1.9545$$</p>
+<p>以及</p>
+<p>$$log(D_{eff})=(-0.1674\pm 0.0152)\times M_B -2.1689$$</p>
+<p>物理意义，前者是在1太阳质量每平法pc的面密度出的kpc单位数。后者是半HI质量的kpc单位数。</p>
+<p>结果是，看起来，会被后者的定义部分resolve，但是前者的定义问题好像不大。但是也要注意到他们97年文章自己提到的，他们这个模型可能有bias的，会倾向于选择大的HI质量以及大的光学尺度。但是无论如何，为了确保没问题，我们尝试平滑我们的data cube，分别使用等效于5.9, 7.8, 9.8, 11.7角秒的综合beam大小，对应于30, 40, 50, 60kpc的大小。然后用这些新的cube重新做stacking，对比结果。发现，没啥不同，放心了。</p>
+<h2 id="宇宙中性氢密度-Omega-HI-1"><a href="#宇宙中性氢密度-Omega-HI-1" class="headerlink" title="宇宙中性氢密度$\Omega _{HI}$"></a>宇宙中性氢密度$\Omega _{HI}$</h2><p>实际上我们说我们的叠加红移是最高的，也不尽然。因为09年Lah叠加了一个红移0.37的。但是要注意的是，他们叠加的环境是rich cluster，所以其结论不能应用于field galaxy的演化研究。我们的却可以。</p>
+<p>如果直接用我们得到的质量除以体积，不行，因为我们的sample可能不全，field里面可能还有一些其他没有观测到的暗弱星系。另外就是cosmic variance，我们不能保证我们的天区有足够的代表性，代表红移0.37处的all-sky。</p>
+<p>那我们咋搞呢？我们使用的办法是叫做体积归一，volumn normalization。具体做法是，用光学的光度数据来做个权重，加权平均得到密度。我们先采用$\frac{M_{HI}}{L}$这个物理量，然后把它乘以光学上的光度密度。这里我们隐含了一个假设，就是所有的HI气体都在我们的光学对应体内。有一些文献告诉我们，至少在local universe，这个假设是合理的。</p>
+<p>这个做法的数学表达是(这里出现的不带下标的质量一律是HI质量，我的下标老出错不能解析不知道咋回事儿。。。)</p>
+<p>$$\sum M= \overline{M} \times N_{gal}$$</p>
+<p>以及</p>
+<p>$$<br>\rho = \frac{\sum M}{\sum L_B} \times rhoLB(z)<br>$$</p>
+<p>在这之后，为了修正incomplete sample的问题，我们测了一下光度函数的一些特征值，比如说，用faint end的slope，以及特征光度。承晚13年的文章的附录给出了具体的计算方法。这个改正没有对early type使用，因为early的光度函数faint end的贡献太小了。</p>
+<p>结果是，$2.6\sigma$置信度上得到的值是0.42.如果结合其他更低红移的观测，结论是，在0.4红移以内，密度是0.35 $(\times 10^{-3})$.</p>
+<p>那么cosmic variance咋整呢？<br>看别人的文章，发现他们分析的这个COSMOS 天区的cosmic variance不严重，小于10%的。我们把这个天区的光度密度和GAMA天区的结果对比了一下，两者太接近了。所以似乎这一步可以忽略了。</p>
+<p>另一个要考虑的是HI自吸收的问题。这取决于到底光薄还是光厚。这个事儿现在还没研究透彻所以不好说。最近有人对临近的大小麦哲伦云做的研究，说这个自吸收效果还是挺明显的，所以很有点光学厚的意思。他们给出的改正因子是HI密度需要进行修正，要增大34%。但是在高红移到底咋样毕竟不清楚，所以这里我们不进行进一步修正了。</p>
+<p>考虑到我们的文章结论一直是说，红移0.4以内没演化。如果真的需要做自吸收改正的话，很多点都会同时上移，那么这个结论还是没有改变的。</p>
+<h2 id="HI气体在4Gyr内的演化"><a href="#HI气体在4Gyr内的演化" class="headerlink" title="HI气体在4Gyr内的演化"></a>HI气体在4Gyr内的演化</h2><p>DLAs原则上会考虑进入不在星系内的气体。尽管我们提到了近邻宇宙气体应该都在星系里面，高红移我们并不知道是不是这样，比如有没有dark galaxy啥的。</p>
+<p>模型解释有点困难。有些模拟跟低红移符合，有些跟高红移符合，都符合比较困难。</p>
+<h2 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h2><p>用的GMRT观测，天区是COSMOS。样本是zCOSMOS-bright 10k样本。对于这个样本，先用SED fitting进行了分类。</p>
+<p>结论是，</p>
+<ol>
+<li>HI气体主要由late星系。</li>
+<li>得到的$\frac {M_{HI}}{L_B}$和近邻宇宙的值是一致的。</li>
+<li>得到了平均的HI质量，再结合COSMOS天区数据的B波段的光度、光度密度信息，我们做了volume normalization. 我们给出的结果是，红移0.37处，密度是0.42.结合已有的其他的工作，4Gyr以内的平均密度是0.35.</li>
+</ol>
+<h2 id="文章的图表记录"><a href="#文章的图表记录" class="headerlink" title="文章的图表记录"></a>文章的图表记录</h2><p>同样的，图标截图放在这里备查。</p>
+<center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig20.png" width="800px"><br></center>
+
+<center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig21.png" width="800px"><br></center>
+
+<center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig22.png" width="800px"><br></center><br><center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig23.png" width="800px"><br></center><br><center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig24.png" width="800px"><br></center><br><center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig25.png" width="800px"><br></center><br><center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig26.png" width="800px"><br></center><br><center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig27.png" width="800px"><br></center><br><center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig28.png" width="800px"><br></center><br><center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig29.png" width="800px"><br></center><br><center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig30.png" width="800px"><br></center><br><center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig31.png" width="800px"><br></center><br><center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig32.png" width="800px"><br></center><br><center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig33.png" width="800px"><br></center>
+
+
+<h1 id="承晚在13年的文章"><a href="#承晚在13年的文章" class="headerlink" title="承晚在13年的文章"></a>承晚在13年的文章</h1><p>这文章给的是0.1和0.2红移的两个点。用的望远镜是WSRT。叠加的星系分别是59和96.这个结果跟其他人的结果比较，和红移~0的结果差不多，说明在过去的2.4Gyr（红移0.2）内星系的HI整体上没什么演化。</p>
+<p>这篇文章的方法啥的，看起来跟那两篇文章自然是非常像。</p>
+<p>射电观测是120个小时。带宽是overlapping的8个20MHz带宽。每个带宽128channel，两个极化。对应的channel宽度是156.25kHz.对应于红移0.15的37.9km/s.</p>
+<p>数据处理方面，不同的是，这里对带宽边缘以及强信号附近做了hanning smooth。<br>用casa做了flagging, calibration, self-calibration, iamging.同时也结合了aips使用。<br>还做了$T_{sys}$的calibration。</p>
+<p>连续谱imaging的参数如下：<br>像素是5角秒大小，12channel一组作图，另一部分8channel一组作图。连续谱的rms是$12\mu Jy/beam$和$13\mu Jy/beam$</p>
+<p>对于astrometric accuracy，跟FIRST对比一下，最大的offset是3.5角秒，小于一个pixel的大小。</p>
+<p>连续谱扣除，是uvsub，然后用fitorder为1的uvcontsub。然后做的data cube用的是briggs0.5, 最终rms是$61\mu Jy/beam/channel$，beam大小是$33’’\times 20’’$</p>
+<p>到了叠加部分，首先看看有没有direct detection。</p>
+<p>用DUCHAMP。低红移部分一共发现了11个。高红移部分两个。</p>
+<p>我们留意到，部分星系是被resolve了的。所以要提防流量丢失的问题。</p>
+<p>叠加的时候，先做pbc。用的式子是</p>
+<p>$$g(\nu ,r)=cos^6(c\times \nu \times r)$$</p>
+<p>这里的c是一个常数，在我们这个情况下是68.注意流量和噪声，如果都是直接计算的话就都要除以这个pbc参数了。<br>也就是</p>
+<p>$$S’_i=S_i/g_i$$</p>
+<p>和</p>
+<p>$$\sigma’_i = \sigma _i/g_i$$</p>
+<p>我们这个beam是$33’’\times 20’’$对应于$50\times 31 kpc$.</p>
+<p>为了考虑这个resolve的问题，用了97年那个文章的两个定义来探究。那里用到了B波段的测光信息，但是我们这里没有B波段测光数据，于是我们用了$R_{90}$来代替。这个半径从定义上是和r波段数据相关的。我们把这个量带入到97年的文章工作中去，外延了一下它们的结论，找到了我们这个r波段信息和HI尺度的关系。然后用这个关系来看看估计的尺度。</p>
+<p>结论发现，一些星系小于50kpc，但是一些是从50-57kpc不等。所以确实有resolve的问题发生。</p>
+<p>但是对高红移的样本，不存在这样的问题，都小于一个beam。</p>
+<p>于是就把beam size搞大来做imaging，分别是33, 45, 60角秒。然后分别做stacking比较结果。具体的结果见相关图表。</p>
+<p>关于叠加时候用的weighting，见下面的式子</p>
+<p>$$S_{average}=\frac{\sum_i w’_i S’_i}{\sum_i w’_i} $$</p>
+<p>以及</p>
+<p>$$w’_i=\frac{1}{\sigma_i’^2}$$</p>
+<p>这里面的$S’_i$已经是pbc过的谱线了。rms噪声是在每个channel分别测量的，然后做pbc，然后平方取倒数得到weighting。</p>
+<p>然后为了计算平均的中性氢质量，需要得知积分的速度区间。这里用了500km/s.用了TF关系。</p>
+<p>噪声方面，用了jackknife的方法。承晚这篇文章里面给了比较具体的他是怎么做jackknife resampling的。</p>
+<center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig34.png" width="800px"><br></center>
+
+
+<p>另外一个事儿，是比较了一下把direct detection加入到stacking里面会造成的影响。<br>结论是</p>
+<ul>
+<li>红移0.1，他们贡献了24%的质量，对intermediate-type的质量则是贡献了44%。</li>
+<li>红移0.3，对intermediate-type贡献了29%，对late星系没有影响。</li>
+</ul>
+<p>这也没啥不正常，毕竟我们的stacking样本就很小，direct detection影响大是正常的。</p>
+<p>然后就开始搞宇宙中性氢气体密度$\Omega_{HI}$了。</p>
+<p>同样的办法，用B波段的亮度和亮度密度。</p>
+<p>然后就要考虑修正因子的问题了。<br>首先是样本缺失的问题，本文的附录给了怎么得到这个修正项的。</p>
+<p>下面是本文出现的图标，贴在这里备查。</p>
+<center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig35.png" width="800px"><br></center>
+
+<center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig36.png" width="800px"><br></center>
+
+<center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig37.png" width="800px"><br></center>
+
+<center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig38.png" width="800px"><br></center>
+
+
+<center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig39.png" width="800px"><br></center>
+
+<center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig40.png" width="800px"><br></center>
+
+<center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig41.png" width="800px"><br></center>
+
+<center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig42.png" width="800px"><br></center>
+
+<center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig43.png" width="800px"><br></center>
+
+<center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig44.png" width="800px"><br></center>
+
+<center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig45.png" width="800px"><br></center>
+
+<center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig46.png" width="800px"><br></center>
+
+<center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig47.png" width="800px"><br></center>
+
+<h1 id="Delhaize在13年的文章"><a href="#Delhaize在13年的文章" class="headerlink" title="Delhaize在13年的文章"></a>Delhaize在13年的文章</h1><p>本文的21cm发射谱线数据来自HIPASS和SGP，都是用的帕克斯望远镜。光学是2dFGRS. 本文研究红移0-0.13.其中小于0.04部分用HIPASS，高于0.04部分用SGP。结果是在两个bin分别给了一个数据点。本文的cosmic variance影响不大，因为涉及的有效volume很大。本文顺便也研究了一下HI质量和质光比的关系，以及随着红移、光度、颜色的变化。</p>
+<p>本文的配图和表格记录在下面。</p>
+<center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig48.png" width="800px"><br></center>
+
+<center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig49.png" width="800px"><br></center>
+
+<center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig50.png" width="800px"><br></center>
+
+<center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig51.png" width="800px"><br></center>
+
+<center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig52.png" width="800px"><br></center>
+
+<center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig53.png" width="800px"><br></center>
+
+<center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig54.png" width="800px"><br></center>
+
+<center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig55.png" width="800px"><br></center>
+
+<center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig56.png" width="800px"><br></center>
+
+<center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig57.png" width="800px"><br></center>
+
+<center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig58.png" width="800px"><br></center>
+
+<center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig59.png" width="800px"><br></center>
+
+<center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig60.png" width="800px"><br></center>
+
+<center><br><img src="/2017/11/11/谱线叠加得到中性氢密度类工作流程整理/nov12.fig61.png" width="800px"><br></center>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/天文/" rel="tag"># 天文</a>
+          
+            <a href="/tags/HI文章/" rel="tag"># HI文章</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/23/python的argument序号/" rel="next" title="python的argument序号">
+                <i class="fa fa-chevron-left"></i> python的argument序号
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/11/23/树莓派折腾笔记-1/" rel="prev" title="树莓派折腾笔记-1">
+                树莓派折腾笔记-1 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/pic2.jpg"
+               alt="陈清祥" />
+          <p class="site-author-name" itemprop="name">陈清祥</p>
+          <p class="site-description motion-element" itemprop="description">我们的征途是星辰大海</p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">72</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">74</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#重要文献目录"><span class="nav-number">1.</span> <span class="nav-text">重要文献目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#承晚今年9月份投出去的文章"><span class="nav-number">2.</span> <span class="nav-text">承晚今年9月份投出去的文章</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第二节，光学数据"><span class="nav-number">2.1.</span> <span class="nav-text">第二节，光学数据</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据样本特点以及选取"><span class="nav-number">2.1.1.</span> <span class="nav-text">数据样本特点以及选取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#观测以及数据处理"><span class="nav-number">2.1.2.</span> <span class="nav-text">观测以及数据处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#红移测定"><span class="nav-number">2.1.3.</span> <span class="nav-text">红移测定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#星系分类"><span class="nav-number">2.1.4.</span> <span class="nav-text">星系分类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#射电数据"><span class="nav-number">2.2.</span> <span class="nav-text">射电数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#观测基本信息"><span class="nav-number">2.3.</span> <span class="nav-text">观测基本信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据处理"><span class="nav-number">2.4.</span> <span class="nav-text">数据处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#校准"><span class="nav-number">2.4.1.</span> <span class="nav-text">校准</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#data-cube"><span class="nav-number">2.4.2.</span> <span class="nav-text">data cube</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#stacking"><span class="nav-number">2.5.</span> <span class="nav-text">stacking</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#星系的恒星组分和HI质量"><span class="nav-number">2.5.1.</span> <span class="nav-text">星系的恒星组分和HI质量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#中性氢密度演化"><span class="nav-number">2.6.</span> <span class="nav-text">中性氢密度演化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#rho-HI-质量密度"><span class="nav-number">2.6.1.</span> <span class="nav-text">$\rho _{HI}$质量密度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#宇宙中性氢密度-Omega-HI"><span class="nav-number">2.6.2.</span> <span class="nav-text">宇宙中性氢密度$\Omega_{HI}$</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">2.7.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重要的图表"><span class="nav-number">2.8.</span> <span class="nav-text">重要的图表</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#承晚16年的文章"><span class="nav-number">3.</span> <span class="nav-text">承晚16年的文章</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#光学数据"><span class="nav-number">3.1.</span> <span class="nav-text">光学数据</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#测光数据"><span class="nav-number">3.1.1.</span> <span class="nav-text">测光数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#光谱数据"><span class="nav-number">3.1.2.</span> <span class="nav-text">光谱数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#星系分类-1"><span class="nav-number">3.1.3.</span> <span class="nav-text">星系分类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#射电数据-1"><span class="nav-number">3.2.</span> <span class="nav-text">射电数据</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#观测细节"><span class="nav-number">3.2.1.</span> <span class="nav-text">观测细节</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据处理-1"><span class="nav-number">3.2.2.</span> <span class="nav-text">数据处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#连续谱图"><span class="nav-number">3.2.3.</span> <span class="nav-text">连续谱图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#data-cube-1"><span class="nav-number">3.2.4.</span> <span class="nav-text">data cube</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#谱线叠加，以及叠加中性氢质量的获得"><span class="nav-number">3.3.</span> <span class="nav-text">谱线叠加，以及叠加中性氢质量的获得</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#宇宙中性氢密度-Omega-HI-1"><span class="nav-number">3.4.</span> <span class="nav-text">宇宙中性氢密度$\Omega _{HI}$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HI气体在4Gyr内的演化"><span class="nav-number">3.5.</span> <span class="nav-text">HI气体在4Gyr内的演化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结-1"><span class="nav-number">3.6.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文章的图表记录"><span class="nav-number">3.7.</span> <span class="nav-text">文章的图表记录</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#承晚在13年的文章"><span class="nav-number">4.</span> <span class="nav-text">承晚在13年的文章</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Delhaize在13年的文章"><span class="nav-number">5.</span> <span class="nav-text">Delhaize在13年的文章</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">陈清祥</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+  
+
+
+</body>
+</html>

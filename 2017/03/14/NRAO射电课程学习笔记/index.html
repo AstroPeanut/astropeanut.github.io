@@ -1,0 +1,728 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="天文,学习笔记,课程,射电,NRAO," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="这个课程质量很高，是给University of Virginia开设的。其讲义写的很好，我决定研习一下并在此更新笔记。讲义的比较老的版本，是07年版，网站提供pdf版本下载，地址为http://www.cv.nrao.edu/course/astr534/ERA_old.shtml，另外目前实际正在使用的讲义（毕竟过去快10年了，很多东西要更新）可以在这里找到https://science.nr">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NRAO射电课程学习笔记">
+<meta property="og:url" content="http://astropeanut.info/2017/03/14/NRAO射电课程学习笔记/index.html">
+<meta property="og:site_name" content="AstroPeanut's Blog">
+<meta property="og:description" content="这个课程质量很高，是给University of Virginia开设的。其讲义写的很好，我决定研习一下并在此更新笔记。讲义的比较老的版本，是07年版，网站提供pdf版本下载，地址为http://www.cv.nrao.edu/course/astr534/ERA_old.shtml，另外目前实际正在使用的讲义（毕竟过去快10年了，很多东西要更新）可以在这里找到https://science.nr">
+<meta property="og:updated_time" content="2017-03-26T07:38:32.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="NRAO射电课程学习笔记">
+<meta name="twitter:description" content="这个课程质量很高，是给University of Virginia开设的。其讲义写的很好，我决定研习一下并在此更新笔记。讲义的比较老的版本，是07年版，网站提供pdf版本下载，地址为http://www.cv.nrao.edu/course/astr534/ERA_old.shtml，另外目前实际正在使用的讲义（毕竟过去快10年了，很多东西要更新）可以在这里找到https://science.nr">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://astropeanut.info/2017/03/14/NRAO射电课程学习笔记/"/>
+
+
+
+
+
+  <title> NRAO射电课程学习笔记 | AstroPeanut's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?d15b8cc355d618f75dfd082559510991";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">AstroPeanut's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle">总学渣也不是个办法</p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://astropeanut.info/2017/03/14/NRAO射电课程学习笔记/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="陈清祥">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/pic2.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="AstroPeanut's Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="AstroPeanut's Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                NRAO射电课程学习笔记
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-14T22:18:26+08:00">
+                2017-03-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/work/" itemprop="url" rel="index">
+                    <span itemprop="name">工作和技能</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/03/14/NRAO射电课程学习笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://astropeanut.info/2017/03/14/NRAO射电课程学习笔记/" itemprop="commentCount">0</span> comments
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>这个课程质量很高，是给University of Virginia开设的。其讲义写的很好，我决定研习一下并在此更新笔记。讲义的比较老的版本，是07年版，网站提供pdf版本下载，地址为<a href="http://www.cv.nrao.edu/course/astr534/ERA_old.shtml" target="_blank" rel="external">http://www.cv.nrao.edu/course/astr534/ERA_old.shtml</a>，另外目前实际正在使用的讲义（毕竟过去快10年了，很多东西要更新）可以在这里找到<a href="https://science.nrao.edu/opportunities/courses/era/" target="_blank" rel="external">https://science.nrao.edu/opportunities/courses/era/</a>.我主要是根据这个新的讲义来学习，老的那个版本作为补充阅读材料。</p>
+<a id="more"></a>
+<h1 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h1><h2 id="射电天文绪论"><a href="#射电天文绪论" class="headerlink" title="射电天文绪论"></a>射电天文绪论</h2><h3 id="啥是射电天文"><a href="#啥是射电天文" class="headerlink" title="啥是射电天文"></a>啥是射电天文</h3><h3 id="大气窗口"><a href="#大气窗口" class="headerlink" title="大气窗口"></a>大气窗口</h3><h3 id="天文中的射电窗口"><a href="#天文中的射电窗口" class="headerlink" title="天文中的射电窗口"></a>天文中的射电窗口</h3><h3 id="长波有什么特别的呢？"><a href="#长波有什么特别的呢？" class="headerlink" title="长波有什么特别的呢？"></a>长波有什么特别的呢？</h3><h3 id="射电望远镜和综合孔径干涉仪"><a href="#射电望远镜和综合孔径干涉仪" class="headerlink" title="射电望远镜和综合孔径干涉仪"></a>射电望远镜和综合孔径干涉仪</h3><h2 id="宇宙射电噪声的发现"><a href="#宇宙射电噪声的发现" class="headerlink" title="宇宙射电噪声的发现"></a>宇宙射电噪声的发现</h2><h2 id="漫游射电宇宙"><a href="#漫游射电宇宙" class="headerlink" title="漫游射电宇宙"></a>漫游射电宇宙</h2><h1 id="辐射理论基础"><a href="#辐射理论基础" class="headerlink" title="辐射理论基础"></a>辐射理论基础</h1><h2 id="亮度和流量密度"><a href="#亮度和流量密度" class="headerlink" title="亮度和流量密度"></a>亮度和流量密度</h2><h2 id="辐射转移"><a href="#辐射转移" class="headerlink" title="辐射转移"></a>辐射转移</h2><h3 id="吸收"><a href="#吸收" class="headerlink" title="吸收"></a>吸收</h3><h3 id="发射"><a href="#发射" class="headerlink" title="发射"></a>发射</h3><h3 id="大气中的吸收和发射"><a href="#大气中的吸收和发射" class="headerlink" title="大气中的吸收和发射"></a>大气中的吸收和发射</h3><h3 id="不透光的物体"><a href="#不透光的物体" class="headerlink" title="不透光的物体"></a>不透光的物体</h3><h2 id="极化"><a href="#极化" class="headerlink" title="极化"></a>极化</h2><h2 id="黑体辐射"><a href="#黑体辐射" class="headerlink" title="黑体辐射"></a>黑体辐射</h2><h3 id="瑞利-金斯近似"><a href="#瑞利-金斯近似" class="headerlink" title="瑞利-金斯近似"></a>瑞利-金斯近似</h3><h3 id="普朗克辐射定律"><a href="#普朗克辐射定律" class="headerlink" title="普朗克辐射定律"></a>普朗克辐射定律</h3><h2 id="热电阻产生的噪声"><a href="#热电阻产生的噪声" class="headerlink" title="热电阻产生的噪声"></a>热电阻产生的噪声</h2><h2 id="CMB"><a href="#CMB" class="headerlink" title="CMB"></a>CMB</h2><h3 id="膨胀的宇宙"><a href="#膨胀的宇宙" class="headerlink" title="膨胀的宇宙"></a>膨胀的宇宙</h3><h3 id="膨胀宇宙中的黑体辐射"><a href="#膨胀宇宙中的黑体辐射" class="headerlink" title="膨胀宇宙中的黑体辐射"></a>膨胀宇宙中的黑体辐射</h3><h3 id="CMB的预言和发现"><a href="#CMB的预言和发现" class="headerlink" title="CMB的预言和发现"></a>CMB的预言和发现</h3><h3 id="偶极非对称性"><a href="#偶极非对称性" class="headerlink" title="偶极非对称性"></a>偶极非对称性</h3><h3 id="内禀非对称性"><a href="#内禀非对称性" class="headerlink" title="内禀非对称性"></a>内禀非对称性</h3><h2 id="加速带电粒子的辐射"><a href="#加速带电粒子的辐射" class="headerlink" title="加速带电粒子的辐射"></a>加速带电粒子的辐射</h2><h2 id="射电波段的dust辐射"><a href="#射电波段的dust辐射" class="headerlink" title="射电波段的dust辐射"></a>射电波段的dust辐射</h2><h1 id="射电波段的望远镜和辐射计"><a href="#射电波段的望远镜和辐射计" class="headerlink" title="射电波段的望远镜和辐射计"></a>射电波段的望远镜和辐射计</h1><h2 id="天线理论基础"><a href="#天线理论基础" class="headerlink" title="天线理论基础"></a>天线理论基础</h2><h3 id="短偶极天线-Hertz-Dipole-的辐射"><a href="#短偶极天线-Hertz-Dipole-的辐射" class="headerlink" title="短偶极天线(Hertz Dipole)的辐射"></a>短偶极天线(Hertz Dipole)的辐射</h3><h3 id="辐射阻抗"><a href="#辐射阻抗" class="headerlink" title="辐射阻抗"></a>辐射阻抗</h3><h3 id="发射天线的功率增益"><a href="#发射天线的功率增益" class="headerlink" title="发射天线的功率增益"></a>发射天线的功率增益</h3><h3 id="接受天线的有效面积"><a href="#接受天线的有效面积" class="headerlink" title="接受天线的有效面积"></a>接受天线的有效面积</h3><h3 id="天线互易性"><a href="#天线互易性" class="headerlink" title="天线互易性"></a>天线互易性</h3><h3 id="天线温度"><a href="#天线温度" class="headerlink" title="天线温度"></a>天线温度</h3><h2 id="反射式天线"><a href="#反射式天线" class="headerlink" title="反射式天线"></a>反射式天线</h2><h3 id="抛物面发射天线"><a href="#抛物面发射天线" class="headerlink" title="抛物面发射天线"></a>抛物面发射天线</h3><h3 id="远场距离"><a href="#远场距离" class="headerlink" title="远场距离"></a>远场距离</h3><h3 id="孔径天线的模式图"><a href="#孔径天线的模式图" class="headerlink" title="孔径天线的模式图"></a>孔径天线的模式图</h3><h3 id="均匀照明的天线的电场和功率图样"><a href="#均匀照明的天线的电场和功率图样" class="headerlink" title="均匀照明的天线的电场和功率图样"></a>均匀照明的天线的电场和功率图样</h3><h3 id="狭窄照明的天线的电场和功率图样"><a href="#狭窄照明的天线的电场和功率图样" class="headerlink" title="狭窄照明的天线的电场和功率图样"></a>狭窄照明的天线的电场和功率图样</h3><h2 id="二维孔径天线"><a href="#二维孔径天线" class="headerlink" title="二维孔径天线"></a>二维孔径天线</h2><h3 id="二维孔径天线的场模式"><a href="#二维孔径天线的场模式" class="headerlink" title="二维孔径天线的场模式"></a>二维孔径天线的场模式</h3><h3 id="均匀照明的矩形孔径天线"><a href="#均匀照明的矩形孔径天线" class="headerlink" title="均匀照明的矩形孔径天线"></a>均匀照明的矩形孔径天线</h3><h3 id="高斯波束立体角和波束宽"><a href="#高斯波束立体角和波束宽" class="headerlink" title="高斯波束立体角和波束宽"></a>高斯波束立体角和波束宽</h3><h3 id="反射精度的要求"><a href="#反射精度的要求" class="headerlink" title="反射精度的要求"></a>反射精度的要求</h3><h3 id="指向精度的要求"><a href="#指向精度的要求" class="headerlink" title="指向精度的要求"></a>指向精度的要求</h3><h2 id="波导"><a href="#波导" class="headerlink" title="波导"></a>波导</h2><h2 id="射电望远镜"><a href="#射电望远镜" class="headerlink" title="射电望远镜"></a>射电望远镜</h2><h2 id="辐射计"><a href="#辐射计" class="headerlink" title="辐射计"></a>辐射计</h2><h3 id="带宽限制噪声"><a href="#带宽限制噪声" class="headerlink" title="带宽限制噪声"></a>带宽限制噪声</h3><h3 id="辐射计-1"><a href="#辐射计-1" class="headerlink" title="辐射计"></a>辐射计</h3><h3 id="一些需要注意的地方"><a href="#一些需要注意的地方" class="headerlink" title="一些需要注意的地方"></a>一些需要注意的地方</h3><h3 id="超外差接收机"><a href="#超外差接收机" class="headerlink" title="超外差接收机"></a>超外差接收机</h3><h3 id="分光计"><a href="#分光计" class="headerlink" title="分光计"></a>分光计</h3><h3 id="辐射计的噪声测量"><a href="#辐射计的噪声测量" class="headerlink" title="辐射计的噪声测量"></a>辐射计的噪声测量</h3><h2 id="干涉仪"><a href="#干涉仪" class="headerlink" title="干涉仪"></a>干涉仪</h2><h3 id="两天线的近单色干涉仪"><a href="#两天线的近单色干涉仪" class="headerlink" title="两天线的近单色干涉仪"></a>两天线的近单色干涉仪</h3><h3 id="微展源和复数相关器"><a href="#微展源和复数相关器" class="headerlink" title="微展源和复数相关器"></a>微展源和复数相关器</h3><h3 id="有限带宽和时间平均的影响"><a href="#有限带宽和时间平均的影响" class="headerlink" title="有限带宽和时间平均的影响"></a>有限带宽和时间平均的影响</h3><h3 id="地球转动孔径综合"><a href="#地球转动孔径综合" class="headerlink" title="地球转动孔径综合"></a>地球转动孔径综合</h3><h3 id="三维干涉仪"><a href="#三维干涉仪" class="headerlink" title="三维干涉仪"></a>三维干涉仪</h3><h3 id="灵敏度"><a href="#灵敏度" class="headerlink" title="灵敏度"></a>灵敏度</h3><h1 id="自由-自由辐射"><a href="#自由-自由辐射" class="headerlink" title="自由-自由辐射"></a>自由-自由辐射</h1><h2 id="热辐射和非热辐射"><a href="#热辐射和非热辐射" class="headerlink" title="热辐射和非热辐射"></a>热辐射和非热辐射</h2><h2 id="HII区"><a href="#HII区" class="headerlink" title="HII区"></a>HII区</h2><h2 id="HII区的自由-自由射电辐射"><a href="#HII区的自由-自由射电辐射" class="headerlink" title="HII区的自由-自由射电辐射"></a>HII区的自由-自由射电辐射</h2><h3 id="单个电子-离子相互作用产生的射电辐射"><a href="#单个电子-离子相互作用产生的射电辐射" class="headerlink" title="单个电子-离子相互作用产生的射电辐射"></a>单个电子-离子相互作用产生的射电辐射</h3><h3 id="单个HII区的射电辐射"><a href="#单个HII区的射电辐射" class="headerlink" title="单个HII区的射电辐射"></a>单个HII区的射电辐射</h3><h1 id="同步辐射"><a href="#同步辐射" class="headerlink" title="同步辐射"></a>同步辐射</h1><h2 id="磁韧致辐射"><a href="#磁韧致辐射" class="headerlink" title="磁韧致辐射"></a>磁韧致辐射</h2><h3 id="Gyro辐射"><a href="#Gyro辐射" class="headerlink" title="Gyro辐射"></a>Gyro辐射</h3><h2 id="同步辐射功率"><a href="#同步辐射功率" class="headerlink" title="同步辐射功率"></a>同步辐射功率</h2><h3 id="洛伦兹变换"><a href="#洛伦兹变换" class="headerlink" title="洛伦兹变换"></a>洛伦兹变换</h3><h3 id="相对论质量"><a href="#相对论质量" class="headerlink" title="相对论质量"></a>相对论质量</h3><h3 id="单一电子的同步辐射功率"><a href="#单一电子的同步辐射功率" class="headerlink" title="单一电子的同步辐射功率"></a>单一电子的同步辐射功率</h3><h2 id="同步辐射谱"><a href="#同步辐射谱" class="headerlink" title="同步辐射谱"></a>同步辐射谱</h2><h3 id="单一电子的同步辐射谱"><a href="#单一电子的同步辐射谱" class="headerlink" title="单一电子的同步辐射谱"></a>单一电子的同步辐射谱</h3><h3 id="光学薄的源的同步辐射谱"><a href="#光学薄的源的同步辐射谱" class="headerlink" title="光学薄的源的同步辐射谱"></a>光学薄的源的同步辐射谱</h3><h3 id="同步辐射自吸收"><a href="#同步辐射自吸收" class="headerlink" title="同步辐射自吸收"></a>同步辐射自吸收</h3><h2 id="同步辐射源"><a href="#同步辐射源" class="headerlink" title="同步辐射源"></a>同步辐射源</h2><h3 id="最小能量和能量均分"><a href="#最小能量和能量均分" class="headerlink" title="最小能量和能量均分"></a>最小能量和能量均分</h3><h3 id="艾丁顿光度极限"><a href="#艾丁顿光度极限" class="headerlink" title="艾丁顿光度极限"></a>艾丁顿光度极限</h3><h3 id="应用到射电亮星系Cyg-A上面"><a href="#应用到射电亮星系Cyg-A上面" class="headerlink" title="应用到射电亮星系Cyg A上面"></a>应用到射电亮星系Cyg A上面</h3><h2 id="逆康普顿散射"><a href="#逆康普顿散射" class="headerlink" title="逆康普顿散射"></a>逆康普顿散射</h2><h3 id="单一电子的逆康普顿功率"><a href="#单一电子的逆康普顿功率" class="headerlink" title="单一电子的逆康普顿功率"></a>单一电子的逆康普顿功率</h3><h3 id="单一电子的逆康普顿能谱"><a href="#单一电子的逆康普顿能谱" class="headerlink" title="单一电子的逆康普顿能谱"></a>单一电子的逆康普顿能谱</h3><h3 id="同步逆康普顿辐射"><a href="#同步逆康普顿辐射" class="headerlink" title="同步逆康普顿辐射"></a>同步逆康普顿辐射</h3><h2 id="河外射电源"><a href="#河外射电源" class="headerlink" title="河外射电源"></a>河外射电源</h2><h3 id="相对论团块运动"><a href="#相对论团块运动" class="headerlink" title="相对论团块运动"></a>相对论团块运动</h3><h3 id="统一模型"><a href="#统一模型" class="headerlink" title="统一模型"></a>统一模型</h3><h3 id="正常星系的射电辐射"><a href="#正常星系的射电辐射" class="headerlink" title="正常星系的射电辐射"></a>正常星系的射电辐射</h3><h3 id="河外射电源的族类以及在宇宙学尺度上的演化"><a href="#河外射电源的族类以及在宇宙学尺度上的演化" class="headerlink" title="河外射电源的族类以及在宇宙学尺度上的演化"></a>河外射电源的族类以及在宇宙学尺度上的演化</h3><h1 id="脉冲星"><a href="#脉冲星" class="headerlink" title="脉冲星"></a>脉冲星</h1><h2 id="脉冲星的性质"><a href="#脉冲星的性质" class="headerlink" title="脉冲星的性质"></a>脉冲星的性质</h2><h3 id="发现"><a href="#发现" class="headerlink" title="发现"></a>发现</h3><h3 id="中子星的质量和密度"><a href="#中子星的质量和密度" class="headerlink" title="中子星的质量和密度"></a>中子星的质量和密度</h3><h3 id="磁场"><a href="#磁场" class="headerlink" title="磁场"></a>磁场</h3><h3 id="磁偶极辐射"><a href="#磁偶极辐射" class="headerlink" title="磁偶极辐射"></a>磁偶极辐射</h3><h3 id="spin-down光度"><a href="#spin-down光度" class="headerlink" title="spin-down光度"></a>spin-down光度</h3><h3 id="最小磁场强度"><a href="#最小磁场强度" class="headerlink" title="最小磁场强度"></a>最小磁场强度</h3><h3 id="特征寿命"><a href="#特征寿命" class="headerlink" title="特征寿命"></a>特征寿命</h3><h3 id="减速指数"><a href="#减速指数" class="headerlink" title="减速指数"></a>减速指数</h3><h3 id="脉冲星的归宿"><a href="#脉冲星的归宿" class="headerlink" title="脉冲星的归宿"></a>脉冲星的归宿</h3><h3 id="发射机制"><a href="#发射机制" class="headerlink" title="发射机制"></a>发射机制</h3><h2 id="脉冲星和ISM"><a href="#脉冲星和ISM" class="headerlink" title="脉冲星和ISM"></a>脉冲星和ISM</h2><h2 id="脉冲星timing"><a href="#脉冲星timing" class="headerlink" title="脉冲星timing"></a>脉冲星timing</h2><h1 id="谱线"><a href="#谱线" class="headerlink" title="谱线"></a>谱线</h1><h2 id="绪论-1"><a href="#绪论-1" class="headerlink" title="绪论"></a>绪论</h2><h2 id="复合线"><a href="#复合线" class="headerlink" title="复合线"></a>复合线</h2><h3 id="复合线的频率"><a href="#复合线的频率" class="headerlink" title="复合线的频率"></a>复合线的频率</h3><h3 id="复合线的线强"><a href="#复合线的线强" class="headerlink" title="复合线的线强"></a>复合线的线强</h3><h2 id="谱线辐射转移"><a href="#谱线辐射转移" class="headerlink" title="谱线辐射转移"></a>谱线辐射转移</h2><h3 id="爱因斯坦系数"><a href="#爱因斯坦系数" class="headerlink" title="爱因斯坦系数"></a>爱因斯坦系数</h3><h3 id="辐射转移和细部平衡"><a href="#辐射转移和细部平衡" class="headerlink" title="辐射转移和细部平衡"></a>辐射转移和细部平衡</h3><h2 id="激发温度"><a href="#激发温度" class="headerlink" title="激发温度"></a>激发温度</h2><h2 id="脉泽"><a href="#脉泽" class="headerlink" title="脉泽"></a>脉泽</h2><h2 id="复合线源"><a href="#复合线源" class="headerlink" title="复合线源"></a>复合线源</h2><h3 id="LTE环境下的辐射转移"><a href="#LTE环境下的辐射转移" class="headerlink" title="LTE环境下的辐射转移"></a>LTE环境下的辐射转移</h3><h3 id="天文应用"><a href="#天文应用" class="headerlink" title="天文应用"></a>天文应用</h3><h2 id="分子谱线"><a href="#分子谱线" class="headerlink" title="分子谱线"></a>分子谱线</h2><h3 id="频率"><a href="#频率" class="headerlink" title="频率"></a>频率</h3><h3 id="激发"><a href="#激发" class="headerlink" title="激发"></a>激发</h3><h3 id="线强"><a href="#线强" class="headerlink" title="线强"></a>线强</h3><h2 id="21厘米线"><a href="#21厘米线" class="headerlink" title="21厘米线"></a>21厘米线</h2><h3 id="银河系的中性氢"><a href="#银河系的中性氢" class="headerlink" title="银河系的中性氢"></a>银河系的中性氢</h3><h3 id="河外中性氢"><a href="#河外中性氢" class="headerlink" title="河外中性氢"></a>河外中性氢</h3><h3 id="黑暗时代和再电离"><a href="#黑暗时代和再电离" class="headerlink" title="黑暗时代和再电离"></a>黑暗时代和再电离</h3><h1 id="附图"><a href="#附图" class="headerlink" title="附图"></a>附图</h1><h1 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h1><h2 id="傅里叶变换"><a href="#傅里叶变换" class="headerlink" title="傅里叶变换"></a>傅里叶变换</h2><h3 id="傅里叶变换-1"><a href="#傅里叶变换-1" class="headerlink" title="傅里叶变换"></a>傅里叶变换</h3><h3 id="离散傅里叶变换"><a href="#离散傅里叶变换" class="headerlink" title="离散傅里叶变换"></a>离散傅里叶变换</h3><h3 id="采样定理"><a href="#采样定理" class="headerlink" title="采样定理"></a>采样定理</h3><h3 id="功率谱"><a href="#功率谱" class="headerlink" title="功率谱"></a>功率谱</h3><h3 id="基本变换"><a href="#基本变换" class="headerlink" title="基本变换"></a>基本变换</h3><h3 id="基本傅里叶定理"><a href="#基本傅里叶定理" class="headerlink" title="基本傅里叶定理"></a>基本傅里叶定理</h3><h3 id="卷积和互相关"><a href="#卷积和互相关" class="headerlink" title="卷积和互相关"></a>卷积和互相关</h3><h3 id="一些其他的傅里叶变换参考"><a href="#一些其他的傅里叶变换参考" class="headerlink" title="一些其他的傅里叶变换参考"></a>一些其他的傅里叶变换参考</h3><h2 id="数学推倒"><a href="#数学推倒" class="headerlink" title="数学推倒"></a>数学推倒</h2><h3 id="普朗克？"><a href="#普朗克？" class="headerlink" title="普朗克？"></a>普朗克？</h3><h3 id="斯特凡定律"><a href="#斯特凡定律" class="headerlink" title="斯特凡定律"></a>斯特凡定律</h3><h3 id="复数的指数运算"><a href="#复数的指数运算" class="headerlink" title="复数的指数运算"></a>复数的指数运算</h3><h3 id="高斯函数的傅里叶变换"><a href="#高斯函数的傅里叶变换" class="headerlink" title="高斯函数的傅里叶变换"></a>高斯函数的傅里叶变换</h3><h3 id="高斯概率分布和噪声电压"><a href="#高斯概率分布和噪声电压" class="headerlink" title="高斯概率分布和噪声电压"></a>高斯概率分布和噪声电压</h3><h3 id="噪声功率的概率分布"><a href="#噪声功率的概率分布" class="headerlink" title="噪声功率的概率分布"></a>噪声功率的概率分布</h3><h3 id="自由-自由脉冲能量积分"><a href="#自由-自由脉冲能量积分" class="headerlink" title="自由-自由脉冲能量积分"></a>自由-自由脉冲能量积分</h3><h3 id="非相对论下的麦克斯韦速度分布"><a href="#非相对论下的麦克斯韦速度分布" class="headerlink" title="非相对论下的麦克斯韦速度分布"></a>非相对论下的麦克斯韦速度分布</h3><h2 id="狭义相对论"><a href="#狭义相对论" class="headerlink" title="狭义相对论"></a>狭义相对论</h2><h3 id="相对论"><a href="#相对论" class="headerlink" title="相对论"></a>相对论</h3><h3 id="钟慢效应和尺缩效应"><a href="#钟慢效应和尺缩效应" class="headerlink" title="钟慢效应和尺缩效应"></a>钟慢效应和尺缩效应</h3><h3 id="速度增加公式？"><a href="#速度增加公式？" class="headerlink" title="速度增加公式？"></a>速度增加公式？</h3><h3 id="质量、能量和功率"><a href="#质量、能量和功率" class="headerlink" title="质量、能量和功率"></a>质量、能量和功率</h3><h2 id="等离子体的波动传递"><a href="#等离子体的波动传递" class="headerlink" title="等离子体的波动传递"></a>等离子体的波动传递</h2><h3 id="低密度等离子体中的弥散和反射"><a href="#低密度等离子体中的弥散和反射" class="headerlink" title="低密度等离子体中的弥散和反射"></a>低密度等离子体中的弥散和反射</h3><h3 id="磁化等离子体的法拉第旋转效应"><a href="#磁化等离子体的法拉第旋转效应" class="headerlink" title="磁化等离子体的法拉第旋转效应"></a>磁化等离子体的法拉第旋转效应</h3><h2 id="重要公式"><a href="#重要公式" class="headerlink" title="重要公式"></a>重要公式</h2><h2 id="参数、单位和量纲"><a href="#参数、单位和量纲" class="headerlink" title="参数、单位和量纲"></a>参数、单位和量纲</h2><h3 id="物理常数"><a href="#物理常数" class="headerlink" title="物理常数"></a>物理常数</h3><h3 id="天文常数"><a href="#天文常数" class="headerlink" title="天文常数"></a>天文常数</h3><h3 id="国际单位制和高斯单位制"><a href="#国际单位制和高斯单位制" class="headerlink" title="国际单位制和高斯单位制"></a>国际单位制和高斯单位制</h3><h3 id="其他的常数和单位"><a href="#其他的常数和单位" class="headerlink" title="其他的常数和单位"></a>其他的常数和单位</h3><h3 id="雷达和波导频带"><a href="#雷达和波导频带" class="headerlink" title="雷达和波导频带"></a>雷达和波导频带</h3><h3 id="量纲分析"><a href="#量纲分析" class="headerlink" title="量纲分析"></a>量纲分析</h3><h2 id="符号和缩写"><a href="#符号和缩写" class="headerlink" title="符号和缩写"></a>符号和缩写</h2><h3 id="希腊符号"><a href="#希腊符号" class="headerlink" title="希腊符号"></a>希腊符号</h3><h3 id="其他的符号和缩写"><a href="#其他的符号和缩写" class="headerlink" title="其他的符号和缩写"></a>其他的符号和缩写</h3><h2 id="参考书目和链接"><a href="#参考书目和链接" class="headerlink" title="参考书目和链接"></a>参考书目和链接</h2><h3 id="参考书目"><a href="#参考书目" class="headerlink" title="参考书目"></a>参考书目</h3><h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/天文/" rel="tag"># 天文</a>
+          
+            <a href="/tags/学习笔记/" rel="tag"># 学习笔记</a>
+          
+            <a href="/tags/课程/" rel="tag"># 课程</a>
+          
+            <a href="/tags/射电/" rel="tag"># 射电</a>
+          
+            <a href="/tags/NRAO/" rel="tag"># NRAO</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/14/打印机设置问题/" rel="next" title="打印机设置问题">
+                <i class="fa fa-chevron-left"></i> 打印机设置问题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/14/Simon课程笔记-大爆炸元素合成和宇宙化学演化/" rel="prev" title="Simon课程笔记:大爆炸元素合成和宇宙化学演化">
+                Simon课程笔记:大爆炸元素合成和宇宙化学演化 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/pic2.jpg"
+               alt="陈清祥" />
+          <p class="site-author-name" itemprop="name">陈清祥</p>
+          <p class="site-description motion-element" itemprop="description">我们的征途是星辰大海</p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">72</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">74</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#绪论"><span class="nav-number">1.</span> <span class="nav-text">绪论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#射电天文绪论"><span class="nav-number">1.1.</span> <span class="nav-text">射电天文绪论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#啥是射电天文"><span class="nav-number">1.1.1.</span> <span class="nav-text">啥是射电天文</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#大气窗口"><span class="nav-number">1.1.2.</span> <span class="nav-text">大气窗口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#天文中的射电窗口"><span class="nav-number">1.1.3.</span> <span class="nav-text">天文中的射电窗口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#长波有什么特别的呢？"><span class="nav-number">1.1.4.</span> <span class="nav-text">长波有什么特别的呢？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#射电望远镜和综合孔径干涉仪"><span class="nav-number">1.1.5.</span> <span class="nav-text">射电望远镜和综合孔径干涉仪</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#宇宙射电噪声的发现"><span class="nav-number">1.2.</span> <span class="nav-text">宇宙射电噪声的发现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#漫游射电宇宙"><span class="nav-number">1.3.</span> <span class="nav-text">漫游射电宇宙</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#辐射理论基础"><span class="nav-number">2.</span> <span class="nav-text">辐射理论基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#亮度和流量密度"><span class="nav-number">2.1.</span> <span class="nav-text">亮度和流量密度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#辐射转移"><span class="nav-number">2.2.</span> <span class="nav-text">辐射转移</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#吸收"><span class="nav-number">2.2.1.</span> <span class="nav-text">吸收</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发射"><span class="nav-number">2.2.2.</span> <span class="nav-text">发射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#大气中的吸收和发射"><span class="nav-number">2.2.3.</span> <span class="nav-text">大气中的吸收和发射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不透光的物体"><span class="nav-number">2.2.4.</span> <span class="nav-text">不透光的物体</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#极化"><span class="nav-number">2.3.</span> <span class="nav-text">极化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#黑体辐射"><span class="nav-number">2.4.</span> <span class="nav-text">黑体辐射</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#瑞利-金斯近似"><span class="nav-number">2.4.1.</span> <span class="nav-text">瑞利-金斯近似</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#普朗克辐射定律"><span class="nav-number">2.4.2.</span> <span class="nav-text">普朗克辐射定律</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#热电阻产生的噪声"><span class="nav-number">2.5.</span> <span class="nav-text">热电阻产生的噪声</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CMB"><span class="nav-number">2.6.</span> <span class="nav-text">CMB</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#膨胀的宇宙"><span class="nav-number">2.6.1.</span> <span class="nav-text">膨胀的宇宙</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#膨胀宇宙中的黑体辐射"><span class="nav-number">2.6.2.</span> <span class="nav-text">膨胀宇宙中的黑体辐射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CMB的预言和发现"><span class="nav-number">2.6.3.</span> <span class="nav-text">CMB的预言和发现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#偶极非对称性"><span class="nav-number">2.6.4.</span> <span class="nav-text">偶极非对称性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内禀非对称性"><span class="nav-number">2.6.5.</span> <span class="nav-text">内禀非对称性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#加速带电粒子的辐射"><span class="nav-number">2.7.</span> <span class="nav-text">加速带电粒子的辐射</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#射电波段的dust辐射"><span class="nav-number">2.8.</span> <span class="nav-text">射电波段的dust辐射</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#射电波段的望远镜和辐射计"><span class="nav-number">3.</span> <span class="nav-text">射电波段的望远镜和辐射计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#天线理论基础"><span class="nav-number">3.1.</span> <span class="nav-text">天线理论基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#短偶极天线-Hertz-Dipole-的辐射"><span class="nav-number">3.1.1.</span> <span class="nav-text">短偶极天线(Hertz Dipole)的辐射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#辐射阻抗"><span class="nav-number">3.1.2.</span> <span class="nav-text">辐射阻抗</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发射天线的功率增益"><span class="nav-number">3.1.3.</span> <span class="nav-text">发射天线的功率增益</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接受天线的有效面积"><span class="nav-number">3.1.4.</span> <span class="nav-text">接受天线的有效面积</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#天线互易性"><span class="nav-number">3.1.5.</span> <span class="nav-text">天线互易性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#天线温度"><span class="nav-number">3.1.6.</span> <span class="nav-text">天线温度</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#反射式天线"><span class="nav-number">3.2.</span> <span class="nav-text">反射式天线</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#抛物面发射天线"><span class="nav-number">3.2.1.</span> <span class="nav-text">抛物面发射天线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#远场距离"><span class="nav-number">3.2.2.</span> <span class="nav-text">远场距离</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#孔径天线的模式图"><span class="nav-number">3.2.3.</span> <span class="nav-text">孔径天线的模式图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#均匀照明的天线的电场和功率图样"><span class="nav-number">3.2.4.</span> <span class="nav-text">均匀照明的天线的电场和功率图样</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#狭窄照明的天线的电场和功率图样"><span class="nav-number">3.2.5.</span> <span class="nav-text">狭窄照明的天线的电场和功率图样</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二维孔径天线"><span class="nav-number">3.3.</span> <span class="nav-text">二维孔径天线</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#二维孔径天线的场模式"><span class="nav-number">3.3.1.</span> <span class="nav-text">二维孔径天线的场模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#均匀照明的矩形孔径天线"><span class="nav-number">3.3.2.</span> <span class="nav-text">均匀照明的矩形孔径天线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高斯波束立体角和波束宽"><span class="nav-number">3.3.3.</span> <span class="nav-text">高斯波束立体角和波束宽</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#反射精度的要求"><span class="nav-number">3.3.4.</span> <span class="nav-text">反射精度的要求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指向精度的要求"><span class="nav-number">3.3.5.</span> <span class="nav-text">指向精度的要求</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#波导"><span class="nav-number">3.4.</span> <span class="nav-text">波导</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#射电望远镜"><span class="nav-number">3.5.</span> <span class="nav-text">射电望远镜</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#辐射计"><span class="nav-number">3.6.</span> <span class="nav-text">辐射计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#带宽限制噪声"><span class="nav-number">3.6.1.</span> <span class="nav-text">带宽限制噪声</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#辐射计-1"><span class="nav-number">3.6.2.</span> <span class="nav-text">辐射计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一些需要注意的地方"><span class="nav-number">3.6.3.</span> <span class="nav-text">一些需要注意的地方</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#超外差接收机"><span class="nav-number">3.6.4.</span> <span class="nav-text">超外差接收机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分光计"><span class="nav-number">3.6.5.</span> <span class="nav-text">分光计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#辐射计的噪声测量"><span class="nav-number">3.6.6.</span> <span class="nav-text">辐射计的噪声测量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#干涉仪"><span class="nav-number">3.7.</span> <span class="nav-text">干涉仪</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#两天线的近单色干涉仪"><span class="nav-number">3.7.1.</span> <span class="nav-text">两天线的近单色干涉仪</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#微展源和复数相关器"><span class="nav-number">3.7.2.</span> <span class="nav-text">微展源和复数相关器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#有限带宽和时间平均的影响"><span class="nav-number">3.7.3.</span> <span class="nav-text">有限带宽和时间平均的影响</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#地球转动孔径综合"><span class="nav-number">3.7.4.</span> <span class="nav-text">地球转动孔径综合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三维干涉仪"><span class="nav-number">3.7.5.</span> <span class="nav-text">三维干涉仪</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#灵敏度"><span class="nav-number">3.7.6.</span> <span class="nav-text">灵敏度</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#自由-自由辐射"><span class="nav-number">4.</span> <span class="nav-text">自由-自由辐射</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#热辐射和非热辐射"><span class="nav-number">4.1.</span> <span class="nav-text">热辐射和非热辐射</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HII区"><span class="nav-number">4.2.</span> <span class="nav-text">HII区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HII区的自由-自由射电辐射"><span class="nav-number">4.3.</span> <span class="nav-text">HII区的自由-自由射电辐射</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单个电子-离子相互作用产生的射电辐射"><span class="nav-number">4.3.1.</span> <span class="nav-text">单个电子-离子相互作用产生的射电辐射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单个HII区的射电辐射"><span class="nav-number">4.3.2.</span> <span class="nav-text">单个HII区的射电辐射</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#同步辐射"><span class="nav-number">5.</span> <span class="nav-text">同步辐射</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#磁韧致辐射"><span class="nav-number">5.1.</span> <span class="nav-text">磁韧致辐射</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Gyro辐射"><span class="nav-number">5.1.1.</span> <span class="nav-text">Gyro辐射</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#同步辐射功率"><span class="nav-number">5.2.</span> <span class="nav-text">同步辐射功率</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#洛伦兹变换"><span class="nav-number">5.2.1.</span> <span class="nav-text">洛伦兹变换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相对论质量"><span class="nav-number">5.2.2.</span> <span class="nav-text">相对论质量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单一电子的同步辐射功率"><span class="nav-number">5.2.3.</span> <span class="nav-text">单一电子的同步辐射功率</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#同步辐射谱"><span class="nav-number">5.3.</span> <span class="nav-text">同步辐射谱</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单一电子的同步辐射谱"><span class="nav-number">5.3.1.</span> <span class="nav-text">单一电子的同步辐射谱</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#光学薄的源的同步辐射谱"><span class="nav-number">5.3.2.</span> <span class="nav-text">光学薄的源的同步辐射谱</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#同步辐射自吸收"><span class="nav-number">5.3.3.</span> <span class="nav-text">同步辐射自吸收</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#同步辐射源"><span class="nav-number">5.4.</span> <span class="nav-text">同步辐射源</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#最小能量和能量均分"><span class="nav-number">5.4.1.</span> <span class="nav-text">最小能量和能量均分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#艾丁顿光度极限"><span class="nav-number">5.4.2.</span> <span class="nav-text">艾丁顿光度极限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应用到射电亮星系Cyg-A上面"><span class="nav-number">5.4.3.</span> <span class="nav-text">应用到射电亮星系Cyg A上面</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#逆康普顿散射"><span class="nav-number">5.5.</span> <span class="nav-text">逆康普顿散射</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单一电子的逆康普顿功率"><span class="nav-number">5.5.1.</span> <span class="nav-text">单一电子的逆康普顿功率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单一电子的逆康普顿能谱"><span class="nav-number">5.5.2.</span> <span class="nav-text">单一电子的逆康普顿能谱</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#同步逆康普顿辐射"><span class="nav-number">5.5.3.</span> <span class="nav-text">同步逆康普顿辐射</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#河外射电源"><span class="nav-number">5.6.</span> <span class="nav-text">河外射电源</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#相对论团块运动"><span class="nav-number">5.6.1.</span> <span class="nav-text">相对论团块运动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#统一模型"><span class="nav-number">5.6.2.</span> <span class="nav-text">统一模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正常星系的射电辐射"><span class="nav-number">5.6.3.</span> <span class="nav-text">正常星系的射电辐射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#河外射电源的族类以及在宇宙学尺度上的演化"><span class="nav-number">5.6.4.</span> <span class="nav-text">河外射电源的族类以及在宇宙学尺度上的演化</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#脉冲星"><span class="nav-number">6.</span> <span class="nav-text">脉冲星</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#脉冲星的性质"><span class="nav-number">6.1.</span> <span class="nav-text">脉冲星的性质</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#发现"><span class="nav-number">6.1.1.</span> <span class="nav-text">发现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#中子星的质量和密度"><span class="nav-number">6.1.2.</span> <span class="nav-text">中子星的质量和密度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#磁场"><span class="nav-number">6.1.3.</span> <span class="nav-text">磁场</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#磁偶极辐射"><span class="nav-number">6.1.4.</span> <span class="nav-text">磁偶极辐射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#spin-down光度"><span class="nav-number">6.1.5.</span> <span class="nav-text">spin-down光度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最小磁场强度"><span class="nav-number">6.1.6.</span> <span class="nav-text">最小磁场强度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特征寿命"><span class="nav-number">6.1.7.</span> <span class="nav-text">特征寿命</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#减速指数"><span class="nav-number">6.1.8.</span> <span class="nav-text">减速指数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#脉冲星的归宿"><span class="nav-number">6.1.9.</span> <span class="nav-text">脉冲星的归宿</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发射机制"><span class="nav-number">6.1.10.</span> <span class="nav-text">发射机制</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#脉冲星和ISM"><span class="nav-number">6.2.</span> <span class="nav-text">脉冲星和ISM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#脉冲星timing"><span class="nav-number">6.3.</span> <span class="nav-text">脉冲星timing</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#谱线"><span class="nav-number">7.</span> <span class="nav-text">谱线</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#绪论-1"><span class="nav-number">7.1.</span> <span class="nav-text">绪论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#复合线"><span class="nav-number">7.2.</span> <span class="nav-text">复合线</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#复合线的频率"><span class="nav-number">7.2.1.</span> <span class="nav-text">复合线的频率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#复合线的线强"><span class="nav-number">7.2.2.</span> <span class="nav-text">复合线的线强</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#谱线辐射转移"><span class="nav-number">7.3.</span> <span class="nav-text">谱线辐射转移</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#爱因斯坦系数"><span class="nav-number">7.3.1.</span> <span class="nav-text">爱因斯坦系数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#辐射转移和细部平衡"><span class="nav-number">7.3.2.</span> <span class="nav-text">辐射转移和细部平衡</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#激发温度"><span class="nav-number">7.4.</span> <span class="nav-text">激发温度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#脉泽"><span class="nav-number">7.5.</span> <span class="nav-text">脉泽</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#复合线源"><span class="nav-number">7.6.</span> <span class="nav-text">复合线源</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#LTE环境下的辐射转移"><span class="nav-number">7.6.1.</span> <span class="nav-text">LTE环境下的辐射转移</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#天文应用"><span class="nav-number">7.6.2.</span> <span class="nav-text">天文应用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分子谱线"><span class="nav-number">7.7.</span> <span class="nav-text">分子谱线</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#频率"><span class="nav-number">7.7.1.</span> <span class="nav-text">频率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#激发"><span class="nav-number">7.7.2.</span> <span class="nav-text">激发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线强"><span class="nav-number">7.7.3.</span> <span class="nav-text">线强</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#21厘米线"><span class="nav-number">7.8.</span> <span class="nav-text">21厘米线</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#银河系的中性氢"><span class="nav-number">7.8.1.</span> <span class="nav-text">银河系的中性氢</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#河外中性氢"><span class="nav-number">7.8.2.</span> <span class="nav-text">河外中性氢</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#黑暗时代和再电离"><span class="nav-number">7.8.3.</span> <span class="nav-text">黑暗时代和再电离</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#附图"><span class="nav-number">8.</span> <span class="nav-text">附图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#附录"><span class="nav-number">9.</span> <span class="nav-text">附录</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#傅里叶变换"><span class="nav-number">9.1.</span> <span class="nav-text">傅里叶变换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#傅里叶变换-1"><span class="nav-number">9.1.1.</span> <span class="nav-text">傅里叶变换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#离散傅里叶变换"><span class="nav-number">9.1.2.</span> <span class="nav-text">离散傅里叶变换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#采样定理"><span class="nav-number">9.1.3.</span> <span class="nav-text">采样定理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#功率谱"><span class="nav-number">9.1.4.</span> <span class="nav-text">功率谱</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本变换"><span class="nav-number">9.1.5.</span> <span class="nav-text">基本变换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本傅里叶定理"><span class="nav-number">9.1.6.</span> <span class="nav-text">基本傅里叶定理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#卷积和互相关"><span class="nav-number">9.1.7.</span> <span class="nav-text">卷积和互相关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一些其他的傅里叶变换参考"><span class="nav-number">9.1.8.</span> <span class="nav-text">一些其他的傅里叶变换参考</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数学推倒"><span class="nav-number">9.2.</span> <span class="nav-text">数学推倒</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#普朗克？"><span class="nav-number">9.2.1.</span> <span class="nav-text">普朗克？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#斯特凡定律"><span class="nav-number">9.2.2.</span> <span class="nav-text">斯特凡定律</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#复数的指数运算"><span class="nav-number">9.2.3.</span> <span class="nav-text">复数的指数运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高斯函数的傅里叶变换"><span class="nav-number">9.2.4.</span> <span class="nav-text">高斯函数的傅里叶变换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高斯概率分布和噪声电压"><span class="nav-number">9.2.5.</span> <span class="nav-text">高斯概率分布和噪声电压</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#噪声功率的概率分布"><span class="nav-number">9.2.6.</span> <span class="nav-text">噪声功率的概率分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自由-自由脉冲能量积分"><span class="nav-number">9.2.7.</span> <span class="nav-text">自由-自由脉冲能量积分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#非相对论下的麦克斯韦速度分布"><span class="nav-number">9.2.8.</span> <span class="nav-text">非相对论下的麦克斯韦速度分布</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#狭义相对论"><span class="nav-number">9.3.</span> <span class="nav-text">狭义相对论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#相对论"><span class="nav-number">9.3.1.</span> <span class="nav-text">相对论</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#钟慢效应和尺缩效应"><span class="nav-number">9.3.2.</span> <span class="nav-text">钟慢效应和尺缩效应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#速度增加公式？"><span class="nav-number">9.3.3.</span> <span class="nav-text">速度增加公式？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#质量、能量和功率"><span class="nav-number">9.3.4.</span> <span class="nav-text">质量、能量和功率</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#等离子体的波动传递"><span class="nav-number">9.4.</span> <span class="nav-text">等离子体的波动传递</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#低密度等离子体中的弥散和反射"><span class="nav-number">9.4.1.</span> <span class="nav-text">低密度等离子体中的弥散和反射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#磁化等离子体的法拉第旋转效应"><span class="nav-number">9.4.2.</span> <span class="nav-text">磁化等离子体的法拉第旋转效应</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重要公式"><span class="nav-number">9.5.</span> <span class="nav-text">重要公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参数、单位和量纲"><span class="nav-number">9.6.</span> <span class="nav-text">参数、单位和量纲</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#物理常数"><span class="nav-number">9.6.1.</span> <span class="nav-text">物理常数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#天文常数"><span class="nav-number">9.6.2.</span> <span class="nav-text">天文常数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#国际单位制和高斯单位制"><span class="nav-number">9.6.3.</span> <span class="nav-text">国际单位制和高斯单位制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他的常数和单位"><span class="nav-number">9.6.4.</span> <span class="nav-text">其他的常数和单位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#雷达和波导频带"><span class="nav-number">9.6.5.</span> <span class="nav-text">雷达和波导频带</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#量纲分析"><span class="nav-number">9.6.6.</span> <span class="nav-text">量纲分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#符号和缩写"><span class="nav-number">9.7.</span> <span class="nav-text">符号和缩写</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#希腊符号"><span class="nav-number">9.7.1.</span> <span class="nav-text">希腊符号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他的符号和缩写"><span class="nav-number">9.7.2.</span> <span class="nav-text">其他的符号和缩写</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考书目和链接"><span class="nav-number">9.8.</span> <span class="nav-text">参考书目和链接</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#参考书目"><span class="nav-number">9.8.1.</span> <span class="nav-text">参考书目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#链接"><span class="nav-number">9.8.2.</span> <span class="nav-text">链接</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">陈清祥</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+  
+
+
+</body>
+</html>

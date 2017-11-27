@@ -1,0 +1,717 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="生活,兴趣,开销," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="刚搬了家，新家好处确实很多，但毕竟是远了。谷歌地图查了下大概是4公里多。这就比较蛋疼了，房租是便宜了一些，但是距离确实远了不少，步行肯定是不行了。在Stirling Hwy上，公交极其方便，但是无比蛋疼的是Perth的公共交通是按”zone”收费的，家刚好在zone1的边上，要收跨区公交费，贵的一比，更不要想每天都要坐两趟了。所以争取每天骑自行车是相对现实的路子。这个距离骑车还是比较合适的，但是骑">
+<meta property="og:type" content="article">
+<meta property="og:title" content="通勤路线坡度调研小记">
+<meta property="og:url" content="http://astropeanut.info/2017/02/17/通勤路线坡度调研小记/index.html">
+<meta property="og:site_name" content="AstroPeanut's Blog">
+<meta property="og:description" content="刚搬了家，新家好处确实很多，但毕竟是远了。谷歌地图查了下大概是4公里多。这就比较蛋疼了，房租是便宜了一些，但是距离确实远了不少，步行肯定是不行了。在Stirling Hwy上，公交极其方便，但是无比蛋疼的是Perth的公共交通是按”zone”收费的，家刚好在zone1的边上，要收跨区公交费，贵的一比，更不要想每天都要坐两趟了。所以争取每天骑自行车是相对现实的路子。这个距离骑车还是比较合适的，但是骑">
+<meta property="og:image" content="http://astropeanut.info/2017/02/17/通勤路线坡度调研小记/route_on_google_maps.png">
+<meta property="og:image" content="http://astropeanut.info/2017/02/17/通勤路线坡度调研小记/dis_height_plot2.png">
+<meta property="og:image" content="http://astropeanut.info/2017/02/17/通勤路线坡度调研小记/dis_slope_plot.png">
+<meta property="og:updated_time" content="2017-03-26T07:48:06.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="通勤路线坡度调研小记">
+<meta name="twitter:description" content="刚搬了家，新家好处确实很多，但毕竟是远了。谷歌地图查了下大概是4公里多。这就比较蛋疼了，房租是便宜了一些，但是距离确实远了不少，步行肯定是不行了。在Stirling Hwy上，公交极其方便，但是无比蛋疼的是Perth的公共交通是按”zone”收费的，家刚好在zone1的边上，要收跨区公交费，贵的一比，更不要想每天都要坐两趟了。所以争取每天骑自行车是相对现实的路子。这个距离骑车还是比较合适的，但是骑">
+<meta name="twitter:image" content="http://astropeanut.info/2017/02/17/通勤路线坡度调研小记/route_on_google_maps.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://astropeanut.info/2017/02/17/通勤路线坡度调研小记/"/>
+
+
+
+
+
+  <title> 通勤路线坡度调研小记 | AstroPeanut's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?d15b8cc355d618f75dfd082559510991";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">AstroPeanut's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle">总学渣也不是个办法</p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://astropeanut.info/2017/02/17/通勤路线坡度调研小记/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="陈清祥">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/pic2.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="AstroPeanut's Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="AstroPeanut's Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                通勤路线坡度调研小记
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-17T17:24:54+08:00">
+                2017-02-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/life/" itemprop="url" rel="index">
+                    <span itemprop="name">生活和提高</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/02/17/通勤路线坡度调研小记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://astropeanut.info/2017/02/17/通勤路线坡度调研小记/" itemprop="commentCount">0</span> comments
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>刚搬了家，新家好处确实很多，但毕竟是远了。谷歌地图查了下大概是4公里多。<br>这就比较蛋疼了，房租是便宜了一些，但是距离确实远了不少，步行肯定是不行了。在Stirling Hwy上，公交极其方便，但是无比蛋疼的是Perth的公共交通是按”zone”收费的，家刚好在zone1的边上，要收跨区公交费，贵的一比，更不要想每天都要坐两趟了。<br>所以争取每天骑自行车是相对现实的路子。这个距离骑车还是比较合适的，但是骑车要考虑的事儿就比较多了。除了天气因素，我最直接的担心是上坡下坡的问题，于是有了这篇文章。</p>
+<a id="more"></a>
+<img src="/2017/02/17/通勤路线坡度调研小记/route_on_google_maps.png" alt="谷歌地图给出的骑行路线" title="谷歌地图给出的骑行路线">
+<p>谷歌地图上给的结论是“大多是平坦的道路”，但是我之前有一次骑车往西边走过大概一公里多，累成狗，所以对谷歌的说法简直是“信了你的邪”。Google搜索Maps Altitude，第一个点进去，发现可以实现我查询海拔的目的。<br>操作很简单，先输入家庭位置，找到。沿着路在地图上点击，下面的数据框就会出现相应的经纬坐标和海拔等信息。它可以同时输出距离信息，但是错的太离谱了，得自己算。。<br>我一共点了大概100个点，在数据框中把经纬度、海拔复制并格式化粘贴到excel里面，然后再粘贴到一个文本文档里面。<br>然后要做的事儿就是把经纬度转换成为实际距离并作为横轴，纵轴是海拔。<br>经纬度转换成实际距离的原理实际上不难，最直观的简单算法就是先假定地球是正球体（这个假设不过分）然后用余弦定理来算。但是因为我这个4km距离相对于地球的半径太小了，算cos的时候误差会比较大所以不是个好办法。其实想想也知道这个肯定在各种语言里面都有现成的包来计算了，但是还是比较好奇具体算法所以进行了一些调研。有一篇比较有趣的是<a href="http://www.cocoachina.com/ios/20141118/10238.html" title="[external] [title]" target="_blank" rel="external">美团外卖写的技术文档</a>，我觉得以后有兴趣可以进行一点相关研究，尤其是那个Haversine公式，还没有弄明白咋回事儿。</p>
+<blockquote>
+<p>备查，家的坐标是-31.98254,115.77723000000003，海拔20.4米。ICRAR的坐标是-31.977704714583545,115.81546783447266，海拔11.7米。以及，用IDL直接用map_2points命令输出这两点的距离，显示只有3.65km的直线距离，我还是挺吃惊的。。</p>
+</blockquote>
+<p>用IDL写很简单，不过一个map_2points()命令而已。我的电脑idl的license有问题，于是在服务器上跑的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">file = &quot;/home/qchen/temp/xy/xy01.txt&quot;</div><div class="line">len = 93L</div><div class="line">array = dblarr(3,len)</div><div class="line"></div><div class="line">openr,1,file</div><div class="line">readf,1,array</div><div class="line">close,1</div><div class="line"></div><div class="line">lat = array[0,*]</div><div class="line">lon = array[1,*]</div><div class="line">att = array[2,*]</div><div class="line"></div><div class="line">dis_straight = map_2points(lon[0],lat[0],lon[len-1],lat[len-1],/METERS)</div><div class="line"></div><div class="line">dis = dblarr(len)</div><div class="line">dis_sum = dblarr(len)</div><div class="line">slope = dblarr(len-1)</div><div class="line">for i = 1L, len-1 do begin</div><div class="line">  dis[i]=map_2points(lon[i-1],lat[i-1],lon[i],lat[i],/METERS)</div><div class="line">  slope[i-1] = (att[i]-att[i-1])/dis[i]</div><div class="line">  dis_sum[i] = dis_sum[i-1]+dis[i]</div><div class="line">endfor</div><div class="line"></div><div class="line">dis_total = dis_sum[len-1]</div><div class="line"></div><div class="line">print,dis_straight</div><div class="line"></div><div class="line">device, true=24, retain=2, decomposed=0</div><div class="line"></div><div class="line">TVLCT,255,255,255,254 ; set up default colors of background white</div><div class="line">!p.color = 253</div><div class="line">!p.background = 254</div><div class="line">window,1</div><div class="line">plot,dis_sum,att,xrange=[0.,dis_total],xtitle=&quot;distance[m]&quot;,ytitle=&quot;altitude[m]&quot;,background=254,color=0</div><div class="line">window,2</div><div class="line">plot,dis_sum,att-min(att),xrange=[0.,dis_total],xtitle=&quot;distance[m]&quot;,ytitle=&quot;normalised altitude[m]&quot;,background=254,color=0</div><div class="line">window,3</div><div class="line">dis_left = dis_sum[0:len-2]</div><div class="line">dis_right= dis_sum[1:len-1]</div><div class="line">plot,(dis_left+dis_right)/2.,slope,xrange=[0.,dis_total],xtitle=&quot;distance[m]&quot;,ytitle=&quot;slope&quot;,background=254,color=0</div><div class="line"></div><div class="line">end</div></pre></td></tr></table></figure>
+<p>跑出来两张图：</p>
+
+<img src="/2017/02/17/通勤路线坡度调研小记/dis_height_plot2.png" alt="路程-海拔图，根据最低海拔处归一化" title="路程-海拔图，根据最低海拔处归一化">
+<p>程序中计算的dis_total确实是3.6公里，而最后的dis_sum显示为4公里多一点。这个和谷歌地图给出的是一致的，我之前认为这个路径比较直了，看来还是不够笔直所以多出来了几百米。</p>
+<p>以及最重要的坡度大小：</p>
+<img src="/2017/02/17/通勤路线坡度调研小记/dis_slope_plot.png" alt="路程-坡度图" title="路程-坡度图">
+<p>可是总感觉这个坡度特么不太对啊。。数是不是太小了。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/生活/" rel="tag"># 生活</a>
+          
+            <a href="/tags/兴趣/" rel="tag"># 兴趣</a>
+          
+            <a href="/tags/开销/" rel="tag"># 开销</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/02/17/pipeline-reading/" rel="next" title="pipeline_reading">
+                <i class="fa fa-chevron-left"></i> pipeline_reading
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/02/18/2-观测事实/" rel="prev" title="2. 观测事实">
+                2. 观测事实 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/pic2.jpg"
+               alt="陈清祥" />
+          <p class="site-author-name" itemprop="name">陈清祥</p>
+          <p class="site-description motion-element" itemprop="description">我们的征途是星辰大海</p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">72</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">74</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">陈清祥</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+  
+
+
+</body>
+</html>

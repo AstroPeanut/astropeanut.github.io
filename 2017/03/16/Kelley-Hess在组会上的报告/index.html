@@ -1,0 +1,803 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="天文,报告笔记,会议,CHILES," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="Kelley Hess在今天的组会上做了个关于CHILES数据处理方面的报告，此页是我总结的笔记。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Kelley Hess在组会上的报告">
+<meta property="og:url" content="http://astropeanut.info/2017/03/16/Kelley-Hess在组会上的报告/index.html">
+<meta property="og:site_name" content="AstroPeanut's Blog">
+<meta property="og:description" content="Kelley Hess在今天的组会上做了个关于CHILES数据处理方面的报告，此页是我总结的笔记。">
+<meta property="og:image" content="http://astropeanut.info/2017/03/16/Kelley-Hess在组会上的报告/fig1.png">
+<meta property="og:image" content="http://astropeanut.info/2017/03/16/Kelley-Hess在组会上的报告/fig2.png">
+<meta property="og:image" content="http://astropeanut.info/2017/03/16/Kelley-Hess在组会上的报告/fig3.png">
+<meta property="og:updated_time" content="2017-03-26T07:36:21.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Kelley Hess在组会上的报告">
+<meta name="twitter:description" content="Kelley Hess在今天的组会上做了个关于CHILES数据处理方面的报告，此页是我总结的笔记。">
+<meta name="twitter:image" content="http://astropeanut.info/2017/03/16/Kelley-Hess在组会上的报告/fig1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://astropeanut.info/2017/03/16/Kelley-Hess在组会上的报告/"/>
+
+
+
+
+
+  <title> Kelley Hess在组会上的报告 | AstroPeanut's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?d15b8cc355d618f75dfd082559510991";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">AstroPeanut's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle">总学渣也不是个办法</p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://astropeanut.info/2017/03/16/Kelley-Hess在组会上的报告/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="陈清祥">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/pic2.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="AstroPeanut's Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="AstroPeanut's Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Kelley Hess在组会上的报告
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-16T21:14:23+08:00">
+                2017-03-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/work/" itemprop="url" rel="index">
+                    <span itemprop="name">工作和技能</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/03/16/Kelley-Hess在组会上的报告/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://astropeanut.info/2017/03/16/Kelley-Hess在组会上的报告/" itemprop="commentCount">0</span> comments
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Kelley Hess在今天的组会上做了个关于CHILES数据处理方面的报告，此页是我总结的笔记。</p>
+<a id="more"></a>
+<h1 id="数据处理部分"><a href="#数据处理部分" class="headerlink" title="数据处理部分"></a>数据处理部分</h1><p>介绍了一下CHILES观测的一些基本情况。摘录如下：</p>
+<ul>
+<li>1002h观测时间，VLA的B configuration</li>
+<li>946-1426 MHz，对应的HI为红移0到红移0.12</li>
+<li>channel宽度是62.5kHz，这对应于红移0.12为15km/s</li>
+<li>预计能探测到约300个HI rich objects</li>
+</ul>
+<p>观测的最近的update</p>
+<ul>
+<li>phase 1 (13B) 178h (13TB的最终科学数据产出)</li>
+<li>phase 2 (15A) 213h (数据处理中)</li>
+<li>phase 3 (16B) 211h (数据处理中)<blockquote>
+<p>预计还需要两轮观测来完成survey,后续的观测正在申请</p>
+</blockquote>
+</li>
+</ul>
+<p>数据处理update</p>
+<ul>
+<li>预先的60个小时观测数据已经处理并发表了，见(Fernandez et al. 2013)</li>
+<li>phase 1的完整480MHz带宽的数据都已经处理并成图完毕</li>
+<li>在整个带宽上noise比较平坦，观测质量良好</li>
+<li>部分频带受RFI影响很严重，我们依然在努力搞好这块</li>
+<li>imaging, continuum subtraction依然很挑战</li>
+</ul>
+<h1 id="SOFIA和source-finding"><a href="#SOFIA和source-finding" class="headerlink" title="SOFIA和source finding"></a>SOFIA和source finding</h1><p>SoFiA有两种工作模式</p>
+<ul>
+<li>blind search<ul>
+<li>事实证明现在的SOFIA还无法自己很好的完成工作。如果选择了blind模式的话，结果并不好看。有很多false positive或者true negative。不能用这个。</li>
+</ul>
+</li>
+<li>输入预先已知的源<ul>
+<li>可以先经由其他波段的已知catalog，作为输入。这个是可行的模式。</li>
+</ul>
+</li>
+</ul>
+<p>用SOFIA做的source finding测试得出了如下结论：</p>
+<ul>
+<li>Optical_find.py<ul>
+<li>cube越小，false positive情况出现的越少</li>
+<li>cube越小，用来决定是否是false positive用到的统计越差</li>
+<li>改变搜寻的cube大小会改变‘探测’的结果</li>
+<li>这个merging parameter要反复敲打才能找到合适的，这个参数设小了会把展源拆成多个，设大了也不行会把false positive也连接进来</li>
+</ul>
+</li>
+<li>使用建议<ul>
+<li>计算noise的时候，与其使用原先的那个特定的area，应该给一个更大的区域。（而且这个区域最好是没有什么源的）</li>
+<li>不要把positive和negative源merge到一起</li>
+</ul>
+</li>
+</ul>
+<p>几种情况。</p>
+<ol>
+<li>SOFIA能干好，人眼也能干好的情况<br>这个不消说，是一些比较明显的源，相对比较亮的。</li>
+<li>SOFIA干的好，人眼干不好的情况<br>比如，有个旋涡星系，其边缘很延展，但是很暗弱，人眼难以分辨出来边缘的feature，但是SOFIA可能结合多个channel的一些统计量进行评估，进而把边缘的一些信息解析出来。<img src="/2017/03/16/Kelley-Hess在组会上的报告/fig1.png" alt="SoFiA比人眼强的情况" title="SoFiA比人眼强的情况"></li>
+<li>SOFIA干不好，人眼能干好的情况<br>典型的比如sidelope比较明显，但是在不同channel处这些sidelope表现不一样，本来看单个channel数据是看不出来的，而结合了多个channel的统计信息SoFiA可能会更加懵逼。这个情况人眼就容易一些，毕竟sidelope不管怎么飘，切换channel总能发现一堆sidelope围着一个不动的信号源。<img src="/2017/03/16/Kelley-Hess在组会上的报告/fig2.png" alt="SoFiA不如人眼的情况" title="SoFiA不如人眼的情况">
+</li>
+</ol>
+<h1 id="科学"><a href="#科学" class="headerlink" title="科学"></a>科学</h1><p>由于已经处理完的数据只有phase 1的，所以所谓科学产出目前只能从这里来。</p>
+<ul>
+<li>在pilot的60个小时观测那篇文章中，发布了红移0~0.18范围内的33个candidate detections.</li>
+<li>红移0.12探测到了15个星系</li>
+<li>pilot中的6个红移在0.12的candidate已经得到了证实</li>
+<li>探测到了红移0.17处两个在void里的星系</li>
+</ul>
+<p>观测到的groups</p>
+<ul>
+<li>44个质量大于$10^{13}M_\odot$的Knobel groups<blockquote>
+<p>啥是Knobel group?   </p>
+</blockquote>
+</li>
+<li>红移0，质量大于$10^{13}M<em>\odot$的星系群有8个$M</em>\star&lt;-18$且$M_\odot &gt;LMC$的<img src="/2017/03/16/Kelley-Hess在组会上的报告/fig3.png" alt="星系群计数" title="星系群计数">
+</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/天文/" rel="tag"># 天文</a>
+          
+            <a href="/tags/报告笔记/" rel="tag"># 报告笔记</a>
+          
+            <a href="/tags/会议/" rel="tag"># 会议</a>
+          
+            <a href="/tags/CHILES/" rel="tag"># CHILES</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/16/markdown中使用数学公式/" rel="next" title="markdown中使用数学公式">
+                <i class="fa fa-chevron-left"></i> markdown中使用数学公式
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/19/Mo-White教材研读笔记/" rel="prev" title="Mo & White教材研读笔记">
+                Mo & White教材研读笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/pic2.jpg"
+               alt="陈清祥" />
+          <p class="site-author-name" itemprop="name">陈清祥</p>
+          <p class="site-description motion-element" itemprop="description">我们的征途是星辰大海</p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">72</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">74</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数据处理部分"><span class="nav-number">1.</span> <span class="nav-text">数据处理部分</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SOFIA和source-finding"><span class="nav-number">2.</span> <span class="nav-text">SOFIA和source finding</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#科学"><span class="nav-number">3.</span> <span class="nav-text">科学</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">陈清祥</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
